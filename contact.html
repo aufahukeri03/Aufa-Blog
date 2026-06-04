@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER (Kekal Statik & Konsisten) -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">My Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="blog.html">BLOG</a></li>
+                <li><a href="contact.html" class="active">CONTACT</a></li>
+            </ul>
+            <div class="header-socials">
+                <a href="#">Eng</a>
+                <span>/</span>
+                <a href="#">Malay</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT SECTION -->
+    <main class="content-container">
+        <h1 class="section-title">let's connect</h1>
+
+        <div class="contact-layout">
+            <!-- Lajur Kiri: Info Hubungi -->
+            <div class="contact-info">
+                <h2 class="contact-heading">Have a project in mind? Or just want to say hi?</h2>
+                <p class="contact-subtext">Saya sentiasa terbuka untuk sebarang kolaborasi digital, peluang projek tahun akhir (FYP), atau perbincangan mengenai reka bentuk UI/UX dan pembangunan perisian.</p>
+                
+                <div class="info-details">
+                    <div class="info-group">
+                        <span>EMAIL ME</span>
+                        <p>hello@yourdomain.com</p>
+                    </div>
+                    <div class="info-group">
+                        <span>BASED IN</span>
+                        <p>Terengganu, Malaysia</p>
+                    </div>
+                </div>
+
+                <!-- Pautan Sosial Eksklusif -->
+                <div class="contact-socials">
+                    <a href="#" target="_blank">GITHUB</a>
+                    <a href="#" target="_blank">LINKEDIN</a>
+                    <a href="#" target="_blank">INSTAGRAM</a>
+                </div>
+            </div>
+
+            <!-- Lajur Kanan: Borang Hubungi -->
+            <div class="contact-form-container">
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">NAME</label>
+                        <input type="text" id="name" name="name" placeholder="Your name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">EMAIL ADDRESS</label>
+                        <input type="email" id="email" name="email" placeholder="Your email address" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">MESSAGE</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Hello, I would love to collaborate on..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">SEND MESSAGE</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 My Portfolio. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
