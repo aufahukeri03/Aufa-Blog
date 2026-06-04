@@ -1,31 +1,32 @@
-/* --- Google Fonts (Ambil fon yang comel & bulat) --- */
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+/* --- Google Fonts (Ambil fon Serif yang mewah & Sans-Serif yang bersih) --- */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap');
 
 /* --- Reset & Gaya Asas --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Fredoka', sans-serif; /* Fon bulat yang comel */
 }
 
 body {
-    background-color: #fff5f7; /* Latar belakang pink super cair */
-    color: #63484d; /* Warna teks coklat lembut (lebih match dengan pink berbanding hitam) */
+    background-color: #fbf9f6; /* Warna off-white/cream lembut yang premium */
+    color: #332c2d; /* Coklat/Charcoal gelap yang lembut pada mata */
+    font-family: 'Montserrat', sans-serif;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    letter-spacing: 0.5px;
 }
 
 /* --- Navigasi (Header) --- */
 header {
-    background-color: #ffb7c5; /* Pink pastel lembut */
-    padding: 20px 10px;
+    background-color: #ffffff;
+    padding: 25px 20px;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 10px rgba(255, 183, 197, 0.3);
-    border-bottom: 3px dashed #ffa1b2; /* Garisan putus-putus yang comel */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+    border-bottom: 1px solid #eee5e0; /* Garisan nipis yang kemas */
 }
 
 .navbar {
@@ -38,10 +39,11 @@ header {
 }
 
 .logo {
-    color: #fff;
-    font-size: 26px;
-    font-weight: 700;
-    text-shadow: 2px 2px #ff8da1; /* Kesan bayang pada teks */
+    font-family: 'Cormorant Garamond', serif;
+    color: #2c2523;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
 .nav-links {
@@ -50,22 +52,39 @@ header {
 }
 
 .nav-links li {
-    margin-left: 20px;
+    margin-left: 30px;
 }
 
 .nav-links a {
-    color: #fffefd;
+    color: #7a6e67;
     text-decoration: none;
-    font-size: 18px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    padding: 5px 10px;
-    border-radius: 15px;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase; /* Tukar teks menu jadi huruf besar untuk impak premium */
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+/* Kesan garisan halus (underline effect) bila hover */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #b89785; /* Warna Rose Gold/Bronze */
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after, .nav-links a.active::after {
+    width: 100%;
 }
 
 .nav-links a:hover, .nav-links a.active {
-    background-color: #ffeaee;
-    color: #ff6f85;
+    color: #b89785;
 }
 
 /* --- Hero Section (Home Page) --- */
@@ -75,73 +94,86 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 50px 20px;
-    /* Gambar latar belakang estetik pastel */
-    background: linear-gradient(rgba(255, 245, 247, 0.4), rgba(255, 245, 247, 0.4)), url('https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+    padding: 60px 20px;
+    /* Latar belakang estetik studio/minimalis */
+    background: linear-gradient(rgba(251, 249, 246, 0.85), rgba(251, 249, 246, 0.85)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
 }
 
 .hero-content {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 40px;
-    border-radius: 24px; /* Sudut lebih bulat & comel */
-    max-width: 700px;
-    box-shadow: 0 8px 24px rgba(255, 141, 161, 0.15);
-    border: 2px solid #ffdae0;
+    background: #ffffff;
+    padding: 50px 40px;
+    border-radius: 4px; /* Sudut petak yang minimalis & tajam (lebih formal/classy) */
+    max-width: 750px;
+    box-shadow: 0 10px 30px rgba(44, 37, 35, 0.04);
+    border: 1px solid #eee5e0;
 }
 
 .hero-content h1 {
-    font-size: 38px;
-    color: #ff6f85; /* Warna pink pekat */
-    margin-bottom: 20px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 400;
+    color: #2c2523;
+    margin-bottom: 25px;
+    line-height: 1.2;
 }
 
 .hero-content p {
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 30px;
-    color: #7d5e63;
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 35px;
+    color: #615551;
+    font-weight: 300;
 }
 
-/* --- Butang Comel --- */
+/* --- Butang Elegant --- */
 .btn {
     display: inline-block;
-    background-color: #ff6f85;
-    color: #fff;
-    padding: 12px 28px;
+    background-color: #2c2523; /* Butang gelap yang premium */
+    color: #ffffff;
+    padding: 14px 32px;
     text-decoration: none;
-    border-radius: 50px; /* Butang berbentuk pill/bujur */
-    font-weight: 600;
-    font-size: 18px;
-    box-shadow: 0 4px 15px rgba(255, 111, 133, 0.4);
-    transition: transform 0.2s, background 0.3s;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    border: 1px solid #2c2523;
 }
 
 .btn:hover {
-    background-color: #ff526e;
-    transform: scale(1.05); /* Kesan butang membesar sikit bila di-hover */
+    background-color: transparent;
+    color: #2c2523; /* Tukar jadi hollow button bila hover */
 }
 
 /* --- Footer --- */
 footer {
-    background-color: #ffb7c5;
-    color: #fff;
+    background-color: #ffffff;
+    color: #9c8e87;
     text-align: center;
-    padding: 15px;
-    font-size: 15px;
-    border-top: 3px dashed #ffa1b2;
+    padding: 25px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-top: 1px solid #eee5e0;
 }
 
 /* --- Responsive (Mobile Friendly) --- */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
+        gap: 20px;
     }
     
-    .nav-links {
-        margin-top: 15px;
+    .nav-links li {
+        margin: 0 15px;
     }
     
+    .hero-content {
+        padding: 30px 20px;
+    }
+
     .hero-content h1 {
-        font-size: 30px;
+        font-size: 32px;
     }
 }
