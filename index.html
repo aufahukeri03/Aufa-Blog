@@ -3,68 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | My Personal Portfolio</title>
+    <title>My Personal Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Header & Navigation Menu -->
+    <!-- Header Navigation -->
     <header>
         <nav class="navbar">
-            <!-- Updated Logo Text -->
             <div class="logo">My Portfolio</div>
             <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html" class="active">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="blog.html">BLOG</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
             </ul>
+            <!-- Tambahan Ruang Kanan: Social Links supaya tak kosong -->
+            <div class="header-socials">
+                <a href="#" target="_blank">GH</a>
+                <span>/</span>
+                <a href="#" target="_blank">LI</a>
+            </div>
         </nav>
     </header>
 
-    <!-- Main Content: Featured Posts Grid -->
+    <!-- NEW: Hero Welcome Section (Menghilangkan rasa kosong web) -->
+    <section class="hero-section">
+        <p class="hero-sub">WELCOME TO MY DIGITAL SPACE</p>
+        <h1 class="hero-title">Crafting digital experiences through clean code, thoughtful design, and structured software development.</h1>
+    </section>
+
+    <!-- Main Content Section -->
     <main class="content-container">
-        <!-- Aesthetic elegant script title -->
         <h2 class="section-title">featured posts</h2>
         
         <div class="posts-grid">
-            <!-- Card 1 -->
+            <!-- Kad 1 -->
             <div class="post-card">
                 <div class="image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=500&q=80" alt="Coding and Tech">
+                    <img src="https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?auto=format&fit=crop&w=800&q=80" alt="Tech Exploration">
+                </div>
+                <div class="card-meta">
+                    <span class="category">TECH & CODING</span>
+                    <span class="date">JUNE 4, 2026</span>
                 </div>
                 <h3>Tech Exploration | Embracing Software Development & Innovations</h3>
+                <p class="card-desc">Diving deep into modern frameworks, exploring systemic logical thinking, and engineering clean user-focused architectures.</p>
             </div>
 
-            <!-- Card 2 -->
+            <!-- Kad 2 -->
             <div class="post-card">
                 <div class="image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=500&q=80" alt="University Life">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Campus Chronicles">
+                </div>
+                <div class="card-meta">
+                    <span class="category">CAMPUS LIFE</span>
+                    <span class="date">MAY 28, 2026</span>
                 </div>
                 <h3>Campus Chronicles | My Academic Journey & Learning Experiences at UniSZA</h3>
+                <p class="card-desc">A reflection on structural teamwork, computing core methodologies, and growing within a high-achieving technical community.</p>
             </div>
 
-            <!-- Card 3 -->
+            <!-- Kad 3 -->
             <div class="post-card">
                 <div class="image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=500&q=80" alt="Personal Blogging">
+                    <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=800&q=80" alt="Digital Notes">
+                </div>
+                <div class="card-meta">
+                    <span class="category">DESIGN & IDEAS</span>
+                    <span class="date">MAY 15, 2026</span>
                 </div>
                 <h3>Digital Notes | A Creative Space to Share Insights, Ideas & Projects</h3>
+                <p class="card-desc">Where multimedia alignment meets technology. Documenting creative assets, wireframes, and UI design breakthroughs.</p>
             </div>
         </div>
     </main>
 
-    <!-- Welcome & Introduction Section (Olive Green Footer Banner) -->
+    <!-- Sunday Ritual Section -->
     <section class="ritual-section">
-        <h2>Welcome to My <span>Personal Blog</span></h2>
-        <p>I am a student at UniSZA, currently building this digital portfolio to share my passions, tech projects, and learning adventures in the world of software development.</p>
-        
-        <!-- Translated Button Link -->
-        <div style="margin-top: 15px;">
-            <a href="about.html" class="btn-link" style="text-decoration: none;">
-                <button type="button" style="cursor: pointer;">GET TO KNOW ME</button>
-            </a>
-        </div>
+        <h2>the portfolio <span>edition</span></h2>
+        <p>This digital portfolio is built systematically to showcase academic milestones, ongoing software development milestones, and design sensibilities inspired by clean, warm, minimalist aesthetics.</p>
+        <button>READ MORE ABOUT ME</button>
     </section>
 
     <!-- Footer -->
