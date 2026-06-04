@@ -19,10 +19,10 @@ body {
     scroll-behavior: smooth;
 }
 
-/* --- Navigasi (Header) - LOCKED POSITION --- */
+/* --- Navigasi (Header) - MUTLAK & TETAP --- */
 header {
-    background-color: rgba(247, 244, 235, 0.95); /* Efek sedikit lutsinar premium */
-    backdrop-filter: blur(8px); /* Blur latar belakang semasa scroll */
+    background-color: rgba(247, 244, 235, 0.95);
+    backdrop-filter: blur(8px);
     padding: 25px 40px;
     position: sticky;
     top: 0;
@@ -32,11 +32,11 @@ header {
 
 .navbar {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     max-width: 1140px;
     margin: 0 auto;
     width: 100%;
+    position: relative; /* Menjadi paksi rujukan untuk kedudukan tengah */
 }
 
 .logo {
@@ -45,12 +45,17 @@ header {
     font-size: 24px;
     font-weight: 600;
     letter-spacing: -0.5px;
+    margin-right: auto; /* Tolak semua elemen lain ke kanan */
 }
 
 .nav-links {
     list-style: none;
     display: flex;
     gap: 35px;
+    /* Trik tegar untuk kunci menu betul-betul di tengah navbar tanpa hiraukan elemen kanan */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .nav-links a {
@@ -59,10 +64,57 @@ header {
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 2px;
-    text-transform: uppercase; /* CAPS LOCK */
+    text-transform: uppercase;
     position: relative;
     padding: 6px 0;
     transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #93907c;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.nav-links a:hover::after, .nav-links a.active::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #4a4439;
+}
+
+/* Tulisan bahasa/socials akan sentiasa duduk di hujung kanan */
+.header-socials {
+    display: flex;
+    gap: 10px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #b5ab9a;
+    letter-spacing: 1px;
+    margin-left: auto; 
+}
+
+.header-socials a {
+    color: #8a7e6e;
+    text-decoration: none;
+    transition: color 0.2s, transform 0.2s;
+}
+
+@media (max-width: 900px) {
+    .nav-links {
+        position: static;
+        transform: none;
+        gap: 20px;
+    }
 }
 
 /* Animasi garisan bawah dari kiri ke kanan yang sangat smooth */
