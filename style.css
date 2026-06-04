@@ -16,18 +16,18 @@ body {
     flex-direction: column;
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
 }
 
 /* --- Navigasi (Header) --- */
 header {
-    background-color: #f7f4eb;
-    padding: 30px 40px;
+    background-color: rgba(247, 244, 235, 0.95); /* Efek sedikit lutsinar premium */
+    backdrop-filter: blur(8px); /* Blur latar belakang semasa scroll */
+    padding: 25px 40px;
     position: sticky;
     top: 0;
     z-index: 1000;
-    /* Gaya garisan double line eksklusif di bawah menu */
     border-bottom: 1px solid #e6e2d3;
-    box-shadow: 0 1px 0 #e6e2d3;
 }
 
 .navbar {
@@ -59,24 +59,29 @@ header {
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 2px;
-    transition: all 0.3s ease;
+    text-transform: uppercase; /* CAPS LOCK */
     position: relative;
-    padding-bottom: 6px;
+    padding: 6px 0;
+    transition: color 0.3s ease;
 }
 
+/* Animasi garisan bawah dari kiri ke kanan yang sangat smooth */
 .nav-links a::after {
     content: '';
     position: absolute;
-    width: 0;
+    width: 100%;
     height: 2px;
     bottom: 0;
     left: 0;
     background-color: #93907c;
-    transition: width 0.3s ease;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .nav-links a:hover::after, .nav-links a.active::after {
-    width: 100%;
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 .nav-links a:hover, .nav-links a.active {
@@ -87,26 +92,27 @@ header {
 .header-socials {
     display: flex;
     gap: 10px;
-    font-size: 12px;
-    font-weight: 600;
-    color: #8a7e6e;
+    font-size: 11px;
+    font-weight: 700;
+    color: #b5ab9a;
     letter-spacing: 1px;
 }
 
 .header-socials a {
     color: #8a7e6e;
     text-decoration: none;
-    transition: color 0.3s;
+    transition: color 0.2s, transform 0.2s;
 }
 
 .header-socials a:hover {
     color: #93907c;
+    transform: translateY(-1px);
 }
 
-/* --- NEW: Hero Welcome Section Layout --- */
+/* --- Hero Welcome Section Layout --- */
 .hero-section {
-    max-width: 900px;
-    margin: 70px auto 40px auto;
+    max-width: 850px;
+    margin: 80px auto 50px auto;
     text-align: center;
     padding: 0 20px;
 }
@@ -114,33 +120,34 @@ header {
 .hero-sub {
     font-size: 11px;
     font-weight: 700;
-    letter-spacing: 3px;
+    letter-spacing: 4px;
     color: #93907c;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .hero-title {
     font-family: 'Lora', serif;
-    font-size: 34px;
+    font-size: 36px;
     font-weight: 400;
-    line-height: 1.5;
+    line-height: 1.6;
     color: #4a4439;
+    letter-spacing: -0.2px;
 }
 
 /* --- Main Content Section --- */
 .content-container {
     max-width: 1140px;
-    margin: 40px auto 80px auto;
+    margin: 40px auto 90px auto;
     width: 100%;
     padding: 0 20px;
 }
 
 .section-title {
     font-family: 'Alex Brush', cursive;
-    font-size: 52px;
+    font-size: 56px;
     color: #4a4439;
     font-weight: 400;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
     text-transform: lowercase;
 }
 
@@ -148,56 +155,62 @@ header {
 .posts-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 35px;
 }
 
 .post-card {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 16px;
     cursor: pointer;
     background: #ffffff; 
-    padding: 16px; 
-    border-radius: 8px;
-    border: 1px solid #e6e2d3; 
-    box-shadow: 0 4px 15px rgba(74, 68, 57, 0.02);
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    padding: 18px; 
+    border-radius: 12px; /* Sudut lebih rounded & moden */
+    border: 1px solid rgba(230, 226, 211, 0.7); 
+    /* Bayang berlapis (Layered Soft Shadow) */
+    box-shadow: 0 4px 6px rgba(74, 68, 57, 0.01), 0 10px 20px rgba(74, 68, 57, 0.02);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .image-wrapper {
     width: 100%;
     aspect-ratio: 4 / 3;
     overflow: hidden;
-    border-radius: 6px;
+    border-radius: 8px;
+    background-color: #4a4439; /* Lapisan gelap di belakang gambar */
 }
 
 .image-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0.95;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+    filter: grayscale(10%) brightness(98%); /* Sedikit filter estetik ala filem kuno */
 }
 
-/* Kesan Interaksi (Hover Effect) Premium */
+/* Interaksi Kad yang Sangat Licin */
 .post-card:hover {
-    box-shadow: 0 20px 35px rgba(74, 68, 57, 0.08);
-    transform: translateY(-6px);
+    box-shadow: 0 20px 38px rgba(74, 68, 57, 0.07), 0 8px 16px rgba(147, 144, 124, 0.03);
+    transform: translateY(-8px);
     border-color: #93907c;
 }
 
 .post-card:hover .image-wrapper img {
-    transform: scale(1.04);
+    transform: scale(1.06);
+    filter: grayscale(0%) brightness(102%); /* Gambar jadi lebih hidup bila di-hover */
+    opacity: 1;
 }
 
-/* Meta tags di dalam kad (Kategori & Tarikh) */
+/* Meta tags (Kategori & Tarikh) */
 .card-meta {
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 10px;
     font-weight: 700;
-    letter-spacing: 1px;
-    margin-top: 4px;
+    letter-spacing: 1.5px;
+    margin-top: 2px;
 }
 
 .card-meta .category {
@@ -209,8 +222,8 @@ header {
 }
 
 .post-card h3 {
-    font-family: 'Lora', serif; /* Tukar ke font serif untuk nampak mahal */
-    font-size: 16px;
+    font-family: 'Lora', serif;
+    font-size: 17px;
     font-weight: 500;
     line-height: 1.4;
     color: #4a4439;
@@ -222,9 +235,10 @@ header {
 }
 
 .post-card .card-desc {
-    font-size: 13px;
+    font-size: 13.5px;
     line-height: 1.6;
     color: #7d7261;
+    font-weight: 400;
 }
 
 /* --- Sunday Ritual Section (Olive Green Footer Banner) --- */
@@ -232,17 +246,17 @@ header {
     background-color: #93907c; 
     color: #f7f4eb;
     text-align: center;
-    padding: 80px 20px;
+    padding: 90px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 24px;
     border-top: 1px solid #e6e2d3;
 }
 
 .ritual-section h2 {
     font-family: 'Lora', serif;
-    font-size: 36px;
+    font-size: 38px;
     font-weight: 400;
     letter-spacing: 0.5px;
     text-transform: lowercase;
@@ -250,13 +264,13 @@ header {
 
 .ritual-section h2 span {
     font-family: 'Alex Brush', cursive;
-    font-size: 55px;
+    font-size: 58px;
     display: inline-block;
     margin-left: 6px;
 }
 
 .ritual-section p {
-    font-size: 15px;
+    font-size: 15.5px;
     max-width: 650px;
     line-height: 1.8;
     color: #e6e2d3;
@@ -267,32 +281,33 @@ header {
     background-color: #4e4d41; 
     color: #f7f4eb;
     border: none;
-    padding: 15px 35px;
+    padding: 16px 38px;
     border-radius: 30px;
     font-size: 11px;
     font-weight: 600;
-    letter-spacing: 2px;
+    letter-spacing: 2.5px;
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(78, 77, 65, 0.2);
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .ritual-section button:hover {
     background-color: #3b3a31;
-    transform: scale(1.02);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(78, 77, 65, 0.35);
 }
 
 /* --- About Page Styling --- */
 .about-layout {
     display: flex;
-    gap: 50px;
+    gap: 60px;
     align-items: center;
     margin-top: 10px;
     background: #ffffff;
-    padding: 40px;
-    border-radius: 8px;
-    border: 1px solid #e6e2d3;
-    box-shadow: 0 4px 15px rgba(74, 68, 57, 0.02);
+    padding: 45px;
+    border-radius: 12px;
+    border: 1px solid rgba(230, 226, 211, 0.7);
+    box-shadow: 0 10px 30px rgba(74, 68, 57, 0.02);
 }
 
 .about-image {
@@ -300,7 +315,8 @@ header {
     max-width: 380px;
     aspect-ratio: 3 / 4;
     overflow: hidden;
-    border-radius: 6px;
+    border-radius: 8px;
+    box-shadow: 0 15px 35px rgba(74, 68, 57, 0.08);
 }
 
 .about-image img {
@@ -313,13 +329,13 @@ header {
     flex: 1.3;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 22px;
 }
 
 .intro-lead {
     font-family: 'Lora', serif;
     font-size: 24px;
-    line-height: 1.5;
+    line-height: 1.6;
     color: #4a4439;
 }
 
@@ -333,7 +349,7 @@ header {
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 12px;
     color: #4a4439;
-    margin-bottom: 15px;
+    margin-bottom: 16px;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 700;
@@ -341,18 +357,25 @@ header {
 
 .skills-tags {
     display: flex;
-    gap: 10px;
+    gap: 12px;
     flex-wrap: wrap;
 }
 
 .skills-tags span {
     background-color: #e6e2d3;
     color: #4a4439;
-    padding: 8px 16px;
-    border-radius: 4px;
+    padding: 8px 18px;
+    border-radius: 6px;
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 0.5px;
+    transition: all 0.3s;
+}
+
+.skills-tags span:hover {
+    background-color: #93907c;
+    color: #f7f4eb;
+    transform: translateY(-2px);
 }
 
 /* --- Footer --- */
@@ -360,7 +383,7 @@ footer {
     background-color: #f7f4eb;
     color: #9c9281;
     text-align: center;
-    padding: 35px;
+    padding: 40px;
     font-size: 11px;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -378,6 +401,10 @@ footer {
         gap: 20px;
     }
 
+    .hero-section {
+        margin: 50px auto 30px auto;
+    }
+
     .hero-title {
         font-size: 26px;
     }
@@ -389,6 +416,7 @@ footer {
 
     .about-layout {
         flex-direction: column;
-        padding: 20px;
+        padding: 25px;
+        gap: 35px;
     }
 }
