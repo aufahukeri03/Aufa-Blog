@@ -3,36 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Utama | Blog Peribadi Saya</title>
+    <title>Utama | Jules Acree Vibes</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Menu Navigasi (Sama untuk semua halaman) -->
+    <!-- Header & Navigasi -->
     <header>
         <nav class="navbar">
-            <div class="logo">MyPortfolio.</div>
+            <div class="logo">jules acree</div>
             <ul class="nav-links">
-                <li><a href="index.html" class="active">Utama</a></li>
-                <li><a href="about.html">Tentang Saya</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Hubungi</a></li>
+                <li><a href="index.html" class="active">home</a></li>
+                <li><a href="about.html">about</a></li>
+                <li><a href="blog.html">blog</a></li>
+                <li><a href="contact.html">contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Kandungan Utama Halaman Home -->
-    <main class="hero-section">
-        <div class="hero-content">
-            <h1>Selamat Datang ke Blog Peribadi Saya</h1>
-            <p>Hai! Saya seorang pelajar di UniSZA yang sedang membina portfolio digital ini untuk berkongsi minat, projek, dan pengembaraan pembelajaran saya dalam bidang pembangunan perisian.</p>
-            <a href="about.html" class="btn">Kenali Saya Lebih Dekat</a>
+    <!-- Kandungan Utama: Featured Posts -->
+    <main class="content-container">
+        <h2 class="section-title">featured posts</h2>
+        
+        <div class="posts-grid">
+            <!-- Kad 1 -->
+            <div class="post-card">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=500&q=80" alt="Living Room">
+                </div>
+                <h3>Tour our Living Room & Lounge | Modern, Minimal, and Cozy</h3>
+            </div>
+
+            <!-- Kad 2 -->
+            <div class="post-card">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=500&q=80" alt="Kitchen">
+                </div>
+                <h3>Full Kitchen Tour | Intentional Organization, Design Inspo, & Favorite Products</h3>
+            </div>
+
+            <!-- Kad 3 -->
+            <div class="post-card">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=500&q=80" alt="Home Office">
+                </div>
+                <h3>2026 Home Office Tour | Cozy, Productive, & Aesthetic Setup</h3>
+            </div>
         </div>
     </main>
 
+    <!-- Ruangan Ritual (Newsletter Section di bahagian bawah) -->
+    <section class="ritual-section">
+        <h2>Meet your new <span>Sunday Ritual</span></h2>
+        <p>Not your average newsletter - cozy up with Slow Brew Sunday every week for new intentions, productivity tips, and small shifts we can make together.</p>
+        
+        <form class="ritual-form" onsubmit="event.preventDefault();">
+            <input type="text" placeholder="first name" required>
+            <input type="email" placeholder="email" required>
+            <button type="submit">JOIN 60K MINDFUL READERS</button>
+        </form>
+        <small class="form-disclaimer">*you'll also get added to our email list + can opt out any time</small>
+    </section>
+
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Blog Peribadi Saya. Hak Cipta Terpelihara.</p>
+        <p>&copy; 2026 AR Extinct Portfolio. Designed with Classy Earth Vibes.</p>
     </footer>
 
 </body>
