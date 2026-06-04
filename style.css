@@ -19,7 +19,7 @@ body {
     scroll-behavior: smooth;
 }
 
-/* --- Navigasi (Header) --- */
+/* --- Navigasi (Header) - LOCKED POSITION --- */
 header {
     background-color: rgba(247, 244, 235, 0.95); /* Efek sedikit lutsinar premium */
     backdrop-filter: blur(8px); /* Blur latar belakang semasa scroll */
@@ -165,9 +165,8 @@ header {
     cursor: pointer;
     background: #ffffff; 
     padding: 18px; 
-    border-radius: 12px; /* Sudut lebih rounded & moden */
+    border-radius: 12px;
     border: 1px solid rgba(230, 226, 211, 0.7); 
-    /* Bayang berlapis (Layered Soft Shadow) */
     box-shadow: 0 4px 6px rgba(74, 68, 57, 0.01), 0 10px 20px rgba(74, 68, 57, 0.02);
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -177,7 +176,7 @@ header {
     aspect-ratio: 4 / 3;
     overflow: hidden;
     border-radius: 8px;
-    background-color: #4a4439; /* Lapisan gelap di belakang gambar */
+    background-color: #4a4439;
 }
 
 .image-wrapper img {
@@ -186,10 +185,9 @@ header {
     object-fit: cover;
     opacity: 0.95;
     transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
-    filter: grayscale(10%) brightness(98%); /* Sedikit filter estetik ala filem kuno */
+    filter: grayscale(10%) brightness(98%);
 }
 
-/* Interaksi Kad yang Sangat Licin */
 .post-card:hover {
     box-shadow: 0 20px 38px rgba(74, 68, 57, 0.07), 0 8px 16px rgba(147, 144, 124, 0.03);
     transform: translateY(-8px);
@@ -198,11 +196,10 @@ header {
 
 .post-card:hover .image-wrapper img {
     transform: scale(1.06);
-    filter: grayscale(0%) brightness(102%); /* Gambar jadi lebih hidup bila di-hover */
+    filter: grayscale(0%) brightness(102%);
     opacity: 1;
 }
 
-/* Meta tags (Kategori & Tarikh) */
 .card-meta {
     display: flex;
     justify-content: space-between;
@@ -390,15 +387,20 @@ footer {
     border-top: 1px solid #e6e2d3;
 }
 
-/* --- Responsive Layout --- */
+/* --- Responsive Layout (FIXED NAVBAR NAVIGATION) --- */
 @media (max-width: 900px) {
     header {
         padding: 20px;
     }
 
+    /* Memastikan susunan horizontal kekal statik dan tidak berubah bertingkat */
     .navbar {
-        flex-direction: column;
-        gap: 20px;
+        flex-direction: row; 
+        justify-content: space-between;
+    }
+
+    .nav-links {
+        gap: 20px; /* Kurangkan gap sikit di peranti kecil supaya muat */
     }
 
     .hero-section {
