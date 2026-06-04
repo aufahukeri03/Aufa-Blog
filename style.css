@@ -1,5 +1,5 @@
-/* --- Google Fonts (Ambil fon tulisan tangan estetik, serif & sans-serif) --- */
-@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Lora:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Lora:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 
 /* --- Reset & Gaya Asas --- */
 * {
@@ -9,8 +9,8 @@
 }
 
 body {
-    background-color: #f7f4eb; /* Warna cream warm beige yang sangat cozy */
-    color: #5a5245; /* Tulisan kelabu-coklat pudar yang lembut pada mata */
+    background-color: #f7f4eb; /* Warna cream warm beige */
+    color: #5a5245; 
     font-family: 'Plus Jakarta Sans', sans-serif;
     display: flex;
     flex-direction: column;
@@ -21,11 +21,11 @@ body {
 /* --- Navigasi (Header) --- */
 header {
     background-color: #f7f4eb;
-    padding: 35px 40px;
+    padding: 25px 40px; /* Dikurangkan supaya tidak terlalu kosong di atas */
     position: sticky;
     top: 0;
     z-index: 1000;
-    transition: background-color 0.3s;
+    border-bottom: 1px solid #e6e2d3; /* Garisan halus pembahagi header */
 }
 
 .navbar {
@@ -40,36 +40,35 @@ header {
 .logo {
     font-family: 'Lora', serif;
     color: #4a4439;
-    font-size: 30px;
-    font-weight: 500;
+    font-size: 26px;
+    font-weight: 600;
     letter-spacing: -0.5px;
-    text-transform: capitalize;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 35px;
+    gap: 30px;
 }
 
 .nav-links a {
-    color: #7d7261;
+    color: #8a7e6e;
     text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 0.8px;
-    text-transform: lowercase;
-    transition: color 0.3s ease;
+    font-size: 13px; /* Diturunkan saiz sikit untuk gaya minimalist */
+    font-weight: 600;
+    letter-spacing: 2px; /* Jarakkan huruf untuk nampak premium */
+    text-transform: uppercase; /* MENUKARKAN MENU KEPADA CAPS LOCK SECARA OTOMATIK */
+    transition: all 0.3s ease;
     position: relative;
     padding-bottom: 6px;
 }
 
-/* Kesan garisan bawah (underline) animasi yang sangat halus */
+/* Kesan garisan bawah tebal sedikit untuk penanda halaman aktif */
 .nav-links a::after {
     content: '';
     position: absolute;
     width: 0;
-    height: 1.5px;
+    height: 2px;
     bottom: 0;
     left: 0;
     background-color: #93907c;
@@ -82,51 +81,53 @@ header {
 
 .nav-links a:hover, .nav-links a.active {
     color: #4a4439;
-    font-weight: 600;
 }
 
 /* --- Main Content Section --- */
 .content-container {
     max-width: 1140px;
-    margin: 50px auto 90px auto;
+    margin: 40px auto 70px auto; /* Jarak luar dikurangkan supaya tidak nampak kosong */
     width: 100%;
     padding: 0 20px;
 }
 
-/* Tajuk ala tulisan tangan (featured posts / about me) */
+/* Tajuk featured posts / about me */
 .section-title {
     font-family: 'Alex Brush', cursive;
-    font-size: 60px;
+    font-size: 52px; /* Saiz disesuaikan agar lebih seimbang */
     color: #4a4439;
     font-weight: 400;
-    margin-bottom: 40px;
+    margin-bottom: 25px; /* Kurangkan jarak ke kad gambar */
     text-transform: lowercase;
-    opacity: 0.9;
+    position: relative;
+    display: inline-block;
 }
 
 /* Grid Susunan Kad Gambar */
 .posts-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 35px;
+    gap: 30px;
 }
 
 .post-card {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 15px;
     cursor: pointer;
-    background: transparent;
-    padding-bottom: 10px;
+    background: #ffffff; /* Tambah latar belakang putih pada kad supaya nampak "penuh" */
+    padding: 15px; /* Beri ruang dalaman pada kad */
+    border-radius: 8px;
+    border: 1px solid #e6e2d3; /* Garisan kotak yang sangat halus */
+    box-shadow: 0 4px 12px rgba(74, 68, 57, 0.03);
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .image-wrapper {
     width: 100%;
     aspect-ratio: 4 / 3;
     overflow: hidden;
-    border-radius: 6px; /* Sudut sedikit bulat halus */
-    box-shadow: 0 8px 20px rgba(74, 68, 57, 0.05); /* Bayang minimalis yang premium */
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    border-radius: 6px;
 }
 
 .image-wrapper img {
@@ -136,74 +137,76 @@ header {
     transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Kesan Interaksi (Hover Effect) pada Kad */
-.post-card:hover .image-wrapper {
-    box-shadow: 0 15px 30px rgba(74, 68, 57, 0.12);
-    transform: translateY(-4px); /* Kad naik sedikit ke atas */
+/* Kesan Interaksi (Hover Effect) yang diperkemas */
+.post-card:hover {
+    box-shadow: 0 12px 24px rgba(74, 68, 57, 0.08);
+    transform: translateY(-5px);
+    border-color: #93907c; /* Garisan kotak bertukar warna sage green lembut */
 }
 
 .post-card:hover .image-wrapper img {
-    transform: scale(1.04); /* Gambar zoom masuk dengan lembut */
+    transform: scale(1.05);
 }
 
 .post-card h3 {
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 1.6;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
     color: #4a4439;
     transition: color 0.3s ease;
+    margin-top: 5px;
 }
 
 .post-card:hover h3 {
-    color: #93907c; /* Tajuk bertukar warna sage green semasa di-hover */
+    color: #93907c;
 }
 
 /* --- Sunday Ritual Section (Olive Green Footer Banner) --- */
 .ritual-section {
-    background-color: #93907c; /* Warna sage-olive premium */
+    background-color: #93907c; 
     color: #f7f4eb;
     text-align: center;
-    padding: 75px 20px;
+    padding: 70px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 22px;
+    gap: 20px;
+    border-top: 1px solid #e6e2d3;
 }
 
 .ritual-section h2 {
     font-family: 'Lora', serif;
-    font-size: 38px;
+    font-size: 36px;
     font-weight: 400;
     letter-spacing: 0.5px;
 }
 
-/* Tulisan bersambung dalam h2 */
 .ritual-section h2 span {
     font-family: 'Alex Brush', cursive;
-    font-size: 55px;
+    font-size: 50px;
     display: inline-block;
     margin-left: 6px;
 }
 
 .ritual-section p {
-    font-size: 16px;
+    font-size: 15px;
     max-width: 680px;
     line-height: 1.7;
     color: #e6e2d3;
     font-weight: 300;
 }
 
-/* Gaya Butang Elegan di Bahagian Bawah */
+/* Gaya Butang di Bahagian Bawah */
 .ritual-section button {
-    background-color: #4e4d41; /* Butang coklat-hijau gelap kontras */
+    background-color: #4e4d41; 
     color: #f7f4eb;
     border: none;
     padding: 14px 35px;
     border-radius: 30px;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 600;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px; /* Caps lock button style */
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(78, 77, 65, 0.2);
     transition: all 0.3s ease;
@@ -211,25 +214,27 @@ header {
 
 .ritual-section button:hover {
     background-color: #3b3a31;
-    transform: scale(1.03); /* Butang membesar sedikit */
-    box-shadow: 0 6px 20px rgba(78, 77, 65, 0.3);
+    transform: scale(1.03);
 }
 
 /* --- About Page Styling --- */
 .about-layout {
     display: flex;
-    gap: 60px;
+    gap: 50px;
     align-items: center;
     margin-top: 10px;
+    background: #ffffff; /* Letak background putih supaya ruangan about tidak kosong */
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #e6e2d3;
 }
 
 .about-image {
     flex: 1;
-    max-width: 420px;
+    max-width: 400px;
     aspect-ratio: 3 / 4;
     overflow: hidden;
     border-radius: 6px;
-    box-shadow: 0 12px 35px rgba(74, 68, 57, 0.08);
 }
 
 .about-image img {
@@ -242,56 +247,45 @@ header {
     flex: 1.3;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 20px;
 }
 
 .intro-lead {
     font-family: 'Lora', serif;
-    font-size: 24px;
+    font-size: 22px;
     line-height: 1.5;
     color: #4a4439;
 }
 
 .about-text p {
-    font-size: 15.5px;
-    line-height: 1.8;
+    font-size: 15px;
+    line-height: 1.7;
     color: #7d7261;
 }
 
 /* Skills Tags Layout */
-.skills-section {
-    margin-top: 10px;
-}
-
 .skills-section h4 {
     font-family: 'Lora', serif;
-    font-size: 16px;
+    font-size: 15px;
     color: #4a4439;
-    margin-bottom: 15px;
-    text-transform: lowercase;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .skills-tags {
     display: flex;
-    gap: 12px;
+    gap: 10px;
     flex-wrap: wrap;
 }
 
 .skills-tags span {
     background-color: #93907c;
     color: #f7f4eb;
-    padding: 8px 18px;
-    border-radius: 25px;
-    font-size: 12px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 11px;
     font-weight: 500;
-    letter-spacing: 0.5px;
-    box-shadow: 0 4px 10px rgba(147, 144, 124, 0.15);
-    transition: all 0.3s ease;
-}
-
-.skills-tags span:hover {
-    background-color: #4e4d41;
-    transform: translateY(-2px);
 }
 
 /* --- Footer --- */
@@ -299,54 +293,31 @@ footer {
     background-color: #f7f4eb;
     color: #9c9281;
     text-align: center;
-    padding: 35px;
-    font-size: 13px;
+    padding: 30px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
     border-top: 1px solid #e6e2d3;
 }
 
-/* --- Responsive Layout (Mobile Friendly) --- */
+/* --- Responsive Layout --- */
 @media (max-width: 900px) {
     header {
-        padding: 25px 20px;
+        padding: 20px;
     }
 
     .navbar {
         flex-direction: column;
-        gap: 20px;
-    }
-
-    .nav-links {
-        gap: 20px;
-    }
-
-    .content-container {
-        margin: 30px auto 60px auto;
+        gap: 15px;
     }
 
     .posts-grid {
-        grid-template-columns: 1fr; /* Menjadi 1 baris memanjang ke bawah di telefon */
-        gap: 45px;
+        grid-template-columns: 1fr;
+        gap: 30px;
     }
 
     .about-layout {
         flex-direction: column;
-        gap: 40px;
-    }
-
-    .about-image {
-        max-width: 100%;
-        width: 100%;
-    }
-
-    .ritual-section {
-        padding: 60px 20px;
-    }
-
-    .ritual-section h2 {
-        font-size: 30px;
-    }
-
-    .ritual-section h2 span {
-        font-size: 45px;
+        padding: 20px;
     }
 }
