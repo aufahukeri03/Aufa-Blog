@@ -232,3 +232,19 @@ footer {
         gap: 15px;
     }
 }
+/* Tambahan hiasan untuk butang pautan di bahagian bawah */
+.ritual-section button {
+    background-color: #4e4d41;
+    color: #f6f3ea;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 25px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: background 0.3s;
+}
+
+.ritual-section button:hover {
+    background-color: #3b3a31;
+}
