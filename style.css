@@ -9,7 +9,7 @@
 }
 
 body {
-    background-color: #f7f4eb; /* Warna cream warm beige */
+    background-color: #f7f4eb; /* Cream warm beige */
     color: #5a5245; 
     font-family: 'Plus Jakarta Sans', sans-serif;
     display: flex;
@@ -21,11 +21,13 @@ body {
 /* --- Navigasi (Header) --- */
 header {
     background-color: #f7f4eb;
-    padding: 25px 40px; /* Dikurangkan supaya tidak terlalu kosong di atas */
+    padding: 30px 40px;
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid #e6e2d3; /* Garisan halus pembahagi header */
+    /* Gaya garisan double line eksklusif di bawah menu */
+    border-bottom: 1px solid #e6e2d3;
+    box-shadow: 0 1px 0 #e6e2d3;
 }
 
 .navbar {
@@ -40,7 +42,7 @@ header {
 .logo {
     font-family: 'Lora', serif;
     color: #4a4439;
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 600;
     letter-spacing: -0.5px;
 }
@@ -48,22 +50,20 @@ header {
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 35px;
 }
 
 .nav-links a {
     color: #8a7e6e;
     text-decoration: none;
-    font-size: 13px; /* Diturunkan saiz sikit untuk gaya minimalist */
+    font-size: 13px;
     font-weight: 600;
-    letter-spacing: 2px; /* Jarakkan huruf untuk nampak premium */
-    text-transform: uppercase; /* MENUKARKAN MENU KEPADA CAPS LOCK SECARA OTOMATIK */
+    letter-spacing: 2px;
     transition: all 0.3s ease;
     position: relative;
     padding-bottom: 6px;
 }
 
-/* Kesan garisan bawah tebal sedikit untuk penanda halaman aktif */
 .nav-links a::after {
     content: '';
     position: absolute;
@@ -83,24 +83,65 @@ header {
     color: #4a4439;
 }
 
+/* Header Socials di hujung kanan */
+.header-socials {
+    display: flex;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #8a7e6e;
+    letter-spacing: 1px;
+}
+
+.header-socials a {
+    color: #8a7e6e;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.header-socials a:hover {
+    color: #93907c;
+}
+
+/* --- NEW: Hero Welcome Section Layout --- */
+.hero-section {
+    max-width: 900px;
+    margin: 70px auto 40px auto;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-sub {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #93907c;
+    margin-bottom: 20px;
+}
+
+.hero-title {
+    font-family: 'Lora', serif;
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #4a4439;
+}
+
 /* --- Main Content Section --- */
 .content-container {
     max-width: 1140px;
-    margin: 40px auto 70px auto; /* Jarak luar dikurangkan supaya tidak nampak kosong */
+    margin: 40px auto 80px auto;
     width: 100%;
     padding: 0 20px;
 }
 
-/* Tajuk featured posts / about me */
 .section-title {
     font-family: 'Alex Brush', cursive;
-    font-size: 52px; /* Saiz disesuaikan agar lebih seimbang */
+    font-size: 52px;
     color: #4a4439;
     font-weight: 400;
-    margin-bottom: 25px; /* Kurangkan jarak ke kad gambar */
+    margin-bottom: 30px;
     text-transform: lowercase;
-    position: relative;
-    display: inline-block;
 }
 
 /* Grid Susunan Kad Gambar */
@@ -113,14 +154,14 @@ header {
 .post-card {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 14px;
     cursor: pointer;
-    background: #ffffff; /* Tambah latar belakang putih pada kad supaya nampak "penuh" */
-    padding: 15px; /* Beri ruang dalaman pada kad */
+    background: #ffffff; 
+    padding: 16px; 
     border-radius: 8px;
-    border: 1px solid #e6e2d3; /* Garisan kotak yang sangat halus */
-    box-shadow: 0 4px 12px rgba(74, 68, 57, 0.03);
-    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    border: 1px solid #e6e2d3; 
+    box-shadow: 0 4px 15px rgba(74, 68, 57, 0.02);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .image-wrapper {
@@ -134,32 +175,56 @@ header {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Kesan Interaksi (Hover Effect) yang diperkemas */
+/* Kesan Interaksi (Hover Effect) Premium */
 .post-card:hover {
-    box-shadow: 0 12px 24px rgba(74, 68, 57, 0.08);
-    transform: translateY(-5px);
-    border-color: #93907c; /* Garisan kotak bertukar warna sage green lembut */
+    box-shadow: 0 20px 35px rgba(74, 68, 57, 0.08);
+    transform: translateY(-6px);
+    border-color: #93907c;
 }
 
 .post-card:hover .image-wrapper img {
-    transform: scale(1.05);
+    transform: scale(1.04);
+}
+
+/* Meta tags di dalam kad (Kategori & Tarikh) */
+.card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-top: 4px;
+}
+
+.card-meta .category {
+    color: #93907c;
+}
+
+.card-meta .date {
+    color: #b5ab9a;
 }
 
 .post-card h3 {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1.5;
+    font-family: 'Lora', serif; /* Tukar ke font serif untuk nampak mahal */
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.4;
     color: #4a4439;
     transition: color 0.3s ease;
-    margin-top: 5px;
 }
 
 .post-card:hover h3 {
     color: #93907c;
+}
+
+.post-card .card-desc {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #7d7261;
 }
 
 /* --- Sunday Ritual Section (Olive Green Footer Banner) --- */
@@ -167,7 +232,7 @@ header {
     background-color: #93907c; 
     color: #f7f4eb;
     text-align: center;
-    padding: 70px 20px;
+    padding: 80px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -180,33 +245,33 @@ header {
     font-size: 36px;
     font-weight: 400;
     letter-spacing: 0.5px;
+    text-transform: lowercase;
 }
 
 .ritual-section h2 span {
     font-family: 'Alex Brush', cursive;
-    font-size: 50px;
+    font-size: 55px;
     display: inline-block;
     margin-left: 6px;
 }
 
 .ritual-section p {
     font-size: 15px;
-    max-width: 680px;
-    line-height: 1.7;
+    max-width: 650px;
+    line-height: 1.8;
     color: #e6e2d3;
     font-weight: 300;
 }
 
-/* Gaya Butang di Bahagian Bawah */
 .ritual-section button {
     background-color: #4e4d41; 
     color: #f7f4eb;
     border: none;
-    padding: 14px 35px;
+    padding: 15px 35px;
     border-radius: 30px;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 600;
-    letter-spacing: 2px; /* Caps lock button style */
+    letter-spacing: 2px;
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(78, 77, 65, 0.2);
     transition: all 0.3s ease;
@@ -214,7 +279,7 @@ header {
 
 .ritual-section button:hover {
     background-color: #3b3a31;
-    transform: scale(1.03);
+    transform: scale(1.02);
 }
 
 /* --- About Page Styling --- */
@@ -223,15 +288,16 @@ header {
     gap: 50px;
     align-items: center;
     margin-top: 10px;
-    background: #ffffff; /* Letak background putih supaya ruangan about tidak kosong */
-    padding: 30px;
+    background: #ffffff;
+    padding: 40px;
     border-radius: 8px;
     border: 1px solid #e6e2d3;
+    box-shadow: 0 4px 15px rgba(74, 68, 57, 0.02);
 }
 
 .about-image {
     flex: 1;
-    max-width: 400px;
+    max-width: 380px;
     aspect-ratio: 3 / 4;
     overflow: hidden;
     border-radius: 6px;
@@ -252,25 +318,25 @@ header {
 
 .intro-lead {
     font-family: 'Lora', serif;
-    font-size: 22px;
+    font-size: 24px;
     line-height: 1.5;
     color: #4a4439;
 }
 
 .about-text p {
     font-size: 15px;
-    line-height: 1.7;
+    line-height: 1.8;
     color: #7d7261;
 }
 
-/* Skills Tags Layout */
 .skills-section h4 {
-    font-family: 'Lora', serif;
-    font-size: 15px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 12px;
     color: #4a4439;
-    margin-bottom: 12px;
+    margin-bottom: 15px;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    font-weight: 700;
 }
 
 .skills-tags {
@@ -280,12 +346,13 @@ header {
 }
 
 .skills-tags span {
-    background-color: #93907c;
-    color: #f7f4eb;
-    padding: 6px 14px;
-    border-radius: 20px;
+    background-color: #e6e2d3;
+    color: #4a4439;
+    padding: 8px 16px;
+    border-radius: 4px;
     font-size: 11px;
-    font-weight: 500;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 /* --- Footer --- */
@@ -293,9 +360,9 @@ footer {
     background-color: #f7f4eb;
     color: #9c9281;
     text-align: center;
-    padding: 30px;
-    font-size: 12px;
-    letter-spacing: 1px;
+    padding: 35px;
+    font-size: 11px;
+    letter-spacing: 2px;
     text-transform: uppercase;
     border-top: 1px solid #e6e2d3;
 }
@@ -308,12 +375,16 @@ footer {
 
     .navbar {
         flex-direction: column;
-        gap: 15px;
+        gap: 20px;
+    }
+
+    .hero-title {
+        font-size: 26px;
     }
 
     .posts-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 35px;
     }
 
     .about-layout {
