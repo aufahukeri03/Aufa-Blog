@@ -1,14 +1,17 @@
+/* --- Google Fonts (Ambil fon yang comel & bulat) --- */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
 /* --- Reset & Gaya Asas --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Fredoka', sans-serif; /* Fon bulat yang comel */
 }
 
 body {
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: #fff5f7; /* Latar belakang pink super cair */
+    color: #63484d; /* Warna teks coklat lembut (lebih match dengan pink berbanding hitam) */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -16,11 +19,13 @@ body {
 
 /* --- Navigasi (Header) --- */
 header {
-    background-color: #2c3e50;
+    background-color: #ffb7c5; /* Pink pastel lembut */
     padding: 20px 10px;
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 4px 10px rgba(255, 183, 197, 0.3);
+    border-bottom: 3px dashed #ffa1b2; /* Garisan putus-putus yang comel */
 }
 
 .navbar {
@@ -34,8 +39,9 @@ header {
 
 .logo {
     color: #fff;
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 26px;
+    font-weight: 700;
+    text-shadow: 2px 2px #ff8da1; /* Kesan bayang pada teks */
 }
 
 .nav-links {
@@ -48,15 +54,18 @@ header {
 }
 
 .nav-links a {
-    color: #bdc3c7;
+    color: #fffefd;
     text-decoration: none;
-    font-size: 16px;
-    transition: color 0.3s;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 15px;
 }
 
 .nav-links a:hover, .nav-links a.active {
-    color: #fff;
-    font-weight: bold;
+    background-color: #ffeaee;
+    color: #ff6f85;
 }
 
 /* --- Hero Section (Home Page) --- */
@@ -67,20 +76,22 @@ header {
     align-items: center;
     text-align: center;
     padding: 50px 20px;
-    background: linear-gradient(rgba(44, 62, 80, 0.1), rgba(44, 62, 80, 0.1)), url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+    /* Gambar latar belakang estetik pastel */
+    background: linear-gradient(rgba(255, 245, 247, 0.4), rgba(255, 245, 247, 0.4)), url('https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
 }
 
 .hero-content {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
     padding: 40px;
-    border-radius: 10px;
+    border-radius: 24px; /* Sudut lebih bulat & comel */
     max-width: 700px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 24px rgba(255, 141, 161, 0.15);
+    border: 2px solid #ffdae0;
 }
 
 .hero-content h1 {
-    font-size: 36px;
-    color: #2c3e50;
+    font-size: 38px;
+    color: #ff6f85; /* Warna pink pekat */
     margin-bottom: 20px;
 }
 
@@ -88,31 +99,36 @@ header {
     font-size: 18px;
     line-height: 1.6;
     margin-bottom: 30px;
-    color: #555;
+    color: #7d5e63;
 }
 
+/* --- Butang Comel --- */
 .btn {
     display: inline-block;
-    background-color: #3498db;
+    background-color: #ff6f85;
     color: #fff;
-    padding: 12px 24px;
+    padding: 12px 28px;
     text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background 0.3s;
+    border-radius: 50px; /* Butang berbentuk pill/bujur */
+    font-weight: 600;
+    font-size: 18px;
+    box-shadow: 0 4px 15px rgba(255, 111, 133, 0.4);
+    transition: transform 0.2s, background 0.3s;
 }
 
 .btn:hover {
-    background-color: #2980b9;
+    background-color: #ff526e;
+    transform: scale(1.05); /* Kesan butang membesar sikit bila di-hover */
 }
 
 /* --- Footer --- */
 footer {
-    background-color: #2c3e50;
-    color: #bdc3c7;
+    background-color: #ffb7c5;
+    color: #fff;
     text-align: center;
     padding: 15px;
-    font-size: 14px;
+    font-size: 15px;
+    border-top: 3px dashed #ffa1b2;
 }
 
 /* --- Responsive (Mobile Friendly) --- */
@@ -126,6 +142,6 @@ footer {
     }
     
     .hero-content h1 {
-        font-size: 28px;
+        font-size: 30px;
     }
 }
