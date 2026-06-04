@@ -1,5 +1,5 @@
-/* --- Google Fonts (Ambil fon Serif yang mewah & Sans-Serif yang bersih) --- */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap');
+/* --- Google Fonts (Ambil fon tulisan tangan estetik, serif & sans-serif) --- */
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Lora:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap');
 
 /* --- Reset & Gaya Asas --- */
 * {
@@ -9,171 +9,226 @@
 }
 
 body {
-    background-color: #fbf9f6; /* Warna off-white/cream lembut yang premium */
-    color: #332c2d; /* Coklat/Charcoal gelap yang lembut pada mata */
-    font-family: 'Montserrat', sans-serif;
+    background-color: #f6f3ea; /* Warna cream lembut/warm beige sebiji macam screenshot */
+    color: #5a5245; /* Tulisan kelabu/coklat pudar yang sangat lembut */
+    font-family: 'Plus Jakarta Sans', sans-serif;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    letter-spacing: 0.5px;
 }
 
 /* --- Navigasi (Header) --- */
 header {
-    background-color: #ffffff;
-    padding: 25px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
-    border-bottom: 1px solid #eee5e0; /* Garisan nipis yang kemas */
+    background-color: #f6f3ea;
+    padding: 30px 40px;
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
     width: 100%;
 }
 
 .logo {
-    font-family: 'Cormorant Garamond', serif;
-    color: #2c2523;
-    font-size: 28px;
-    font-weight: 600;
-    letter-spacing: 1px;
+    font-family: 'Lora', serif;
+    color: #4a4439;
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: -0.5px;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-}
-
-.nav-links li {
-    margin-left: 30px;
+    gap: 25px;
 }
 
 .nav-links a {
-    color: #7a6e67;
+    color: #6e6556;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 400;
-    text-transform: uppercase; /* Tukar teks menu jadi huruf besar untuk impak premium */
-    letter-spacing: 2px;
-    transition: color 0.3s ease;
-    position: relative;
-    padding-bottom: 4px;
-}
-
-/* Kesan garisan halus (underline effect) bila hover */
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 1px;
-    bottom: 0;
-    left: 0;
-    background-color: #b89785; /* Warna Rose Gold/Bronze */
-    transition: width 0.3s ease;
-}
-
-.nav-links a:hover::after, .nav-links a.active::after {
-    width: 100%;
+    letter-spacing: 0.5px;
+    transition: color 0.3s;
 }
 
 .nav-links a:hover, .nav-links a.active {
-    color: #b89785;
+    color: #92846d;
+    border-bottom: 1px solid #92846d;
 }
 
-/* --- Hero Section (Home Page) --- */
-.hero-section {
-    flex: 1;
+/* --- Main Content Section --- */
+.content-container {
+    max-width: 1200px;
+    margin: 40px auto 80px auto;
+    width: 100%;
+    padding: 0 20px;
+}
+
+/* Tajuk ala tulisan tangan (featured posts) */
+.section-title {
+    font-family: 'Alex Brush', cursive;
+    font-size: 55px;
+    color: #4a4439;
+    font-weight: 400;
+    margin-bottom: 30px;
+    text-transform: lowercase;
+}
+
+/* Grid untuk susun 3 kad gambar sebelah-menyebelah */
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 11fr);
+    gap: 30px;
+}
+
+.post-card {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.image-wrapper {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.post-card:hover .image-wrapper img {
+    transform: scale(1.03); /* Kesan zoom-in halus masa hover */
+}
+
+.post-card h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #4a4439;
+}
+
+/* --- Sunday Ritual Section (Olive Green) --- */
+.ritual-section {
+    background-color: #93907c; /* Warna hijau zaitun / sage-olive yang diredupkan */
+    color: #f6f3ea;
     text-align: center;
     padding: 60px 20px;
-    /* Latar belakang estetik studio/minimalis */
-    background: linear-gradient(rgba(251, 249, 246, 0.85), rgba(251, 249, 246, 0.85)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
-.hero-content {
-    background: #ffffff;
-    padding: 50px 40px;
-    border-radius: 4px; /* Sudut petak yang minimalis & tajam (lebih formal/classy) */
-    max-width: 750px;
-    box-shadow: 0 10px 30px rgba(44, 37, 35, 0.04);
-    border: 1px solid #eee5e0;
-}
-
-.hero-content h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 42px;
+.ritual-section h2 {
+    font-family: 'Lora', serif;
+    font-size: 36px;
     font-weight: 400;
-    color: #2c2523;
-    margin-bottom: 25px;
-    line-height: 1.2;
+    letter-spacing: 0.5px;
 }
 
-.hero-content p {
+/* Tulisan bersambung dalam h2 */
+.ritual-section h2 span {
+    font-family: 'Alex Brush', cursive;
+    font-size: 50px;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.ritual-section p {
     font-size: 15px;
-    line-height: 1.8;
-    margin-bottom: 35px;
-    color: #615551;
+    max-width: 650px;
+    line-height: 1.6;
+    color: #e5e1d3;
     font-weight: 300;
 }
 
-/* --- Butang Elegant --- */
-.btn {
-    display: inline-block;
-    background-color: #2c2523; /* Butang gelap yang premium */
-    color: #ffffff;
-    padding: 14px 32px;
-    text-decoration: none;
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 500;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-    border: 1px solid #2c2523;
+/* Borang / Form inputs */
+.ritual-form {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+    width: 100%;
+    max-width: 750px;
+    justify-content: center;
 }
 
-.btn:hover {
-    background-color: transparent;
-    color: #2c2523; /* Tukar jadi hollow button bila hover */
+.ritual-form input {
+    background-color: #f6f3ea;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px; /* Input melengkung bulat mampat */
+    font-size: 14px;
+    width: 200px;
+    color: #5a5245;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.ritual-form input::placeholder {
+    color: #a8a092;
+}
+
+.ritual-form button {
+    background-color: #4e4d41; /* Butang hijau tua/coklat gelap */
+    color: #f6f3ea;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.ritual-form button:hover {
+    background-color: #3b3a31;
+}
+
+.form-disclaimer {
+    font-size: 11px;
+    color: #cdcaa8;
+    font-style: italic;
 }
 
 /* --- Footer --- */
 footer {
-    background-color: #ffffff;
-    color: #9c8e87;
+    background-color: #f6f3ea;
+    color: #8c8577;
     text-align: center;
-    padding: 25px;
-    font-size: 12px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    border-top: 1px solid #eee5e0;
+    padding: 30px;
+    font-size: 13px;
+    border-top: 1px solid #e1ded4;
 }
 
-/* --- Responsive (Mobile Friendly) --- */
-@media (max-width: 768px) {
+/* --- Responsive Layout (Mobile Friendly) --- */
+@media (max-width: 900px) {
+    .posts-grid {
+        grid-template-columns: 1fr; /* Jadi satu baris memanjang ke bawah kalau buka di telefon */
+        gap: 40px;
+    }
+    
+    .ritual-form {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .ritual-form input, .ritual-form button {
+        width: 100%;
+        max-width: 300px;
+    }
+    
     .navbar {
         flex-direction: column;
-        gap: 20px;
-    }
-    
-    .nav-links li {
-        margin: 0 15px;
-    }
-    
-    .hero-content {
-        padding: 30px 20px;
-    }
-
-    .hero-content h1 {
-        font-size: 32px;
+        gap: 15px;
     }
 }
