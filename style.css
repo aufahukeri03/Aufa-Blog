@@ -806,21 +806,22 @@ footer {
 .resume-btn {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #1a1a1a;
-    color: #ffffff;
+    background-color: #e6dfd3; /* Tukar ke warna beige cair (seperti tag SQL/Unity) */
+    color: #2b3a42; /* Warna teks gelap lembut supaya kontra dan mudah dibaca */
     text-decoration: none;
     font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 1px;
-    border-radius: 4px;
-    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 6px; /* Tukar ke 6px supaya sama bulat dengan tag tech stack */
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Kesan melonjak 3px yang sedondon */
 .resume-btn:hover {
     transform: translateY(-3px);
-    background-color: #d4af37; /* Warna Gold apabila di-hover */
-    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+    background-color: #928e7d; /* Tukar ke warna sage/olive green (seperti tag VS Code) */
+    color: #ffffff; /* Tukar teks kepada putih semasa hover supaya tulisan jelas */
+    box-shadow: 0 5px 15px rgba(146, 142, 125, 0.3); /* Shadow halus menggunakan tona sage green */
 }
 
 .resume-btn i {
