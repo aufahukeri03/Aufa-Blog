@@ -747,7 +747,7 @@ footer {
 /* --- Efek Hover Mengikut Warna Screenshot 2026-06-05 221722.png --- */
 /* LinkedIn akan bertukar jadi warna Gold/Kuning Mustard apabila di-hover */
 .icon-circle.linkedin:hover {
-    background-color: #d4af37; /* Warna Gold */
+    background-color: #4a4439; /* Tukar jadi warna gelap premium */
     color: #ffffff;
     transform: translateY(-3px); /* Ikon melonjak sedikit ke atas */
     box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
