@@ -778,31 +778,72 @@ footer {
 .nav-links a.active:hover {
     transform: translateY(-6px);
 }
-/* --- Gaya Butang Muat Turun Resume --- */
-.resume-section {
-    margin-top: 30px;
+/* --- Bahagian Preview & Muat Turun Resume --- */
+.resume-container {
+    margin-top: 50px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Shadow halus korporat */
+}
+
+.resume-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f4f4f4;
+    padding-bottom: 15px;
+}
+
+.resume-header h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.6rem;
+    color: #1a1a1a;
+    margin: 0;
 }
 
 .resume-btn {
     display: inline-block;
-    padding: 12px 24px;
-    background-color: #1a1a1a; /* Hitam korporat minimalis */
+    padding: 10px 20px;
+    background-color: #1a1a1a;
     color: #ffffff;
     text-decoration: none;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 1px;
     border-radius: 4px;
     transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Kesan hover melonjak ke atas yang konsisten */
+/* Kesan melonjak 3px yang sedondon */
 .resume-btn:hover {
     transform: translateY(-3px);
-    background-color: #d4af37; /* Bertukar warna ke emas premium */
+    background-color: #d4af37; /* Warna Gold apabila di-hover */
     box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
 }
 
 .resume-btn i {
-    margin-right: 8px; /* Jarak ikon fail dengan teks */
+    margin-right: 6px;
+}
+
+/* Bingkai Kotak Preview PDF */
+.resume-preview {
+    background: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+/* Responsif untuk paparan telefon bimbit */
+@media (max-width: 768px) {
+    .resume-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .resume-preview iframe {
+        height: 450px; /* Kurangkan ketinggian preview pada skrin telefon */
+    }
 }
