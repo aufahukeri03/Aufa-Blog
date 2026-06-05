@@ -778,3 +778,31 @@ footer {
 .nav-links a.active:hover {
     transform: translateY(-6px);
 }
+/* --- Gaya Butang Muat Turun Resume --- */
+.resume-section {
+    margin-top: 30px;
+}
+
+.resume-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #1a1a1a; /* Hitam korporat minimalis */
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Kesan hover melonjak ke atas yang konsisten */
+.resume-btn:hover {
+    transform: translateY(-3px);
+    background-color: #d4af37; /* Bertukar warna ke emas premium */
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+.resume-btn i {
+    margin-right: 8px; /* Jarak ikon fail dengan teks */
+}
