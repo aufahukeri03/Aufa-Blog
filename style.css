@@ -723,3 +723,42 @@ footer {
         text-align: center;
     }
 }
+/* --- Gaya Ikon Media Sosial Bulat di Header --- */
+.header-social-icons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.icon-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #f0ebe0; /* Warna asal bulatan (kelabu/beige lembut) */
+    color: #4a4439; /* Warna ikon di dalam */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* --- Efek Hover Mengikut Warna Screenshot 2026-06-05 221722.png --- */
+/* LinkedIn akan bertukar jadi warna Gold/Kuning Mustard apabila di-hover */
+.icon-circle.linkedin:hover {
+    background-color: #d4af37; /* Warna Gold */
+    color: #ffffff;
+    transform: translateY(-3px); /* Ikon melonjak sedikit ke atas */
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+/* Hover untuk Instagram, Facebook & Email (Sama ada nak kekal warna gold atau warna gelap) */
+.icon-circle.instagram:hover,
+.icon-circle.facebook:hover,
+.icon-circle.email:hover {
+    background-color: #4a4439; /* Tukar jadi warna gelap premium */
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(74, 68, 57, 0.2);
+}

@@ -5,27 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aufa | About — My Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    
+    <!-- 1. BARIS BARU: Dimasukkan di sini untuk panggil ikon Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
     <!-- Header & Navigation Menu (Fixed & Highlighted) -->
     <header>
-    <nav class="navbar">
-        <div class="logo">My Portfolio</div>
-        <ul class="nav-links">
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="about.html" class="active">ABOUT</a></li>
-            <li><a href="blog.html">BLOG</a></li>
-            <li><a href="contact.html">CONTACT</a></li>
-        </ul>
-        <!-- Pastikan bahagian bawah ini wujud di kedua-dua fail -->
-        <div class="header-socials">
-            <a href="#">Eng</a>
-            <span>/</span>
-            <a href="#">Malay</a>
-        </div>
-    </nav>
-</header>
+        <nav class="navbar">
+            <div class="logo">My Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html" class="active">ABOUT</a></li>
+                <li><a href="blog.html">BLOG</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+            
+            <!-- 2. DI SINI: Menggantikan bahagian Eng/Malay lama kepada Ikon Media Sosial Bulat -->
+            <div class="header-social-icons">
+                <a href="https://linkedin.com/in/usernameanda" target="_blank" class="icon-circle linkedin" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://instagram.com/usernameanda" target="_blank" class="icon-circle instagram" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://facebook.com/usernameanda" target="_blank" class="icon-circle facebook" title="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="mailto:emailanda@gmail.com" class="icon-circle email" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </nav>
+    </header>
 
     <!-- Main Content: About Me Layout -->
     <main class="content-container">
