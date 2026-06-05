@@ -848,3 +848,40 @@ footer {
         height: 450px; /* Kurangkan ketinggian preview pada skrin telefon */
     }
 }
+/* --- Gaya Kontena Kad About Me (Sebiji Macam Resume-Container) --- */
+.about-card-container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Bayang halus korporat */
+    margin-bottom: 40px; /* Jarak pemisah antara kad About Me dan kad Resume */
+}
+
+/* Header di dalam kad About Me */
+.about-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #f4f4f4; /* Garisan pemisah halus bawah tajuk */
+    padding-bottom: 15px;
+}
+
+/* Tulisan tajuk H2 "About Me" */
+.about-card-header h2 {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+
+/* Melaraskan kedudukan susunan gambar & teks di dalam kad */
+.about-layout {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+/* Nota: Jika ada `.section-title` lama yang membuatkan tajuk h2 asal anda terkeluar dari kotak, anda boleh padam atau abaikan kerana tajuk baru kini menggunakan `.about-card-header h2` */
