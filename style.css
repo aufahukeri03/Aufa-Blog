@@ -770,11 +770,11 @@ footer {
 
 /* Efek apabila mouse digerakkan di atas menu HOME, ABOUT, BLOG, CONTACT */
 .nav-links a:hover {
-    transform: translateY(-3px); /* Teks menu melonjak 3px ke atas */
+    transform: translateY(-6px); /* Teks menu melonjak 6px ke atas */
     color: #d4af37; /* Opsional: Tukar warna teks ke Gold semasa hover supaya sedondon dengan ikon LinkedIn */
 }
 
 /* Kekalkan kedudukan teks yang sedang aktif (class="active") supaya tidak pelik, atau jika anda mahu ia boleh melonjak juga */
 .nav-links a.active:hover {
-    transform: translateY(-3px);
+    transform: translateY(-6px);
 }
