@@ -1213,51 +1213,55 @@ footer {
    ========================================================================== */
 @media screen and (max-width: 768px) {
     
-    /* Gantikan '.about-container' dengan nama class kotak About Me anda yang sebenar jika berbeza */
-    .about-container, 
-    .about-section,
-    .about-content {
+    /* 1. Tukar susunan layout daripada melintang (row) kepada menegak (column) */
+    .about-layout {
         display: flex !important;
-        flex-direction: column !important; /* Tukar susunan dari melintang ke menegak */
+        flex-direction: column !important;
         align-items: center !important;
-        text-align: center !important;     /* Letakkan tulisan di tengah supaya kemas pada phone */
-        padding: 20px !important;          /* Beri ruang padding dalam kotak */
-        width: 100% !important;            /* Pastikan kotak ikut lebar skrin phone */
+        width: 100% !important;
+        padding: 10px !important;
         box-sizing: border-box !important;
     }
 
-    /* Memastikan gambar profil tidak terlalu besar dan berada di tengah */
-    .about-image, 
-    .about-img,
-    .about-section img {
+    /* 2. Setkan bahagian gambar berada di atas dan tidak terlalu besar */
+    .about-image {
         width: 100% !important;
-        max-width: 280px !important;       /* Hadkan saiz gambar pada skrin phone */
-        margin: 0 auto 20px auto !important; /* Letak tengah dan beri jarak bawah sebelum tulisan */
+        max-width: 300px !important; /* Hadkan lebar maksimum gambar pada telefon */
+        margin-bottom: 25px !important; /* Beri jarak di antara gambar dan teks nama */
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    .about-image img {
+        width: 100% !important;
         height: auto !important;
+        display: block !important;
     }
 
-    /* Memastikan bahagian teks mengambil ruang penuh tanpa terkeluar */
-    .about-text,
-    .about-info,
-    .about-details {
+    /* 3. Paksa kotak teks mengambil lebar penuh skrin telefon tanpa melorot keluar */
+    .about-text {
         width: 100% !important;
-        padding: 0 !important;
-        margin: 0 !important;
+        max-width: 100% !important;
+        padding: 0 15px !important; /* Beri sedikit ruang kosong di kiri & kanan skrin */
         box-sizing: border-box !important;
+        display: block !important;
     }
 
-    /* Elakkan saiz teks nama terlalu besar pada phone */
-    .about-text h1, 
-    .about-text h2 {
-        font-size: 1.8rem !important;      /* Kecilkan sikit saiz font nama */
-        word-wrap: break-word !important;  /* Paksa teks panjang turun bawah jika tak muat */
+    /* 4. Pastikan tulisan tajuk/nama tidak terpotong ke kanan */
+    .profile-name {
+        font-size: 1.8rem !important;     /* Kecilkan sedikit saiz font pada telefon */
+        word-wrap: break-word !important; /* Paksa teks panjang turun ke bawah */
+        overflow-wrap: break-word !important;
+        white-space: normal !important;   /* Alang-alang menghalang teks daripada lurus sebaris */
         line-height: 1.3 !important;
+        margin-bottom: 10px !important;
     }
 
-    /* Mengemas kini saiz perenggan teks tentang saya */
+    /* 5. Mengemaskan perenggan teks maklumat diri */
     .about-text p {
-        font-size: 0.95rem !important;     /* Saiz pembacaan yang selesa pada telefon */
+        font-size: 0.95rem !important;
         line-height: 1.6 !important;
-        text-align: justify !important;    /* Atau 'center' mengikut kesesuaian reka bentuk anda */
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
 }
