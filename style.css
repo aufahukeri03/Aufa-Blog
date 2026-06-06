@@ -1157,16 +1157,58 @@ footer {
 }
 
 /* ==========================================================================
-   EFFECT HOVER: BILA USER SENTUH BUTANG BACK TO PORTFOLIO
+   REKA BENTUK BARU: BACK TO PORTFOLIO MINIMALIS & ELEGAN
+   ========================================================================== */
+.back-to-portfolio-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;                  /* Jarakkan ikon dan tulisan */
+    padding: 5px 0;             /* Buang border kotak, guna padding bawah sahaja */
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #5c564b;             /* Warna coklat warm yang lebih jelas & premium */
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;     /* Jarakkan huruf sikit untuk gaya estetik */
+    position: relative;         /* Penting untuk kesan garisan bawah */
+    background: transparent;    /* Buang warna latar belakang kotak */
+    border: none;               /* Buang border kotak terus */
+    box-shadow: none;           /* Buang kesan bayang kotak */
+    transition: color 0.3s ease;
+}
+
+/* Reka bentuk ikon anak panah */
+.back-to-portfolio-btn i {
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+/* Kesan garisan bawah estetik (Underline Effect) */
+.back-to-portfolio-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;                   /* Mula-mula garisan tidak kelihatan */
+    height: 1.5px;
+    background-color: #7d7768;  /* Warna garisan hijau sage lembut */
+    transition: width 0.3s ease;/* Animasi garisan meluncur */
+}
+
+/* ==========================================================================
+   EFFECT HOVER: BILA USER SENTUH
    ========================================================================== */
 .back-to-portfolio-btn:hover {
-    color: #5c564b;             /* Tukar tulisan jadi coklat gelap lembut */
-    background-color: #f5f2e9;  /* Latar belakang jadi sedikit gelap/warm */
-    border-color: #e8e5d8;      /* Garisan luar halus muncul */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    color: #7d7768;             /* Warna tulisan bertukar lembut ke sage green */
     cursor: pointer;
 }
 
+/* Anak panah bergerak ke kiri sikit bila hover */
 .back-to-portfolio-btn:hover i {
-    transform: translateX(-4px); /* Anak panah meluncur ke kiri sikit */
+    transform: translateX(-5px);
+}
+
+/* Garisan bawah meluncur keluar penuh bila hover */
+.back-to-portfolio-btn:hover::after {
+    width: 100%;
 }
