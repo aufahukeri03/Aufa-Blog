@@ -1187,7 +1187,7 @@ footer {
    EFFECT HOVER: BILA TETIKUS SENTUH KOTAK
    ========================================================================== */
 .back-to-portfolio-btn:hover {
-    color: #ffffff;             /* Tukar tulisan jadi warna putih */
+    color: #7d7768;             /* Tukar tulisan jadi warna putih */
     background-color: #7d7768;  /* Kotak dipenuhi warna sage green sepenuhnya */
     border-color: #7d7768;      /* Sempadan bertukar warna sage green */
     box-shadow: 0 6px 15px rgba(125, 119, 104, 0.2); /* Bayang jadi lebih dalam/cantik */
