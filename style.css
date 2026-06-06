@@ -1048,14 +1048,14 @@ footer {
     
     /* Animasi dilaraskan menggunakan ch (character unit) untuk ketepatan maksimum */
     animation: 
-        playTyping 2.0s steps(20, end) forwards, 
+        playTyping 1.8s steps(18, end) forwards, 
         blinkCursor 0.75s step-end infinite;
 }
 
 /* --- Keyframes Diperbaharui Menggunakan Unit 'ch' (Ikut Bilangan Huruf) --- */
 @keyframes playTyping {
     from { width: 0; }
-    to { width: 20ch; } /* '25ch' bermaksud lebar kotak akan berhenti tepat pada huruf ke-25! */
+    to { width: 18ch; } /* '25ch' bermaksud lebar kotak akan berhenti tepat pada huruf ke-25! */
 }
 
 @keyframes blinkCursor {
