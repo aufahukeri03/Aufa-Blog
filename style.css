@@ -916,3 +916,54 @@ footer {
     color: #1a1a1a;
     margin: 0;
 }
+/* ==========================================================================
+   ANIMASI MARQUEE UNTUK TECH STACK (KHAS UNTUK LAYOUT ASAL AUFA)
+   ========================================================================== */
+
+/* Mengurung pergerakan ikon supaya tidak melimpah keluar dari sempadan teks asal */
+.tech-marquee-container {
+    width: 100%;
+    overflow: hidden; /* Memotong ikon yang terkeluar dari sempadan */
+    white-space: nowrap;
+    display: flex;
+    position: relative;
+    padding: 5px 0;
+}
+
+/* Menggerakkan barisan ikon */
+.tech-marquee-content {
+    display: flex;
+    gap: 15px; /* Jarak antara setiap tag kemahiran */
+    animation: scrollTech 18s linear infinite;
+}
+
+/* Reka bentuk kotak ikon mengikut sebiji warna & bentuk tag asal anda */
+.tech-icon-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    background-color: #e6dfd3; /* Warna beige lembut asal anda */
+    color: #2b3a42;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 8px; /* Kelengkungan bucu tag asal */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+
+/* Warna ikon kecil di dalam kotak */
+.tech-icon-box i {
+    font-size: 1rem;
+    color: #7d7768; /* Warna kontras gelap sikit untuk ikon */
+}
+
+/* Logik animasi bergerak ke kiri secara infiniti */
+@keyframes scrollTech {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
