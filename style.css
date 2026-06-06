@@ -1087,3 +1087,31 @@ footer {
     cursor: pointer;           /* Tukar bentuk mouse jadi ikon tangan penunjuk */
     transform: translateY(-2px); /* Kesan magik: butang akan naik atas sikit bila disentuh! */
 }
+/* ==========================================================================
+   STYLE BUTANG VIEW DETAILS PADA KAD PORTFOLIO
+   ========================================================================== */
+.project-link-btn {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #7d7768; /* Warna sage/olive tema anda */
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: color 0.3s ease;
+}
+
+.project-link-btn i {
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+/* Kesan apabila mouse lalu (Hover) */
+.project-link-btn:hover {
+    color: #5c564b; /* Warna bertukar coklat gelap lembut */
+}
+
+.project-link-btn:hover i {
+    transform: translateX(5px); /* Anak panah bergerak ke kanan sedikit */
+}
