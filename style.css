@@ -998,7 +998,7 @@ footer {
     100% { transform: translateY(0px); }
 }
 /* ==========================================================================
-   ANIMASI MENAIP JELAS & TAIP SAMPAI HABIS (UNTUK GELARAN DIRi)
+   ANIMASI MENAIP PENDEK (BERHENTI DI INFORMATICS MEDIA STUDENT)
    ========================================================================== */
 
 .typing-title {
@@ -1008,56 +1008,24 @@ footer {
     color: #7d7768; /* Warna sage/olive lembut tema anda */
     margin-bottom: 20px;
     
-    /* Kod Utama Efek Menaip */
-    overflow: hidden; /* Menyembunyikan teks yang belum ditaip */
-    white-space: nowrap; /* Memaksa teks kekal sebaris */
-    border-right: 3px solid #7d7768; /* Garisan kursor yang berkelip */
+    overflow: hidden; 
+    white-space: nowrap; 
+    border-right: 3px solid #7d7768; 
     
-    /* Logik pergerakan: width bermula dari 0% hingga 100% sepenuhnya */
     width: 0;
+    /* Masa dipendekkan ke 2.5 saat & steps dilaraskan ke 25 mengikut jumlah huruf */
     animation: 
         playTyping 2.5s steps(25, end) forwards, 
         blinkCursor 0.75s step-end infinite;
 }
 
-/* ─── Keyframes: Mengembangkan lebar tulisan sampai 100% habis ─── */
+/* --- Keyframes kekal sama --- */
 @keyframes playTyping {
     from { width: 0; }
-    to { width: 100%; } /* Paksa taip sampai huruf terakhir */
+    to { width: 100%; }
 }
 
-/* ─── Keyframes: Kursor Berkelip-kelip ─── */
 @keyframes blinkCursor {
     from, to { border-color: transparent; }
     50% { border-color: #7d7768; }
-}
-.status-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.85rem;
-    color: #666;
-    margin-bottom: 15px;
-}
-.pulse-dot {
-    width: 8px;
-    height: 8px;
-    background-color: #8da399; /* Warna sage green pastel */
-    border-radius: 50%;
-    position: relative;
-}
-.pulse-dot::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: #8da399;
-    border-radius: 50%;
-    animation: pulseAnimation 1.5s infinite ease-in-out;
-}
-@keyframes pulseAnimation {
-    0% { transform: scale(1); opacity: 1; }
-    100% { transform: scale(3); opacity: 0; }
 }
