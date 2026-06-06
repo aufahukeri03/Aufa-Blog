@@ -1157,58 +1157,45 @@ footer {
 }
 
 /* ==========================================================================
-   REKA BENTUK BARU: BACK TO PORTFOLIO MINIMALIS & ELEGAN
+   REKA BENTUK KOTAK ESTETIK & MODEN (PREMIUM BOX DESIGN)
    ========================================================================== */
 .back-to-portfolio-btn {
     display: inline-flex;
     align-items: center;
-    gap: 10px;                  /* Jarakkan ikon dan tulisan */
-    padding: 5px 0;             /* Buang border kotak, guna padding bawah sahaja */
-    font-size: 0.85rem;
+    gap: 10px;                  /* Jarak antara anak panah dan tulisan */
+    padding: 10px 24px;         /* Ruang dalam kotak yang seimbang */
+    font-size: 0.8rem;
     font-weight: 600;
-    color: #5c564b;             /* Warna coklat warm yang lebih jelas & premium */
+    color: #7d7768;             /* Warna Sage Green lembut anda */
     text-decoration: none;
     text-transform: uppercase;
-    letter-spacing: 0.08em;     /* Jarakkan huruf sikit untuk gaya estetik */
-    position: relative;         /* Penting untuk kesan garisan bawah */
-    background: transparent;    /* Buang warna latar belakang kotak */
-    border: none;               /* Buang border kotak terus */
-    box-shadow: none;           /* Buang kesan bayang kotak */
-    transition: color 0.3s ease;
+    letter-spacing: 0.08em;     /* Jarakkan huruf untuk gaya moden */
+    background-color: #ffffff;  /* Warna kotak putih bersih supaya timbul */
+    border: 1px solid #e8e5d8;  /* Garisan sempadan yang sangat nipis & lembut */
+    border-radius: 8px;         /* Bucu membulat yang lembut dan premium */
+    box-shadow: 0 2px 8px rgba(125, 119, 104, 0.08); /* Bayang halus berwarna warm */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Animasi pergerakan yang sangat smooth */
 }
 
-/* Reka bentuk ikon anak panah */
+/* Reka bentuk ikon anak panah di dalam kotak */
 .back-to-portfolio-btn i {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     transition: transform 0.3s ease;
 }
 
-/* Kesan garisan bawah estetik (Underline Effect) */
-.back-to-portfolio-btn::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;                   /* Mula-mula garisan tidak kelihatan */
-    height: 1.5px;
-    background-color: #7d7768;  /* Warna garisan hijau sage lembut */
-    transition: width 0.3s ease;/* Animasi garisan meluncur */
-}
-
 /* ==========================================================================
-   EFFECT HOVER: BILA USER SENTUH
+   EFFECT HOVER: BILA TETIKUS SENTUH KOTAK
    ========================================================================== */
 .back-to-portfolio-btn:hover {
-    color: #7d7768;             /* Warna tulisan bertukar lembut ke sage green */
+    color: #ffffff;             /* Tukar tulisan jadi warna putih */
+    background-color: #7d7768;  /* Kotak dipenuhi warna sage green sepenuhnya */
+    border-color: #7d7768;      /* Sempadan bertukar warna sage green */
+    box-shadow: 0 6px 15px rgba(125, 119, 104, 0.2); /* Bayang jadi lebih dalam/cantik */
+    transform: translateY(-2px); /* Kotak naik ke atas sedikit (kesan terapung) */
     cursor: pointer;
 }
 
-/* Anak panah bergerak ke kiri sikit bila hover */
+/* Anak panah meluncur ke kiri sedikit bila hover */
 .back-to-portfolio-btn:hover i {
-    transform: translateX(-5px);
-}
-
-/* Garisan bawah meluncur keluar penuh bila hover */
-.back-to-portfolio-btn:hover::after {
-    width: 100%;
+    transform: translateX(-4px);
 }
