@@ -1209,25 +1209,27 @@ footer {
     transform: translateX(-4px); /* Seluruh bulatan meluncur ke kiri sikit */
 }
 /* ==========================================================================
-   PEMBAIKAN RESPONSIF: FIX TULISAN ABOUT ME TERKELUAR DI TELEFON
+   PEMBAIKAN TOTAL: FIX RESPONSIF & KAWALAN OVERFLOW MARQUEE TECH STACK
    ========================================================================== */
 @media screen and (max-width: 768px) {
     
-    /* 1. Tukar susunan layout daripada melintang (row) kepada menegak (column) */
+    /* 1. Paksa layout utama turun ke bawah secara menegak */
     .about-layout {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
         width: 100% !important;
+        max-width: 100% !important;
         padding: 10px !important;
         box-sizing: border-box !important;
+        overflow: hidden !important; /* Menghalang sebarang komponen dalaman terkeluar */
     }
 
-    /* 2. Setkan bahagian gambar berada di atas dan tidak terlalu besar */
+    /* 2. Kawalan saiz gambar profil */
     .about-image {
         width: 100% !important;
-        max-width: 300px !important; /* Hadkan lebar maksimum gambar pada telefon */
-        margin-bottom: 25px !important; /* Beri jarak di antara gambar dan teks nama */
+        max-width: 260px !important; 
+        margin: 0 auto 20px auto !important;
         display: flex !important;
         justify-content: center !important;
     }
@@ -1238,30 +1240,54 @@ footer {
         display: block !important;
     }
 
-    /* 3. Paksa kotak teks mengambil lebar penuh skrin telefon tanpa melorot keluar */
+    /* 3. Kotak teks dipaksa mengikut lebar skrin telefon sepenuhnya */
     .about-text {
         width: 100% !important;
         max-width: 100% !important;
-        padding: 0 15px !important; /* Beri sedikit ruang kosong di kiri & kanan skrin */
+        padding: 0 10px !important; 
         box-sizing: border-box !important;
         display: block !important;
+        overflow: hidden !important; /* Mengunci kandungan teks di dalam skrin */
     }
 
-    /* 4. Pastikan tulisan tajuk/nama tidak terpotong ke kanan */
+    /* 4. Elakkan nama panjang terpotong atau terkeluar */
     .profile-name {
-        font-size: 1.8rem !important;     /* Kecilkan sedikit saiz font pada telefon */
-        word-wrap: break-word !important; /* Paksa teks panjang turun ke bawah */
+        font-size: 1.6rem !important;     /* Kecilkan sedikit lagi saiz di phone */
+        white-space: normal !important;   /* Membenarkan tulisan turun baris baharu */
+        word-wrap: break-word !important; 
         overflow-wrap: break-word !important;
-        white-space: normal !important;   /* Alang-alang menghalang teks daripada lurus sebaris */
         line-height: 1.3 !important;
-        margin-bottom: 10px !important;
     }
 
-    /* 5. Mengemaskan perenggan teks maklumat diri */
+    /* 5. Memastikan perenggan teks responsif */
     .about-text p {
         font-size: 0.95rem !important;
         line-height: 1.6 !important;
         width: 100% !important;
         box-sizing: border-box !important;
+        word-wrap: break-word !important;
+    }
+
+    /* ==========================================================================
+       PUNCA UTAMA: MENJINAKKAN ANIMASI MARQUEE SUPAYA TIDAK MENOLAK KOTAK
+       ========================================================================== */
+    .skills-section {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+    }
+
+    .tech-marquee-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: hidden !important; /* Memotong ikon yang berjalan di luar sempadan skrin phone */
+        box-sizing: border-box !important;
+        display: block !important;
+    }
+
+    .tech-marquee-content {
+        display: flex !important;
+        /* Kekalkan animasi berjalan melintang tetapi disembunyikan hujungnya oleh container */
     }
 }
