@@ -917,27 +917,35 @@ footer {
     margin: 0;
 }
 /* ==========================================================================
-   ANIMASI MARQUEE UNTUK TECH STACK (KHAS UNTUK LAYOUT ASAL AUFA)
+   KOD PENSTABIL MARQUEE KHAS (GAMBAR KEKAL & TEKS TAKKAN TERKELUAR)
    ========================================================================== */
 
-/* Mengurung pergerakan ikon supaya tidak melimpah keluar dari sempadan teks asal */
+/* 1. Paksa ruang teks biodata supaya tidak boleh ditolak oleh barisan ikon */
+.about-text {
+    flex: 1;
+    min-width: 0; /* Kod wajib supaya kontena tahu had maksimum skrin */
+}
+
+/* 2. Mengurung sepenuhnya animasi marquee di dalam dinding teks biodata sahaja */
 .tech-marquee-container {
     width: 100%;
-    overflow: hidden; /* Memotong ikon yang terkeluar dari sempadan */
+    max-width: 100%; /* Menghalang kontena daripada membesar mengikut panjang ikon */
+    overflow: hidden; /* Memotong terus mana-mana ikon yang terkeluar dari sempadan */
     white-space: nowrap;
-    display: flex;
+    display: block; /* Menggunakan block supaya ia mengambil baris baru yang selamat */
     position: relative;
+    margin-top: 15px;
     padding: 5px 0;
 }
 
-/* Menggerakkan barisan ikon */
+/* 3. Barisan bergerak yang mengandungi ikon */
 .tech-marquee-content {
-    display: flex;
-    gap: 15px; /* Jarak antara setiap tag kemahiran */
-    animation: scrollTech 18s linear infinite;
+    display: inline-flex; /* Guna inline-flex supaya logik transform -50% berfungsi dengan tepat */
+    gap: 15px;
+    animation: scrollTech 20s linear infinite;
 }
 
-/* Reka bentuk kotak ikon mengikut sebiji warna & bentuk tag asal anda */
+/* 4. Reka bentuk kotak tag kemahiran mengikut bentuk asal dalam Screenshot */
 .tech-icon-box {
     display: flex;
     align-items: center;
@@ -945,25 +953,24 @@ footer {
     padding: 8px 18px;
     background-color: #e6dfd3; /* Warna beige lembut asal anda */
     color: #2b3a42;
-    font-family: inherit;
     font-size: 0.9rem;
     font-weight: 500;
-    border-radius: 8px; /* Kelengkungan bucu tag asal */
-    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    border-radius: 8px;
+    box-sizing: border-box;
 }
 
-/* Warna ikon kecil di dalam kotak */
+/* Warna ikon kecil di dalam kotak tag */
 .tech-icon-box i {
     font-size: 1rem;
-    color: #7d7768; /* Warna kontras gelap sikit untuk ikon */
+    color: #7d7768;
 }
 
-/* Logik animasi bergerak ke kiri secara infiniti */
+/* 5. Logik pergerakan animasi berpusing tanpa henti */
 @keyframes scrollTech {
     0% {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-50%);
+        transform: translateX(-50%); /* Bergerak separuh sahaja kerana Set 2 adalah klon Set 1 */
     }
 }
