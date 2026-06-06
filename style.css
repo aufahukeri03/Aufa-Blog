@@ -1298,3 +1298,38 @@ footer {
     color: #555;       /* Warna tulisan, pastikan sama dengan perenggan pertama */
     margin-bottom: 5px; /* Penting: Ini untuk beri jarak antara perenggan */
 }
+/* Gaya untuk Butang Video */
+.video-showcase-section a {
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.video-showcase-section a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    filter: brightness(1.2);
+}
+
+/* Memastikan gambar dalam gallery grid nampak seragam */
+.gallery-grid img {
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-grid div:hover img {
+    transform: scale(1.03);
+}
+
+/* Gaya untuk butang Back */
+.back-to-portfolio-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #f0eee9;
+    border-radius: 50px;
+    transition: background 0.3s ease;
+}
+
+.back-to-portfolio-btn:hover {
+    background: #e0dcd0;
+}
