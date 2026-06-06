@@ -974,3 +974,18 @@ footer {
         transform: translateX(-50%); /* Bergerak separuh sahaja kerana Set 2 adalah klon Set 1 */
     }
 }
+/* Efek fade-in untuk kandungan utama */
+.content-container {
+    animation: fadeInPage 1s ease-out forwards;
+}
+
+@keyframes fadeInPage {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Muncul dari bawah sedikit */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
