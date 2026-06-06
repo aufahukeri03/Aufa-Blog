@@ -1016,7 +1016,7 @@ footer {
     /* Logik pergerakan: width bermula dari 0% hingga 100% sepenuhnya */
     width: 0;
     animation: 
-        playTyping 4s steps(45, end) forwards, 
+        playTyping 2.5s steps(25, end) forwards, 
         blinkCursor 0.75s step-end infinite;
 }
 
