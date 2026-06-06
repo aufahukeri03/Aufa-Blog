@@ -1208,3 +1208,56 @@ footer {
     background-color: #7d7768;  /* Bulatan dipenuhi warna sage green sepenuhnya */
     transform: translateX(-4px); /* Seluruh bulatan meluncur ke kiri sikit */
 }
+/* ==========================================================================
+   PEMBAIKAN RESPONSIF: FIX TULISAN ABOUT ME TERKELUAR DI TELEFON
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+    
+    /* Gantikan '.about-container' dengan nama class kotak About Me anda yang sebenar jika berbeza */
+    .about-container, 
+    .about-section,
+    .about-content {
+        display: flex !important;
+        flex-direction: column !important; /* Tukar susunan dari melintang ke menegak */
+        align-items: center !important;
+        text-align: center !important;     /* Letakkan tulisan di tengah supaya kemas pada phone */
+        padding: 20px !important;          /* Beri ruang padding dalam kotak */
+        width: 100% !important;            /* Pastikan kotak ikut lebar skrin phone */
+        box-sizing: border-box !important;
+    }
+
+    /* Memastikan gambar profil tidak terlalu besar dan berada di tengah */
+    .about-image, 
+    .about-img,
+    .about-section img {
+        width: 100% !important;
+        max-width: 280px !important;       /* Hadkan saiz gambar pada skrin phone */
+        margin: 0 auto 20px auto !important; /* Letak tengah dan beri jarak bawah sebelum tulisan */
+        height: auto !important;
+    }
+
+    /* Memastikan bahagian teks mengambil ruang penuh tanpa terkeluar */
+    .about-text,
+    .about-info,
+    .about-details {
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Elakkan saiz teks nama terlalu besar pada phone */
+    .about-text h1, 
+    .about-text h2 {
+        font-size: 1.8rem !important;      /* Kecilkan sikit saiz font nama */
+        word-wrap: break-word !important;  /* Paksa teks panjang turun bawah jika tak muat */
+        line-height: 1.3 !important;
+    }
+
+    /* Mengemas kini saiz perenggan teks tentang saya */
+    .about-text p {
+        font-size: 0.95rem !important;     /* Saiz pembacaan yang selesa pada telefon */
+        line-height: 1.6 !important;
+        text-align: justify !important;    /* Atau 'center' mengikut kesesuaian reka bentuk anda */
+    }
+}
