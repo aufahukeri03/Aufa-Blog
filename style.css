@@ -1036,7 +1036,7 @@ footer {
     font-size: 1.1rem;
     font-weight: 600;
     color: #7d7768; /* Warna sage/olive lembut tema anda */
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     
     /* ─── KOD MAGIK PENYELASAI ─── */
     display: inline-block;     /* Memaksa lebar kotak mengikut saiz tulisan sahaja, bukan saiz skrin */
