@@ -1088,30 +1088,44 @@ footer {
     transform: translateY(-2px); /* Kesan magik: butang akan naik atas sikit bila disentuh! */
 }
 /* ==========================================================================
-   STYLE BUTANG VIEW DETAILS PADA KAD PORTFOLIO
+   KEMASAN PREMIUM: BUTANG VIEW DETAILS ESTETIK (MINIMALIST)
    ========================================================================== */
 .project-link-btn {
-    display: inline-block;
-    margin-top: 15px;
-    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 10px 22px;
+    font-size: 0.8rem;
     font-weight: 600;
-    color: #7d7768; /* Warna sage/olive tema anda */
+    color: #7d7768;            /* Warna Sage Green lembut asal anda */
     text-decoration: none;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    transition: color 0.3s ease;
+    letter-spacing: 0.1em;
+    border: 1.5px solid #7d7768; /* Garisan luar butang (Outlined) */
+    border-radius: 50px;       /* Bentuk kapsul bulat yang kemas */
+    background-color: transparent;
+    transition: all 0.3s ease; /* Animasi lancar untuk semua pertukaran */
 }
 
+/* Ikon anak panah di dalam butang */
 .project-link-btn i {
-    margin-left: 5px;
+    margin-left: 8px;
+    font-size: 0.85rem;
     transition: transform 0.3s ease;
 }
 
-/* Kesan apabila mouse lalu (Hover) */
+/* ==========================================================================
+   EFFECT HOVER: BILA USER SENTUH BUTANG VIEW DETAILS
+   ========================================================================== */
 .project-link-btn:hover {
-    color: #5c564b; /* Warna bertukar coklat gelap lembut */
+    background-color: #7d7768; /* Penuhkan latar belakang dengan warna sage */
+    color: #ffffff;            /* Tukar tulisan jadi warna putih */
+    box-shadow: 0 4px 12px rgba(125, 119, 104, 0.2); /* Kesan bayang lembut */
+    transform: translateY(-2px); /* Butang naik atas sedikit */
+    cursor: pointer;
 }
 
 .project-link-btn:hover i {
-    transform: translateX(5px); /* Anak panah bergerak ke kanan sedikit */
+    transform: translateX(4px); /* Anak panah meluncur ke kanan sikit */
 }
