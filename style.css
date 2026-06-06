@@ -884,4 +884,49 @@ footer {
     align-items: flex-start;
 }
 
-/* Nota: Jika ada `.section-title` lama yang membuatkan tajuk h2 asal anda terkeluar dari kotak, anda boleh padam atau abaikan kerana tajuk baru kini menggunakan `.about-card-header h2` */
+/* --- Kontena Utama Marquee Ikon --- */
+.tech-marquee-container {
+    width: 100%;
+    overflow: hidden;
+    padding: 10px 0;
+    white-space: nowrap;
+    display: flex;
+    position: relative;
+}
+
+/* --- Kandungan yang Menggerakkan Ikon Secara Infiniti --- */
+.tech-marquee-content {
+    display: flex;
+    gap: 15px; /* Jarak antara kotak ikon */
+    animation: scrollTech 15s linear infinite; /* Gerakan berterusan ke tepi */
+}
+
+/* --- Reka Bentuk Kotak Ikon (Sedondon dengan Tema Krem/Beige Anda) --- */
+.tech-icon-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background-color: #e6dfd3; /* Warna beige lembut */
+    color: #2b3a42; /* Teks gelap lembut */
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+/* Warna ikon apabila diletakkan di dalam kotak */
+.tech-icon-box i {
+    font-size: 1rem;
+    color: #928e7d; /* Warna sage/olive */
+}
+
+/* --- LOGIK ANIMASI BERGERAK KE TEPI NON-STOP --- */
+@keyframes scrollTech {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); /* Bergerak ke kiri sebanyak separuh panjang */
+    }
+}
