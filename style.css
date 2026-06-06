@@ -1345,11 +1345,8 @@ footer {
 }
 
 /* Warna border butang ikut gaya TikTok */
-.youtube-btn-light.group { border-color: #00f2ea; color: #00f2ea; }
+.tiktok-btn-light.group { border-color: #00f2ea; color: #00f2ea; }
 .tiktok-btn-light.solo { border-color: #fe2c55; color: #fe2c55; }
-
-.youtube-btn-light:hover {
-    background: #f0eee9;
 
 .tiktok-btn-light:hover {
     background: #f0eee9;
