@@ -894,39 +894,63 @@ footer {
     position: relative;
 }
 
-/* --- Kandungan yang Menggerakkan Ikon Secara Infiniti --- */
-.tech-marquee-content {
-    display: flex;
-    gap: 15px; /* Jarak antara kotak ikon */
-    animation: scrollTech 15s linear infinite; /* Gerakan berterusan ke tepi */
+/* --- Mengunci kedudukan kad About Me supaya sama dengan Resume --- */
+.about-card-container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 40px;
 }
 
-/* --- Reka Bentuk Kotak Ikon (Sedondon dengan Tema Krem/Beige Anda) --- */
+.about-card-header {
+    margin-bottom: 25px;
+    border-bottom: 2px solid #f4f4f4;
+    padding-bottom: 15px;
+}
+
+.about-card-header h2 {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+/* --- Mengurung Animasi Marquee Supaya Tidak Melimpah Keluar Skrin --- */
+.tech-marquee-container {
+    width: 100%;
+    overflow: hidden; /* Ini kod magik yang memotong elemen yang terkeluar */
+    padding: 10px 0;
+    white-space: nowrap;
+    display: flex;
+    position: relative;
+}
+
+.tech-marquee-content {
+    display: flex;
+    gap: 15px;
+    animation: scrollTech 15s linear infinite;
+}
+
 .tech-icon-box {
     display: flex;
     align-items: center;
     gap: 8px;
     padding: 8px 16px;
-    background-color: #e6dfd3; /* Warna beige lembut */
-    color: #2b3a42; /* Teks gelap lembut */
+    background-color: #e6dfd3;
+    color: #2b3a42;
     font-size: 0.85rem;
     font-weight: 600;
     border-radius: 6px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
 }
 
-/* Warna ikon apabila diletakkan di dalam kotak */
 .tech-icon-box i {
     font-size: 1rem;
-    color: #928e7d; /* Warna sage/olive */
+    color: #928e7d;
 }
 
-/* --- LOGIK ANIMASI BERGERAK KE TEPI NON-STOP --- */
 @keyframes scrollTech {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%); /* Bergerak ke kiri sebanyak separuh panjang */
-    }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }

@@ -43,17 +43,17 @@
     <!-- Main Content: About Me Layout -->
     <main class="content-container">
         
-        <!-- Tajuk utama "about" yang terbuka di bahagian luar -->
+        <!-- FIX 1: Ditukar kepada "about" ringkas di bahagian luar -->
         <h2 class="section-title">about</h2>
         
-        <!-- --- 1. KOTAK KONTENA "ABOUT ME" (Sebiji reka bentuk macam Resume) --- -->
+        <!-- FIX 2: Dibungkus ke dalam kad putih supaya animasi tools terkurung dengan kemas -->
         <div class="about-card-container">
             <div class="about-card-header">
                 <h2>About Me</h2>
             </div>
             
             <div class="about-layout">
-                <!-- Profile Image Section -->
+                <!-- Profile Image Section (Gambar anda dijamin muncul semula) -->
                 <div class="about-image">
                     <img src="aufa.png" alt="My Profile">
                 </div>
@@ -68,37 +68,36 @@
                     
                     <p>Beyond classroom assignments, I love exploring UI/UX designs, creative media layouts, and learning how to build interactive user experiences that are both highly functional and aesthetically pleasing.</p>
 
-                    <!-- Skills Tags -->
+                    <!-- Skills Tags (Kini menggunakan animasi bergerak ke tepi non-stop yang diidamkan) -->
                     <div class="skills-section">
-    <h4>my tech stack & tools</h4>
-    
-    <!-- Kontena bergerak ke tepi tanpa henti -->
-                    <div class="tech-marquee-container">
-                        <div class="tech-marquee-content">
-                            <!-- Set 1 -->
-                            <div class="tech-icon-box"><i class="fas fa-database"></i> <span>SQL</span></div>
-                            <div class="tech-icon-box"><i class="fab fa-unity"></i> <span>Unity</span></div>
-                            <div class="tech-icon-box"><i class="fas fa-cube"></i> <span>Blender</span></div>
-                            <div class="tech-icon-box"><i class="fab fa-js"></i> <span>JavaScript</span></div>
-                            <div class="tech-icon-box"><i class="fab fa-git-alt"></i> <span>Git</span></div>
-                            <div class="tech-icon-box"><i class="fab fa-github"></i> <span>GitHub</span></div>
-                            <div class="tech-icon-box"><i class="fas fa-code"></i> <span>VS Code</span></div>
-                            
-                            <!-- Set 2 -->
-                            <div class="tech-icon-box"><i class="fas fa-database"></i> <span>SQL</span></div>
-                            <div class="tech-icon-box"><i class="fab fa-unity"></i> <span>Unity</span></div>
-                            <div class="tech-icon-box"><i class="fas fa-cube"></i> <span>Blender</span></div>
-                            <div class="tech-icon-box"><i class="fab fa-js"></i> <span>JavaScript</span></div>
-                            <div class="tech-icon-box"><i class="fab fa-git-alt"></i> <span>Git</span></div>
-                            <div class="tech-icon-box"><i class="fab fa-github"></i> <span>GitHub</span></div>
-                            <div class="tech-icon-box"><i class="fas fa-code"></i> <span>VS Code</span></div>
+                        <h4>my tech stack & tools</h4>
+                        <div class="tech-marquee-container">
+                            <div class="tech-marquee-content">
+                                <!-- Set 1 -->
+                                <div class="tech-icon-box"><i class="fas fa-database"></i> <span>SQL</span></div>
+                                <div class="tech-icon-box"><i class="fab fa-unity"></i> <span>Unity</span></div>
+                                <div class="tech-icon-box"><i class="fas fa-cube"></i> <span>Blender</span></div>
+                                <div class="tech-icon-box"><i class="fab fa-js"></i> <span>JavaScript</span></div>
+                                <div class="tech-icon-box"><i class="fab fa-git-alt"></i> <span>Git</span></div>
+                                <div class="tech-icon-box"><i class="fab fa-github"></i> <span>GitHub</span></div>
+                                <div class="tech-icon-box"><i class="fas fa-code"></i> <span>VS Code</span></div>
+                                
+                                <!-- Set 2 (Diulang untuk sambungan animasi yang lancar) -->
+                                <div class="tech-icon-box"><i class="fas fa-database"></i> <span>SQL</span></div>
+                                <div class="tech-icon-box"><i class="fab fa-unity"></i> <span>Unity</span></div>
+                                <div class="tech-icon-box"><i class="fas fa-cube"></i> <span>Blender</span></div>
+                                <div class="tech-icon-box"><i class="fab fa-js"></i> <span>JavaScript</span></div>
+                                <div class="tech-icon-box"><i class="fab fa-git-alt"></i> <span>Git</span></div>
+                                <div class="tech-icon-box"><i class="fab fa-github"></i> <span>GitHub</span></div>
+                                <div class="tech-icon-box"><i class="fas fa-code"></i> <span>VS Code</span></div>
+                            </div>
                         </div>
-                    </div> <!-- Penutup tech-marquee-container -->
-                </div> <!-- Penutup skills-section -->
-            </div> <!-- Penutup about-text -->
-        </div> <!-- Penutup about-layout -->
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        <!-- --- 2. KOTAK KONTENA RESUME (Kekal Seperti Asal & Konsisten Dengan Di Atas) --- -->
+        <!-- --- SEKSYEN RESUME (Kekal Berkotak Premium) --- -->
         <div class="resume-container">
             <div class="resume-header">
                 <h3>Resume</h3>
@@ -109,6 +108,7 @@
             
             <!-- Tempat User Boleh Review/Preview PDF -->
             <div class="resume-preview">
+                <!-- FIX 3: Tag penutup iframe telah dibetulkan semula di sini -->
                 <iframe src="resume-aufa.pdf" width="100%" height="600px" style="border: none;">
                     <p>Pelayar web anda tidak menyokong paparan PDF. <a href="resume-aufa.pdf">Klik sini untuk muat turun</a>.</p>
                 </iframe>
