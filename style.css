@@ -1062,3 +1062,11 @@ footer {
     from, to { border-color: transparent; }
     50% { border-color: #7d7768; }
 }
+/* ==========================================================================
+   KEMASAN BUTANG READ MORE (MENGEKALKAN STYLING ASAL SELEPAS JADI LINK)
+   ========================================================================== */
+.read-more-btn {
+    text-decoration: none; /* Membuang garisan bawah teks link */
+    display: inline-block; /* Memastikan saiz butang, padding, & margin kekal tegak */
+    color: #ffffff;        /* Tukar warna teks mengikut tema asal anda jika perlu */
+}
