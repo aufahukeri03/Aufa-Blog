@@ -1351,3 +1351,18 @@ footer {
 .tiktok-btn-light:hover {
     background: #f0eee9;
 }
+<style>
+    /* Kesan Hover untuk Butang YouTube (Group) */
+    .btn-youtube:hover {
+        background-color: #ff0000 !important;
+        color: #ffffff !important;
+        transition: 0.3s ease;
+    }
+
+    /* Kesan Hover untuk Butang TikTok (Solo) */
+    .btn-tiktok:hover {
+        background-color: #fe2c55 !important;
+        color: #ffffff !important;
+        transition: 0.3s ease;
+    }
+</style>
