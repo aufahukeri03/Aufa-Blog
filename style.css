@@ -1296,5 +1296,5 @@ footer {
     font-size: 1.1rem; /* Contoh saiz, boleh ubah ikut kesesuaian */
     line-height: 1.0;  /* Jarak antara baris supaya selesa dibaca */
     color: #555;       /* Warna tulisan, pastikan sama dengan perenggan pertama */
-    margin-bottom: 20px; /* Penting: Ini untuk beri jarak antara perenggan */
+    margin-bottom: 10px; /* Penting: Ini untuk beri jarak antara perenggan */
 }
