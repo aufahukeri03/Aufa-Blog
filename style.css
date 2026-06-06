@@ -1129,3 +1129,44 @@ footer {
 .project-link-btn:hover i {
     transform: translateX(4px); /* Anak panah meluncur ke kanan sikit */
 }
+/* ==========================================================================
+   KEMASAN PREMIUM: BUTANG BACK TO PORTFOLIO (MINIMALIST)
+   ========================================================================== */
+.back-to-portfolio-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;                  /* Jarak antara ikon anak panah & teks */
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #7d7768;            /* Warna Sage Green lembut anda */
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: 1px solid transparent; /* Garisan halimunan sebelum di-hover */
+    border-radius: 4px;
+    background-color: #fdfcf7;  /* Warna latar belakang off-white yang warm */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+    transition: all 0.3s ease;  /* Animasi smooth */
+}
+
+/* Ikon anak panah di dalam butang */
+.back-to-portfolio-btn i {
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+/* ==========================================================================
+   EFFECT HOVER: BILA USER SENTUH BUTANG BACK TO PORTFOLIO
+   ========================================================================== */
+.back-to-portfolio-btn:hover {
+    color: #5c564b;             /* Tukar tulisan jadi coklat gelap lembut */
+    background-color: #f5f2e9;  /* Latar belakang jadi sedikit gelap/warm */
+    border-color: #e8e5d8;      /* Garisan luar halus muncul */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+
+.back-to-portfolio-btn:hover i {
+    transform: translateX(-4px); /* Anak panah meluncur ke kiri sikit */
+}
