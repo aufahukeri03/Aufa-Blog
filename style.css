@@ -1070,3 +1070,20 @@ footer {
     display: inline-block; /* Memastikan saiz butang, padding, & margin kekal tegak */
     color: #ffffff;        /* Tukar warna teks mengikut tema asal anda jika perlu */
 }
+/* ==========================================================================
+   EFFECT HOVER: TUKAR WARNA BUTANG BILA USER SENTUH
+   ========================================================================== */
+
+/* Pastikan nama class ini (.read-more-btn) sama dengan nama class butang anda */
+.read-more-btn {
+    /* Tambah baris ini di dalam class butang asal jika belum ada, 
+       supaya pertukaran warna nampak licin/smooth selama 0.3 saat */
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+}
+
+.read-more-btn:hover {
+    background-color: #7d7768; /* Warna bertukar ke Sage/Olive lembut tema anda */
+    color: #ffffff;            /* Kekalkan tulisan warna putih */
+    cursor: pointer;           /* Tukar bentuk mouse jadi ikon tangan penunjuk */
+    transform: translateY(-2px); /* Kesan magik: butang akan naik atas sikit bila disentuh! */
+}
