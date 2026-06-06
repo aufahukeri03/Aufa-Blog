@@ -998,7 +998,7 @@ footer {
     100% { transform: translateY(0px); }
 }
 /* ==========================================================================
-   ANIMASI MENAIP PENDEK (BERHENTI DI INFORMATICS MEDIA STUDENT)
+   ANIMATION: FIX TYPING EFFECT BERHENTI TEPAT PADA TEKS
    ========================================================================== */
 
 .typing-title {
@@ -1008,21 +1008,24 @@ footer {
     color: #7d7768; /* Warna sage/olive lembut tema anda */
     margin-bottom: 20px;
     
+    /* ─── KOD MAGIK PENYELASAI ─── */
+    display: inline-block;     /* Memaksa lebar kotak mengikut saiz tulisan sahaja, bukan saiz skrin */
+    width: 0;                  /* Bermula dari kosong */
+    
     overflow: hidden; 
     white-space: nowrap; 
     border-right: 3px solid #7d7768; 
     
-    width: 0;
-    /* Masa dipendekkan ke 2.5 saat & steps dilaraskan ke 25 mengikut jumlah huruf */
+    /* Animasi dilaraskan menggunakan ch (character unit) untuk ketepatan maksimum */
     animation: 
         playTyping 2.5s steps(25, end) forwards, 
         blinkCursor 0.75s step-end infinite;
 }
 
-/* --- Keyframes kekal sama --- */
+/* --- Keyframes Diperbaharui Menggunakan Unit 'ch' (Ikut Bilangan Huruf) --- */
 @keyframes playTyping {
     from { width: 0; }
-    to { width: 100%; }
+    to { width: 25ch; } /* '25ch' bermaksud lebar kotak akan berhenti tepat pada huruf ke-25! */
 }
 
 @keyframes blinkCursor {
