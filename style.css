@@ -1157,45 +1157,54 @@ footer {
 }
 
 /* ==========================================================================
-   REKA BENTUK KOTAK ESTETIK & MODEN (PREMIUM BOX DESIGN)
+   REKA BENTUK MODEN: BUTANG KOTAK + ANAK PANAH DALAM BULATAN
    ========================================================================== */
 .back-to-portfolio-btn {
     display: inline-flex;
     align-items: center;
-    gap: 10px;                  /* Jarak antara anak panah dan tulisan */
-    padding: 10px 24px;         /* Ruang dalam kotak yang seimbang */
+    gap: 14px;                  /* Jarakkan bulatan ikon dengan teks */
+    padding: 10px 24px 10px 16px; /* Padding kiri dikurangkan sikit supaya bulatan nampak seimbang */
     font-size: 0.8rem;
     font-weight: 600;
-    color: #7d7768;             /* Warna Sage Green lembut anda */
+    color: #5c564b;             /* Warna coklat warm premium */
     text-decoration: none;
     text-transform: uppercase;
-    letter-spacing: 0.08em;     /* Jarakkan huruf untuk gaya moden */
-    background-color: #ffffff;  /* Warna kotak putih bersih supaya timbul */
-    border: 1px solid #e8e5d8;  /* Garisan sempadan yang sangat nipis & lembut */
-    border-radius: 8px;         /* Bucu membulat yang lembut dan premium */
-    box-shadow: 0 2px 8px rgba(125, 119, 104, 0.08); /* Bayang halus berwarna warm */
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Animasi pergerakan yang sangat smooth */
+    letter-spacing: 0.08em;
+    background-color: #ffffff;  /* Latar belakang kotak putih bersih */
+    border: 1px solid #e8e5d8;  /* Garisan sempadan halus */
+    border-radius: 12px;        /* Bucu kotak membulat moden */
+    box-shadow: 0 4px 12px rgba(125, 119, 104, 0.05); /* Bayang lembut */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Reka bentuk ikon anak panah di dalam kotak */
+/* REKA BENTUK BULATAN UNTUK IKON */
 .back-to-portfolio-btn i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;                /* Lebar bulatan */
+    height: 32px;               /* Tinggi bulatan */
     font-size: 0.85rem;
-    transition: transform 0.3s ease;
+    color: #7d7768;             /* Warna asal ikon (sage green) */
+    background-color: #f5f3ec;  /* Latar belakang bulatan kelabu/sage lembut */
+    border-radius: 50px;        /* Menjadikannya bulatan sempurna */
+    transition: all 0.3s ease;  /* Animasi lancar untuk pergerakan bulatan */
 }
 
 /* ==========================================================================
-   EFFECT HOVER: BILA TETIKUS SENTUH KOTAK
+   EFFECT HOVER: BILA USER SENTUH BUTANG
    ========================================================================== */
 .back-to-portfolio-btn:hover {
-    color: #7d7768;             /* Tukar tulisan jadi warna putih */
-    background-color: #7d7768;  /* Kotak dipenuhi warna sage green sepenuhnya */
-    border-color: #7d7768;      /* Sempadan bertukar warna sage green */
-    box-shadow: 0 6px 15px rgba(125, 119, 104, 0.2); /* Bayang jadi lebih dalam/cantik */
-    transform: translateY(-2px); /* Kotak naik ke atas sedikit (kesan terapung) */
+    color: #7d7768;             /* Tulisan bertukar warna sage lembut */
+    border-color: #cdcaa7;      /* Garisan luar kotak menjadi sedikit pekat */
+    box-shadow: 0 6px 20px rgba(125, 119, 104, 0.12); /* Bayang lebih dalam */
+    transform: translateY(-2px); /* Kotak terapung naik sikit */
     cursor: pointer;
 }
 
-/* Anak panah meluncur ke kiri sedikit bila hover */
+/* Perubahan pada bulatan ikon apabila butang di-hover */
 .back-to-portfolio-btn:hover i {
-    transform: translateX(-4px);
+    color: #ffffff;             /* Ikon anak panah bertukar jadi putih */
+    background-color: #7d7768;  /* Bulatan dipenuhi warna sage green sepenuhnya */
+    transform: translateX(-4px); /* Seluruh bulatan meluncur ke kiri sikit */
 }
