@@ -997,19 +997,38 @@ footer {
     50% { transform: translateY(-4px); } /* Naik sikit secara lembut */
     100% { transform: translateY(0px); }
 }
-.intro-lead {
-    overflow: hidden;
-    border-right: 2px solid #7d7768; /* Garisan cursor menaip */
-    white-space: nowrap;
-    animation: typingEffect 3.5s steps(40, end), blinkCursor 0.75s step-end infinite;
-    max-width: fit-content;
+/* ==========================================================================
+   ANIMASI MENAIP JELAS & TAIP SAMPAI HABIS (UNTUK GELARAN DIRi)
+   ========================================================================== */
+
+.typing-title {
+    font-family: inherit;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #7d7768; /* Warna sage/olive lembut tema anda */
+    margin-bottom: 20px;
+    
+    /* Kod Utama Efek Menaip */
+    overflow: hidden; /* Menyembunyikan teks yang belum ditaip */
+    white-space: nowrap; /* Memaksa teks kekal sebaris */
+    border-right: 3px solid #7d7768; /* Garisan kursor yang berkelip */
+    
+    /* Logik pergerakan: width bermula dari 0% hingga 100% sepenuhnya */
+    width: 0;
+    animation: 
+        playTyping 4s steps(45, end) forwards, 
+        blinkCursor 0.75s step-end infinite;
 }
-@keyframes typingEffect {
-    from { width: 0 }
-    to { width: 100% }
+
+/* ─── Keyframes: Mengembangkan lebar tulisan sampai 100% habis ─── */
+@keyframes playTyping {
+    from { width: 0; }
+    to { width: 100%; } /* Paksa taip sampai huruf terakhir */
 }
+
+/* ─── Keyframes: Kursor Berkelip-kelip ─── */
 @keyframes blinkCursor {
-    from, to { border-color: transparent }
+    from, to { border-color: transparent; }
     50% { border-color: #7d7768; }
 }
 .status-badge {
