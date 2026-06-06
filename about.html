@@ -42,62 +42,40 @@
 
     <!-- Main Content: About Me Layout -->
     <main class="content-container">
+        <h2 class="section-title">about me</h2>
         
-        <!-- FIX 1: Ditukar kepada "about" ringkas di bahagian luar -->
-        <h2 class="section-title">about</h2>
-        
-        <!-- FIX 2: Dibungkus ke dalam kad putih supaya animasi tools terkurung dengan kemas -->
-        <div class="about-card-container">
-            <div class="about-card-header">
-                <h2>About Me</h2>
+        <div class="about-layout">
+            <!-- Profile Image Section -->
+            <div class="about-image">
+                <img src="aufa.png" alt="My Profile">
             </div>
-            
-            <div class="about-layout">
-                <!-- Profile Image Section (Gambar anda dijamin muncul semula) -->
-                <div class="about-image">
-                    <img src="aufa.png" alt="My Profile">
-                </div>
 
-                <!-- Profile Info Section -->
-                <div class="about-text">
-                    <h1 class="profile-name">Aufa Maisarah Binti Shukeri</h1> 
+            <!-- Profile Info Section -->
+            <div class="about-text">
+                <h1 class="profile-name">Aufa Maisarah Binti Shukeri</h1> 
 
-                    <p class="intro-lead">Hello! I'm a passionate student currently pursuing my Bachelor of Information Technology (Informatics Media) with Honours at Universiti Sultan Zainal Abidin (UniSZA).</p>
-                    
-                    <p>My academic journey focuses on learning how to solve real-world problems through clean code, structured software engineering design, and modern web frameworks.</p>
-                    
-                    <p>Beyond classroom assignments, I love exploring UI/UX designs, creative media layouts, and learning how to build interactive user experiences that are both highly functional and aesthetically pleasing.</p>
+                <p class="intro-lead">Hello! I'm a passionate student currently pursuing my Bachelor of Information Technology (Informatics Media) with Honours at Universiti Sultan Zainal Abidin (UniSZA).</p>
+                
+                <p>My academic journey focuses on learning how to solve real-world problems through clean code, structured software engineering design, and modern web frameworks.</p>
+                
+                <p>Beyond classroom assignments, I love exploring UI/UX designs, creative media layouts, and learning how to build interactive user experiences that are both highly functional and aesthetically pleasing.</p>
 
-                    <!-- Skills Tags (Kini menggunakan animasi bergerak ke tepi non-stop yang diidamkan) -->
-                    <div class="skills-section">
-                        <h4>my tech stack & tools</h4>
-                        <div class="tech-marquee-container">
-                            <div class="tech-marquee-content">
-                                <!-- Set 1 -->
-                                <div class="tech-icon-box"><i class="fas fa-database"></i> <span>SQL</span></div>
-                                <div class="tech-icon-box"><i class="fab fa-unity"></i> <span>Unity</span></div>
-                                <div class="tech-icon-box"><i class="fas fa-cube"></i> <span>Blender</span></div>
-                                <div class="tech-icon-box"><i class="fab fa-js"></i> <span>JavaScript</span></div>
-                                <div class="tech-icon-box"><i class="fab fa-git-alt"></i> <span>Git</span></div>
-                                <div class="tech-icon-box"><i class="fab fa-github"></i> <span>GitHub</span></div>
-                                <div class="tech-icon-box"><i class="fas fa-code"></i> <span>VS Code</span></div>
-                                
-                                <!-- Set 2 (Diulang untuk sambungan animasi yang lancar) -->
-                                <div class="tech-icon-box"><i class="fas fa-database"></i> <span>SQL</span></div>
-                                <div class="tech-icon-box"><i class="fab fa-unity"></i> <span>Unity</span></div>
-                                <div class="tech-icon-box"><i class="fas fa-cube"></i> <span>Blender</span></div>
-                                <div class="tech-icon-box"><i class="fab fa-js"></i> <span>JavaScript</span></div>
-                                <div class="tech-icon-box"><i class="fab fa-git-alt"></i> <span>Git</span></div>
-                                <div class="tech-icon-box"><i class="fab fa-github"></i> <span>GitHub</span></div>
-                                <div class="tech-icon-box"><i class="fas fa-code"></i> <span>VS Code</span></div>
-                            </div>
-                        </div>
+                <!-- Skills Tags -->
+                <div class="skills-section">
+                    <h4>my tech stack & tools</h4>
+                    <div class="skills-tags">
+                        <span>SQL</span>
+                        <span>Unity</span>
+                        <span>Blender</span>
+                        <span>JavaScript</span>
+                        <span>Git & GitHub</span>
+                        <span>VS Code</span>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- --- SEKSYEN RESUME (Kekal Berkotak Premium) --- -->
+        <!-- --- DI SINI: BAHAGIAN BARU (RESUME PREVIEW & DOWNLOAD) --- -->
         <div class="resume-container">
             <div class="resume-header">
                 <h3>Resume</h3>
@@ -108,12 +86,12 @@
             
             <!-- Tempat User Boleh Review/Preview PDF -->
             <div class="resume-preview">
-                <!-- FIX 3: Tag penutup iframe telah dibetulkan semula di sini -->
                 <iframe src="resume-aufa.pdf" width="100%" height="600px" style="border: none;">
                     <p>Pelayar web anda tidak menyokong paparan PDF. <a href="resume-aufa.pdf">Klik sini untuk muat turun</a>.</p>
-                </iframe>
+                 iframe>
             </div>
         </div>
+        <!-- -------------------------------------------------------- -->
 
     </main>
 
