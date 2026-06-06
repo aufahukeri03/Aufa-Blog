@@ -1362,26 +1362,28 @@ footer {
         border-radius: 4px; 
         font-weight: bold; 
         border: 1px solid;
-        transition: all 0.3s ease; /* Ini yang buat dia tukar color smooth */
+        transition: all 0.3s ease;
     }
 
     /* Style YouTube */
     .btn-youtube {
         border-color: #ff0000;
-        color: #ff0000;
+        color: #ff0000; /* Warna asal teks */
     }
+    
     .btn-youtube:hover {
         background-color: #ff0000;
-        color: #ffffff;
+        color: #ffffff !important; /* Teks bertukar jadi PUTIH bila hover */
     }
 
     /* Style TikTok */
     .btn-tiktok {
         border-color: #fe2c55;
-        color: #fe2c55;
+        color: #fe2c55; /* Warna asal teks */
     }
+    
     .btn-tiktok:hover {
         background-color: #fe2c55;
-        color: #ffffff;
+        color: #ffffff !important; /* Teks bertukar jadi PUTIH bila hover */
     }
 </style>
