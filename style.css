@@ -1378,12 +1378,12 @@ footer {
 
     /* Style TikTok */
     .btn-tiktok {
-        border-color: #fe2c55;
-        color: #fe2c55; /* Warna asal teks */
+        border-color: #00f2ea;
+        color: #00f2ea; /* Warna asal teks */
     }
     
     .btn-tiktok:hover {
-        background-color: #fe2c55;
-        color: #ffffff !important; /* Teks bertukar jadi PUTIH bila hover */
+        background-color: #00f2ea;
+        color: #090606 !important; /* Teks bertukar jadi PUTIH bila hover */
     }
 </style>
