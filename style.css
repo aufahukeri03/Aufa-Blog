@@ -1387,3 +1387,50 @@ footer {
         color: #090606 !important; /* Teks bertukar jadi PUTIH bila hover */
     }
 </style>
+/* --- Palet Warna Maroon & Krim Minimalis --- */
+
+:root {
+    --color-maroon: #631015;
+    --color-cream: #fcfaf5;
+}
+
+/* 1. Background Utama (Krim) */
+body {
+    background-color: var(--color-cream) !important;
+    color: #4a4a4a !important; /* Teks guna kelabu gelap supaya tak terlalu tajam dengan maroon */
+}
+
+/* 2. Tajuk & Headings (Maroon) */
+h1, h2, h3, .logo, .typing-title {
+    color: var(--color-maroon) !important;
+}
+
+/* 3. Butang Utama (Maroon) */
+.submit-btn, .resume-btn, .project-link-btn, .read-more-btn {
+    background-color: var(--color-maroon) !important;
+    color: var(--color-cream) !important;
+    border: 1px solid var(--color-maroon) !important;
+}
+
+/* 4. Kad & Background Box (Krim lembut/Putih Bersih) */
+.post-card, .about-layout, .contact-layout, .resume-container, .audio-card-modern {
+    background-color: #ffffff !important; /* Putih bersih untuk kontras dengan background krim */
+    border: 1px solid #efeae9 !important; /* Border nipis */
+    box-shadow: 0 4px 15px rgba(99, 16, 21, 0.05) !important; /* Bayang halus maroon */
+}
+
+/* 5. Link & Hover (Maroon) */
+a {
+    color: var(--color-maroon) !important;
+}
+
+.nav-links a:hover, .post-card:hover {
+    color: var(--color-maroon) !important;
+    border-color: var(--color-maroon) !important;
+}
+
+/* 6. Ikon & Tag (Maroon) */
+.skills-tags span, .tag, .status-badge {
+    color: var(--color-maroon) !important;
+    border-color: var(--color-maroon) !important;
+}
