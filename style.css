@@ -1387,3 +1387,48 @@ footer {
         color: #090606 !important; /* Teks bertukar jadi PUTIH bila hover */
     }
 </style>
+/* Gaya Butang */
+.view-details-btn {
+    background: transparent;
+    border: 1.5px solid #8B8577; /* Warna kelabu-coklat dari screenshot */
+    color: #8B8577;
+    padding: 10px 25px;
+    border-radius: 30px; /* Bucu bulat (pill shape) */
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.view-details-btn:hover {
+    background: #8B8577;
+    color: white;
+}
+
+/* Gaya Modal (Tetingkap pop-up) */
+.modal {
+    display: none; 
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #F5F0E6; /* Warna latar belakang seperti dalam screenshot */
+    margin: 10% auto;
+    padding: 30px;
+    width: 70%;
+    border-radius: 20px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 20px; top: 10px;
+    font-size: 30px; cursor: pointer;
+}
+.modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); }
+.modal-content { background-color: #fcfaf5; margin: 10% auto; padding: 20px; width: 60%; border-radius: 15px; position: relative; }
+.close { position: absolute; right: 20px; top: 10px; cursor: pointer; font-size: 24px; }
+.view-details-btn { background: transparent; border: 1px solid #7a766c; color: #7a766c; padding: 8px 20px; border-radius: 20px; cursor: pointer; margin-top: 10px; }
+.view-details-btn:hover { background: #7a766c; color: #fff; }
