@@ -1,5 +1,5 @@
 /* --- Google Fonts --- */
-@import url('https://fonts.googleapis.com/css?family=Alex+Brush&family=Lora:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Lora:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 
 /* --- Reset & Gaya Asas --- */
 * {
@@ -9,8 +9,8 @@
 }
 
 body {
-    background-color: #fcfaf5; /* Warna Krim Baru */
-    color: #5a5245;
+    background-color: #fcfaf5; /* Krim */
+    color: #631015; /* Maroon */
     font-family: 'Plus Jakarta Sans', sans-serif;
     display: flex;
     flex-direction: column;
@@ -27,7 +27,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid #e6e2d3;
+    border-bottom: 1px solid #631015;
 }
 
 .navbar {
@@ -36,64 +36,422 @@ header {
     max-width: 1140px;
     margin: 0 auto;
     width: 100%;
+    position: relative;
 }
 
-/* --- Tukar Warna Utama kepada Maroon --- */
-.logo, .nav-links a, .hero-sub, .hero-title, .section-title, .ritual-section h2 {
-    color: #631015 !important;
+.logo {
+    font-family: 'Lora', serif;
+    color: #631015;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    margin-right: auto;
 }
 
-/* --- Butang Custom & Hover --- */
-.btn-custom {
-    display: inline-flex; 
-    align-items: center; 
-    gap: 8px; 
-    padding: 8px 16px; 
-    text-decoration: none; 
-    border-radius: 4px; 
-    font-weight: bold; 
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-links a {
+    color: #631015;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    padding: 6px 0;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #631015;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.nav-links a:hover::after, .nav-links a.active::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #631015;
+}
+
+.header-socials {
+    display: flex;
+    gap: 10px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #631015;
+    letter-spacing: 1px;
+    margin-left: auto;
+}
+
+.header-socials a {
+    color: #631015;
+    text-decoration: none;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.header-socials a:hover {
+    color: #631015;
+    transform: translateY(-1px);
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    max-width: 850px;
+    margin: 80px auto 50px auto;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-sub {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #631015;
+    margin-bottom: 25px;
+}
+
+.hero-title {
+    font-family: 'Lora', serif;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #631015;
+    letter-spacing: -0.2px;
+}
+
+/* --- Main Content --- */
+.content-container {
+    max-width: 1140px;
+    margin: 40px auto 90px auto;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-family: 'Alex Brush', cursive;
+    font-size: 56px;
+    color: #631015;
+    font-weight: 400;
+    margin-bottom: 35px;
+    text-transform: lowercase;
+}
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+}
+
+.post-card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    cursor: pointer;
+    background: #ffffff;
+    padding: 18px;
+    border-radius: 12px;
     border: 1px solid #631015;
-    background: transparent;
-    transition: 0.3s;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.image-wrapper {
+    background-color: #631015;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.post-card:hover {
+    border-color: #631015;
+    transform: translateY(-8px);
+}
+
+.card-meta .category, .card-meta .date { color: #631015; }
+
+.post-card h3 {
+    font-family: 'Lora', serif;
+    font-size: 17px;
     color: #631015;
 }
 
-.btn-custom:hover {
-    background: #631015;
-    color: #ffffff !important;
-}
-
-/* --- TikTok/Social Buttons (Kekal Struktur Asal) --- */
-.tiktok-btn-light.group { border-color: #631015; color: #631015; }
-.tiktok-btn-light.solo { border-color: #631015; color: #631015; }
-
-.tiktok-btn-light:hover {
-    background: #fcfaf5;
-    color: #631015;
-}
-
-/* --- Ritual Section (Theme Maroon) --- */
+/* --- Sunday Ritual Section --- */
 .ritual-section {
     background-color: #631015;
-    color: #ffffff;
-    padding: 80px 20px;
+    color: #fcfaf5;
+    padding: 90px 20px;
     text-align: center;
 }
 
 .ritual-section button {
-    background: #ffffff;
+    background-color: #fcfaf5;
     color: #631015;
-    padding: 15px 30px;
     border: none;
+    padding: 16px 38px;
+    border-radius: 30px;
+    font-weight: 600;
     cursor: pointer;
-    font-weight: bold;
-    border-radius: 4px;
 }
+
+/* --- About & Skills --- */
+.about-layout { background: #ffffff; padding: 45px; border-radius: 12px; border: 1px solid #631015; }
+.skills-tags span { background-color: #fcfaf5; color: #631015; border: 1px solid #631015; }
+.skills-tags span:hover { background-color: #631015; color: #fcfaf5; }
 
 /* --- Footer --- */
 footer {
-    padding: 40px;
-    text-align: center;
-    border-top: 1px solid #e6e2d3;
+    background-color: #fcfaf5;
     color: #631015;
+    text-align: center;
+    padding: 40px;
+    border-top: 1px solid #631015;
+}
+./* --- Blog Meta & Content --- */
+.blog-meta {
+    flex: 0 0 180px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.blog-date { color: #631015; opacity: 0.7; }
+.blog-category { color: #631015; }
+
+.blog-title a {
+    font-family: 'Lora', serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #631015;
+    text-decoration: none;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+    display: inline-block;
+}
+
+.blog-item:hover .blog-title a {
+    color: #631015;
+    padding-left: 6px;
+}
+
+.blog-excerpt { font-size: 14.5px; line-height: 1.7; color: #631015; opacity: 0.8; max-width: 720px; }
+
+/* --- Contact Page --- */
+.contact-layout {
+    display: flex; gap: 80px; margin-top: 20px; background: #ffffff; padding: 50px;
+    border-radius: 12px; border: 1px solid #631015; box-shadow: 0 10px 30px rgba(99, 16, 21, 0.05);
+}
+
+.contact-heading, .info-group p { color: #631015; }
+.contact-subtext { color: #631015; opacity: 0.8; }
+.info-group span { color: #631015; opacity: 0.6; }
+
+.contact-socials a { color: #631015; }
+.contact-socials a:hover { color: #631015; transform: translateY(-2px); }
+
+.form-group input, .form-group textarea {
+    background-color: #fcfaf5;
+    border: 1px solid #631015;
+    color: #631015;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: #631015;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(99, 16, 21, 0.1);
+}
+
+.submit-btn { background-color: #631015; color: #fcfaf5; }
+.submit-btn:hover { background-color: #4a0c10; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(99, 16, 21, 0.2); }
+
+/* --- Icons & Navigation --- */
+.icon-circle { background-color: #fcfaf5; color: #631015; border: 1px solid #631015; }
+.icon-circle:hover { background-color: #631015; color: #ffffff; }
+
+.nav-links a:hover { color: #631015; }
+
+/* --- Resume & About Containers --- */
+.resume-container, .about-card-container {
+    background: #ffffff; padding: 30px; border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(99, 16, 21, 0.05);
+}
+
+.resume-header, .about-card-header { border-bottom: 2px solid #fcfaf5; }
+.resume-header h3, .about-card-header h2 { color: #631015; }
+
+.resume-btn { background-color: #fcfaf5; color: #631015; border: 1px solid #631015; }
+.resume-btn:hover { background-color: #631015; color: #ffffff; }
+
+/* --- Marquee --- */
+.tech-icon-box { background-color: #fcfaf5; color: #631015; border: 1px solid #631015; }
+.tech-icon-box i { color: #631015; }
+
+/* --- Responsif (Media Queries) --- */
+@media (max-width: 900px) {
+    .contact-layout { flex-direction: column; padding: 30px 20px; }
+    .submit-btn { width: 100%; text-align: center; }
+}
+/* --- Animasi & Efek Utama --- */
+.content-container {
+    animation: fadeInPage 1s ease-out forwards;
+}
+
+@keyframes fadeInPage {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.about-image img {
+    animation: imageFloat 5s ease-in-out infinite;
+}
+
+@keyframes imageFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-4px); }
+}
+
+/* --- Status & Pulse --- */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: #631015;
+    margin-bottom: 15px;
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #631015;
+    border-radius: 50%;
+    position: relative;
+}
+
+.pulse-dot::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #631015;
+    border-radius: 50%;
+    animation: pulseAnimation 1.5s infinite ease-in-out;
+}
+
+@keyframes pulseAnimation {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(3); opacity: 0; }
+}
+
+/* --- Typing Effect --- */
+.typing-title {
+    font-family: inherit;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #631015;
+    margin-bottom: 10px;
+    display: inline-block;
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #631015;
+    animation: playTyping 1.8s steps(18, end) forwards, blinkCursor 0.75s step-end infinite;
+}
+
+@keyframes playTyping {
+    from { width: 0; }
+    to { width: 18ch; }
+}
+
+@keyframes blinkCursor {
+    from, to { border-color: transparent; }
+    50% { border-color: #631015; }
+}
+
+/* --- Butang (Custom, Project, Portfolio) --- */
+.read-more-btn, .project-link-btn, .back-to-portfolio-btn {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.read-more-btn:hover, .project-link-btn:hover {
+    background-color: #631015;
+    color: #fcfaf5 !important;
+}
+
+.project-link-btn {
+    border: 1.5px solid #631015;
+    color: #631015;
+    background-color: transparent;
+    padding: 10px 22px;
+    border-radius: 50px;
+}
+
+.back-to-portfolio-btn {
+    background-color: #ffffff;
+    border: 1px solid #631015;
+    color: #631015;
+    border-radius: 12px;
+}
+
+.back-to-portfolio-btn i {
+    background-color: #fcfaf5;
+    color: #631015;
+}
+
+.back-to-portfolio-btn:hover i {
+    background-color: #631015;
+    color: #fcfaf5;
+}
+
+/* --- Audio/TikTok/YouTube Cards --- */
+.audio-card-modern {
+    background: #fcfaf5;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #631015;
+}
+
+.btn-custom {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: bold;
+    border: 1px solid #631015;
+    color: #631015;
+    transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+    background-color: #631015;
+    color: #fcfaf5 !important;
+}
+
+/* --- Responsif (Media Queries) --- */
+@media screen and (max-width: 768px) {
+    .about-layout { flex-direction: column !important; align-items: center !important; }
+    .tech-marquee-container { overflow: hidden !important; }
 }
