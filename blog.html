@@ -5,13 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aufa | Blog — My Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    
-    <!-- 1. BARIS BARU: Dimasukkan di sini untuk panggil ikon Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- HEADER (Kekal Statik & Konsisten) -->
     <header>
         <nav class="navbar">
             <div class="logo">My Portfolio</div>
@@ -21,43 +18,47 @@
                 <li><a href="blog.html" class="active">BLOG</a></li>
                 <li><a href="contact.html">CONTACT</a></li>
             </ul>
-            
-            <!-- 2. DI SINI: Menggantikan bahagian Eng/Malay lama kepada Ikon Media Sosial Bulat -->
             <div class="header-social-icons">
-                <a href="https://linkedin.com/in/usernameanda" target="_blank" class="icon-circle linkedin" title="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://instagram.com/usernameanda" target="_blank" class="icon-circle instagram" title="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://facebook.com/usernameanda" target="_blank" class="icon-circle facebook" title="Facebook">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="mailto:emailanda@gmail.com" class="icon-circle email" title="Email">
-                    <i class="fas fa-envelope"></i>
-                </a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
             </div>
         </nav>
     </header>
 
-    <!-- MAIN CONTENT SECTION -->
     <main class="content-container">
         <h1 class="section-title">thoughtful writings</h1>
 
-        <!-- Senarai Artikel Blog -->
         <div class="blog-list">
             
+            <!-- Artikel Baharu -->
+            <article class="blog-item">
+                <div class="blog-meta">
+                    <span class="blog-date">June 07, 2026</span>
+                    <span class="blog-category">Design</span>
+                    <img src="path-ke-gambar-anda.jpg" alt="Blog Image" class="blog-img">
+                </div>
+                <div class="blog-content">
+                    <h2 class="blog-title"><a href="#">Building Seamless User Experiences...</a></h2>
+                    <p class="blog-excerpt">Exploring the delicate balance...</p>
+                    
+                    <button onclick="openModal('modal3')" class="view-details-btn">View Details →</button>
+                </div>
+            </article>
+
             <!-- Artikel 1 -->
             <article class="blog-item">
                 <div class="blog-meta">
                     <span class="blog-date">June 04, 2026</span>
                     <span class="blog-category">Tech & Design</span>
-                    <!-- Gambar baru ditambah di sini -->
-        <img src="path-ke-gambar-anda.jpg" alt="Blog Image" class="blog-img">
+                    <img src="path-ke-gambar-anda.jpg" alt="Blog Image" class="blog-img">
                 </div>
                 <div class="blog-content">
-                    <h2 class="blog-title"><a href="#">Building Seamless User Experiences in Modern Web Architecture</a></h2>
-                    <p class="blog-excerpt">Exploring the delicate balance between visual aesthetics, interface consistency, and clean front-end code in modern portfolio designs.</p>
+                    <h2 class="blog-title"><a href="#">Building Seamless User Experiences</a></h2>
+                    <p class="blog-excerpt">Exploring the delicate balance between visual aesthetics and clean front-end code.</p>
+                    
+                    <button onclick="openModal('modal1')" class="view-details-btn">View Details →</button>
                 </div>
             </article>
 
@@ -66,43 +67,64 @@
                 <div class="blog-meta">
                     <span class="blog-date">May 18, 2026</span>
                     <span class="blog-category">Development</span>
-                    <!-- Gambar baru ditambah di sini -->
-        <img src="path-ke-gambar-anda.jpg" alt="Blog Image" class="blog-img">
+                    <img src="path-ke-gambar-anda.jpg" alt="Blog Image" class="blog-img">
                 </div>
                 <div class="blog-content">
-                    <h2 class="blog-title"><a href="#">Why Visual Consistency is the Backbone of Premium UI/UX</a></h2>
-                    <p class="blog-excerpt">A deep dive into why keeping your navigation elements locked and predictable reduces cognitive load and creates an elite digital space.</p>
+                    <h2 class="blog-title"><a href="#">Why Visual Consistency is the Backbone</a></h2>
+                    <p class="blog-excerpt">A deep dive into why keeping your navigation elements locked is crucial.</p>
+                    
+                    <button onclick="openModal('modal2')" class="view-details-btn">View Details →</button>
                 </div>
             </article>
-
-            <!-- Artikel 3 -->
-            <article class="blog-item">
-                <div class="blog-meta">
-                    <span class="blog-date">April 30, 2026</span>
-                    <span class="blog-category">Photography</span>
-                    <!-- Gambar baru ditambah di sini -->
-        <img src="path-ke-gambar-anda.jpg" alt="Blog Image" class="blog-img">
-                </div>
-                <div class="blog-content">
-                    <h2 class="blog-title"><a href="#">Capturing Depth: Studio Lighting and Minimalist Compositions</a></h2>
-                    <p class="blog-excerpt">Behind the scenes of creating corporate editorial imagery with high-quality soft ambient shadows and crisp focus.</p>
-                </div>
-            </article>
-
         </div>
     </main>
 
-    <!-- FOOTER BANNER (Sunday Ritual) -->
-    <section class="ritual-section">
-        <h2>the sunday<span>ritual</span></h2>
-        <p>Setiap hujung minggu, saya berkongsi nota ringkas tentang pengaturcaraan, reka bentuk minimalis, dan proses kreatif digital terus ke peti mel anda.</p>
-        <button>SUBSCRIBE TO NEWSLETTER</button>
-    </section>
+    <!-- Modal 1 -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal1')">&times;</span>
+            <h2>Building Seamless User Experiences</h2>
+            <div class="modal-images">
+                <img src="gambar1.jpg" alt="Detail">
+            </div>
+            <p>Huraian lanjut tentang projek 1 di sini.</p>
+        </div>
+    </div>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>© 2026 My Portfolio. All Rights Reserved.</p>
-    </footer>
+    <!-- Modal 2 -->
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal2')">&times;</span>
+            <h2>Why Visual Consistency is the Backbone</h2>
+            <div class="modal-images">
+                <img src="gambar2.jpg" alt="Detail">
+            </div>
+            <p>Huraian lanjut tentang projek 2 di sini.</p>
+        </div>
+    </div>
+
+    <!-- Modal 3 (Untuk artikel baharu) -->
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal3')">&times;</span>
+            <h2>Building Seamless User Experiences...</h2>
+            <div class="modal-images">
+                <img src="gambar3.jpg" alt="Detail">
+            </div>
+            <p>Huraian lanjut tentang artikel baharu di sini.</p>
+        </div>
+    </div>
+
+    <script>
+        function openModal(id) { document.getElementById(id).style.display = "block"; }
+        function closeModal(id) { document.getElementById(id).style.display = "none"; }
+        window.onclick = function(event) {
+            var modals = document.getElementsByClassName('modal');
+            for (var i = 0; i < modals.length; i++) {
+                if (event.target == modals[i]) { modals[i].style.display = "none"; }
+            }
+        }
+    </script>
 
 </body>
 </html>

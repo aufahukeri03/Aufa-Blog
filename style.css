@@ -1387,22 +1387,20 @@ footer {
         color: #090606 !important; /* Teks bertukar jadi PUTIH bila hover */
     }
 </style>
-.blog-entry {
-    display: flex;
-    align-items: flex-start; /* Pastikan ia bermula dari atas */
-    margin-bottom: 40px;
+.view-details-btn {
+    background: transparent;          /* Tiada warna latar belakang */
+    border: none;                     /* Tiada kotak */
+    border-bottom: 2px solid #7a766c; /* Garisan bawah dengan warna dari Screenshot 2026-06-07 234940.png */
+    color: #7a766c;                   /* Warna teks dari Screenshot 2026-06-07 234940.png */
+    padding: 2px 0;                   /* Padding nipis supaya tidak nampak besar */
+    font-size: 0.9rem;                /* Saiz teks minimalis */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-top: 10px;
 }
 
-.meta-section {
-    width: 200px; /* Lebar bahagian kiri */
-    flex-shrink: 0;
-}
-
-.blog-img {
-    width: 150px; /* Saiz gambar supaya tidak terlalu besar */
-    height: 100px; /* Tetapkan ketinggian supaya seragam */
-    object-fit: cover; /* Supaya gambar tidak senget */
-    margin-top: 15px; /* Jarak antara teks kategori dengan gambar */
-    border-radius: 4px; /* Sedikit lengkung untuk nampak kemas */
-    border: 1px solid #ddd;
+.view-details-btn:hover {
+    color: #5a574f;                   /* Warna sedikit lebih gelap bila hover */
+    border-bottom: 2px solid #5a574f; /* Garisan bawah bertukar warna bila hover */
 }
