@@ -1512,3 +1512,24 @@ footer {
     color: #ffffff !important;           /* Tukar teks jadi warna putih */
     border-color: #8B8577 !important;    /* Pastikan border kekal coklat */
 }
+/* Pastikan blog-item disusun secara mendatar */
+.blog-item {
+    display: flex;
+    align-items: flex-start; /* Jajar ke atas */
+    gap: 20px; /* Jarak antara gambar dan teks */
+    padding: 20px 0;
+}
+
+/* Tetapkan saiz gambar supaya kecil dan konsisten */
+.blog-img {
+    width: 150px; /* Anda boleh ubah saiz ini (contoh: 120px atau 150px) */
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px; /* Bucu bulat sedikit */
+    flex-shrink: 0; /* Pastikan gambar tidak mengecut */
+}
+
+/* Pastikan kandungan teks mengambil ruang selebihnya */
+.blog-content {
+    flex: 1;
+}
