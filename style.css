@@ -1490,3 +1490,21 @@ footer {
     background: #8B8577;
     color: white;
 }
+.view-details-btn {
+    background: transparent !important;
+    border: 1.5px solid #8B8577 !important;
+    color: #8B8577 !important;
+    
+    /* Padding kecil */
+    padding: 5px 15px !important; 
+    
+    /* Paksa butang jadi kecil mengikut teks */
+    display: inline-flex !important;
+    width: fit-content !important; 
+    
+    border-radius: 30px !important;
+    cursor: pointer !important;
+    font-size: 13px !important; /* Saiz font lebih kecil */
+    font-weight: 600 !important;
+    transition: 0.3s !important;
+}
