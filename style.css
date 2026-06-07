@@ -1387,20 +1387,3 @@ footer {
         color: #090606 !important; /* Teks bertukar jadi PUTIH bila hover */
     }
 </style>
-.view-details-btn {
-    background: transparent;          /* Tiada warna latar belakang */
-    border: none;                     /* Tiada kotak */
-    border-bottom: 2px solid #7a766c; /* Garisan bawah dengan warna dari Screenshot 2026-06-07 234940.png */
-    color: #7a766c;                   /* Warna teks dari Screenshot 2026-06-07 234940.png */
-    padding: 2px 0;                   /* Padding nipis supaya tidak nampak besar */
-    font-size: 0.9rem;                /* Saiz teks minimalis */
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: inline-block;
-    margin-top: 10px;
-}
-
-.view-details-btn:hover {
-    color: #5a574f;                   /* Warna sedikit lebih gelap bila hover */
-    border-bottom: 2px solid #5a574f; /* Garisan bawah bertukar warna bila hover */
-}
