@@ -1490,21 +1490,25 @@ footer {
     background: #8B8577;
     color: white;
 }
+/* 1. Gaya butang asal (Normal) */
 .view-details-btn {
-    background: transparent !important;
-    border: 1.5px solid #8B8577 !important;
-    color: #8B8577 !important;
+    background: transparent !important; /* Latar belakang lutsinar */
+    border: 1.5px solid #8B8577 !important; /* Warna border asal */
+    color: #8B8577 !important; /* Warna teks asal */
     
-    /* Padding kecil */
     padding: 5px 15px !important; 
-    
-    /* Paksa butang jadi kecil mengikut teks */
-    display: inline-flex !important;
-    width: fit-content !important; 
-    
     border-radius: 30px !important;
     cursor: pointer !important;
-    font-size: 13px !important; /* Saiz font lebih kecil */
+    font-size: 13px !important;
     font-weight: 600 !important;
-    transition: 0.3s !important;
+    display: inline-flex !important;
+    width: fit-content !important;
+    transition: 0.3s !important; /* Efek transisi yang lancar */
+}
+
+/* 2. Gaya apabila mouse berada di atas butang (Hover) */
+.view-details-btn:hover {
+    background-color: #8B8577 !important; /* Tukar background jadi warna coklat */
+    color: #ffffff !important;           /* Tukar teks jadi warna putih */
+    border-color: #8B8577 !important;    /* Pastikan border kekal coklat */
 }
