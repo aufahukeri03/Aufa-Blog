@@ -72,17 +72,25 @@
         </div>
     </main>
 
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal3')">&times;</span>
+            <h2>Photography</h2> 
+            
+            <div class="image-gallery">
+                <img src="gambar1.jpg" alt="Edited Photo" class="gallery-img">
+                <img src="gambar2.jpg" alt="Lighting" class="gallery-img">
+                <img src="gambar3.jpg" alt="Behind the Scenes" class="gallery-img">
+            </div>
+            
+            <p class="modal-description">
+                I have experience in photography and photo editing. This experience helped me improve my creativity, composition, lighting, posing, and visual storytelling skills.
+            </p>
+        </div>
+    </div>
+
     <div id="modal1" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('modal1')">&times;</span><h2>Projek 1</h2><p>Huraian lanjut...</p></div></div>
     <div id="modal2" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('modal2')">&times;</span><h2>Projek 2</h2><p>Huraian lanjut...</p></div></div>
-    <div id="modal3" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('modal3')">&times;</span><h2>Projek 3</h2><p>Huraian lanjut...</p></div></div>
-
-    <script>
-        function openModal(id) { document.getElementById(id).style.display = "block"; }
-        function closeModal(id) { document.getElementById(id).style.display = "none"; }
-        window.onclick = function(event) {
-            if (event.target.className === 'modal') { event.target.style.display = "none"; }
-        }
-    </script>
 
     <section class="ritual-section">
         <h2>the sunday<span>ritual</span></h2>
@@ -93,7 +101,7 @@
     <footer>
         <p>© 2026 My Portfolio. All Rights Reserved.</p>
     </footer>
-    <!-- Letakkan skrip ini di penghujung fail blog.html, sebelum </body> -->
+
     <script>
         function openModal(id) { 
             document.getElementById(id).style.display = "block"; 
@@ -101,7 +109,6 @@
         function closeModal(id) { 
             document.getElementById(id).style.display = "none"; 
         }
-        // Skrip untuk tutup modal jika pengguna klik di luar kawasan modal
         window.onclick = function(event) {
             var modals = document.getElementsByClassName('modal');
             for (var i = 0; i < modals.length; i++) {

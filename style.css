@@ -1432,3 +1432,34 @@ footer {
 .close { position: absolute; right: 20px; top: 10px; cursor: pointer; font-size: 24px; }
 .view-details-btn { background: transparent; border: 1px solid #7a766c; color: #7a766c; padding: 8px 20px; border-radius: 20px; cursor: pointer; margin-top: 10px; }
 .view-details-btn:hover { background: #7a766c; color: #fff; }
+/* Gaya untuk modal content */
+.modal-content {
+    background-color: #F5EFE0; /* Warna latar belakang krim seperti dalam Screenshot 2026-06-07 233224_3.png */
+    border-radius: 30px;       /* Bucu yang sangat bulat */
+    padding: 40px;
+    width: 80%;
+    max-width: 900px;
+    margin: 5% auto;
+    position: relative;
+}
+
+/* Susunan gambar secara mendatar (Flexbox) */
+.image-gallery {
+    display: flex;
+    gap: 15px;                 /* Jarak antara gambar */
+    margin: 20px 0;
+}
+
+.gallery-img {
+    width: 30%;                /* Setiap gambar mengambil 30% lebar */
+    height: auto;
+    border-radius: 15px;       /* Gambar berbucu bulat */
+    object-fit: cover;
+}
+
+/* Gaya teks huraian */
+.modal-description {
+    font-size: 1.1rem;
+    color: #4a4a4a;
+    line-height: 1.6;
+}
