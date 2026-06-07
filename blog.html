@@ -31,6 +31,7 @@
         <h1 class="section-title">thoughtful writings</h1>
 
         <div class="blog-list">
+            <!-- Artikel 1: Tech & Design -->
             <article class="blog-item">
                 <div class="blog-meta">
                     <span class="blog-date">June 04, 2026</span>
@@ -38,12 +39,13 @@
                     <img src="path-ke-gambar-anda.jpg" alt="Blog Image" class="blog-img">
                 </div>
                 <div class="blog-content">
-                    <h2 class="blog-title"><a href="#">Building Seamless User Experiences in Modern Web Architecture</a></h2>
-                    <p class="blog-excerpt">Exploring the delicate balance between visual aesthetics, interface consistency, and clean front-end code.</p>
+                    <h2 class="blog-title"><a href="#">Building Seamless User Experiences</a></h2>
+                    <p class="blog-excerpt">Exploring the balance between visual aesthetics and clean code.</p>
                     <button class="view-details-btn" onclick="openModal('modal1')">VIEW DETAILS →</button>
                 </div>
             </article>
 
+            <!-- Artikel 2: Development -->
             <article class="blog-item">
                 <div class="blog-meta">
                     <span class="blog-date">May 18, 2026</span>
@@ -51,12 +53,13 @@
                     <img src="path-ke-gambar-anda.jpg" alt="Blog Image" class="blog-img">
                 </div>
                 <div class="blog-content">
-                    <h2 class="blog-title"><a href="#">Why Visual Consistency is the Backbone of Premium UI/UX</a></h2>
-                    <p class="blog-excerpt">A deep dive into why keeping your navigation elements locked and predictable reduces cognitive load.</p>
+                    <h2 class="blog-title"><a href="#">Visual Consistency in UI/UX</a></h2>
+                    <p class="blog-excerpt">Why navigation elements should be locked and predictable.</p>
                     <button class="view-details-btn" onclick="openModal('modal2')">VIEW DETAILS →</button>
                 </div>
             </article>
 
+            <!-- Artikel 3: Photography -->
             <article class="blog-item">
                 <div class="blog-meta">
                     <span class="blog-date">April 30, 2026</span>
@@ -64,59 +67,69 @@
                     <img src="path-ke-gambar-anda.jpg" alt="Blog Image" class="blog-img">
                 </div>
                 <div class="blog-content">
-                    <h2 class="blog-title"><a href="#">Capturing Depth: Studio Lighting and Minimalist Compositions</a></h2>
-                    <p class="blog-excerpt">Behind the scenes of creating corporate editorial imagery with high-quality soft ambient shadows.</p>
+                    <h2 class="blog-title"><a href="#">Capturing Depth</a></h2>
+                    <p class="blog-excerpt">Behind the scenes of studio lighting and compositions.</p>
                     <button class="view-details-btn" onclick="openModal('modal3')">VIEW DETAILS →</button>
                 </div>
             </article>
         </div>
     </main>
 
+    <!-- Modal 1: Tech & Design -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal1')">&times;</span>
+            <h2>Tech & Design</h2>
+            <div class="image-gallery">
+                <img src="img1.jpg" alt="Pic 1" class="gallery-img">
+                <img src="img2.jpg" alt="Pic 2" class="gallery-img">
+                <img src="img3.jpg" alt="Pic 3" class="gallery-img">
+            </div>
+            <p class="modal-description">Huraian tentang projek Tech & Design anda di sini.</p>
+        </div>
+    </div>
+
+    <!-- Modal 2: Development -->
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal2')">&times;</span>
+            <h2>Development</h2>
+            <div class="image-gallery">
+                <img src="img1.jpg" alt="Pic 1" class="gallery-img">
+                <img src="img2.jpg" alt="Pic 2" class="gallery-img">
+                <img src="img3.jpg" alt="Pic 3" class="gallery-img">
+            </div>
+            <p class="modal-description">Huraian tentang projek Development anda di sini.</p>
+        </div>
+    </div>
+
+    <!-- Modal 3: Photography -->
     <div id="modal3" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('modal3')">&times;</span>
-            <h2>Photography</h2> 
-            
+            <h2>Photography</h2>
             <div class="image-gallery">
                 <img src="gambar1.jpg" alt="Edited Photo" class="gallery-img">
                 <img src="gambar2.jpg" alt="Lighting" class="gallery-img">
                 <img src="gambar3.jpg" alt="Behind the Scenes" class="gallery-img">
             </div>
-            
-            <p class="modal-description">
-                I have experience in photography and photo editing. This experience helped me improve my creativity, composition, lighting, posing, and visual storytelling skills.
-            </p>
+            <p class="modal-description">I have experience in photography and photo editing. This experience helped me improve my creativity, composition, lighting, posing, and visual storytelling skills.</p>
         </div>
     </div>
 
-    <div id="modal1" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('modal1')">&times;</span><h2>Projek 1</h2><p>Huraian lanjut...</p></div></div>
-    <div id="modal2" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('modal2')">&times;</span><h2>Projek 2</h2><p>Huraian lanjut...</p></div></div>
-
-    <section class="ritual-section">
-        <h2>the sunday<span>ritual</span></h2>
-        <p>Setiap hujung minggu, saya berkongsi nota ringkas tentang pengaturcaraan, reka bentuk minimalis.</p>
-        <button>SUBSCRIBE TO NEWSLETTER</button>
-    </section>
+    <script>
+        function openModal(id) { document.getElementById(id).style.display = "block"; }
+        function closeModal(id) { document.getElementById(id).style.display = "none"; }
+        window.onclick = function(event) {
+            var modals = document.getElementsByClassName('modal');
+            for (var i = 0; i < modals.length; i++) {
+                if (event.target == modals[i]) { modals[i].style.display = "none"; }
+            }
+        }
+    </script>
 
     <footer>
         <p>© 2026 My Portfolio. All Rights Reserved.</p>
     </footer>
-
-    <script>
-        function openModal(id) { 
-            document.getElementById(id).style.display = "block"; 
-        }
-        function closeModal(id) { 
-            document.getElementById(id).style.display = "none"; 
-        }
-        window.onclick = function(event) {
-            var modals = document.getElementsByClassName('modal');
-            for (var i = 0; i < modals.length; i++) {
-                if (event.target == modals[i]) { 
-                    modals[i].style.display = "none"; 
-                }
-            }
-        }
-    </script>
 </body>
 </html>
