@@ -1390,7 +1390,7 @@ footer {
 /* Gaya Butang */
 .view-details-btn {
     background: transparent;
-    border: 1.5px solid #8B8577; /* Warna kelabu-coklat dari screenshot */
+    border: 0.5px solid #8B8577; /* Warna kelabu-coklat dari screenshot */
     color: #8B8577;
     padding: 10px 25px;
     border-radius: 30px; /* Bucu bulat (pill shape) */
