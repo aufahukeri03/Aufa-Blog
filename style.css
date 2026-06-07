@@ -1387,3 +1387,48 @@ footer {
         color: #090606 !important; /* Teks bertukar jadi PUTIH bila hover */
     }
 </style>
+/* --- TEMA MAROON & CREAM (KONSISTEN UNTUK SELURUH LAMAN) --- */
+:root {
+    /* Warna yang diambil daripada gaya yang anda mahukan */
+    --maroon-utama: #631015;  /* Warna untuk tajuk, butang, dan aksen */
+    --krim-latar: #fcfaf5;    /* Warna latar belakang kad/kontena */
+    --krim-background: #f5efe6; /* Warna latar belakang laman utama */
+    --sempadan-halus: #dcd4c9; /* Warna garis sempadan */
+    --teks-gelap: #333333;   /* Warna teks utama */
+}
+
+/* Mengaplikasikan tema kepada seluruh elemen */
+body {
+    background-color: var(--krim-background) !important;
+    color: var(--teks-gelap) !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--maroon-utama) !important;
+}
+
+/* Kotak/Kad yang konsisten */
+.card, .container-box {
+    background: var(--krim-latar) !important;
+    border: 1px solid var(--sempadan-halus) !important;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+/* Butang yang seragam */
+.btn-tema {
+    background-color: transparent;
+    border: 1px solid var(--maroon-utama) !important;
+    color: var(--maroon-utama) !important;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-tema:hover {
+    background-color: var(--maroon-utama) !important;
+    color: #ffffff !important;
+}
