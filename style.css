@@ -1390,13 +1390,18 @@ footer {
 /* Gaya Butang */
 .view-details-btn {
     background: transparent;
-    border: 0.5px solid #8B8577; /* Warna kelabu-coklat dari screenshot */
+    border: 1.5px solid #8B8577;
     color: #8B8577;
-    padding: 10px 25px;
-    border-radius: 30px; /* Bucu bulat (pill shape) */
+    /* Kurangkan padding untuk mengecilkan saiz butang */
+    padding: 6px 16px; 
+    border-radius: 30px;
     cursor: pointer;
     font-weight: bold;
     transition: 0.3s;
+    /* Tambahkan ini supaya butang mengikut saiz teks sahaja */
+    display: inline-block; 
+    width: auto; 
+    font-size: 0.9rem; /* Pilihan: Kecilkan sedikit saiz font */
 }
 
 .view-details-btn:hover {
