@@ -1,5 +1,5 @@
 /* --- Google Fonts --- */
-@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Lora:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Alex+Brush&family=Lora:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 
 /* --- Reset & Gaya Asas --- */
 * {
@@ -9,8 +9,8 @@
 }
 
 body {
-    background-color: #f7f4eb; /* Cream warm beige */
-    color: #5a5245; 
+    background-color: #fcfaf5;
+    color: #5a5245;
     font-family: 'Plus Jakarta Sans', sans-serif;
     display: flex;
     flex-direction: column;
@@ -19,1371 +19,146 @@ body {
     scroll-behavior: smooth;
 }
 
-/* --- Navigasi (Header) - MUTLAK & TETAP --- */
+/* --- Navigasi --- */
 header {
-    background-color: rgba(247, 244, 235, 0.95);
+    background-color: rgba(252, 250, 245, 0.95);
     backdrop-filter: blur(8px);
     padding: 25px 40px;
     position: sticky;
     top: 0;
     z-index: 1000;
     border-bottom: 1px solid #e6e2d3;
-}
-
-.navbar {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    max-width: 1140px;
-    margin: 0 auto;
-    width: 100%;
-    position: relative; /* Menjadi paksi rujukan untuk kedudukan tengah */
 }
 
 .logo {
     font-family: 'Lora', serif;
-    color: #4a4439;
+    color: #631015;
     font-size: 24px;
     font-weight: 600;
     letter-spacing: -0.5px;
-    margin-right: auto; /* Tolak semua elemen lain ke kanan */
 }
 
 .nav-links {
-    list-style: none;
     display: flex;
-    gap: 35px;
-    /* Trik tegar untuk kunci menu betul-betul di tengah navbar tanpa hiraukan elemen kanan */
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    gap: 30px;
 }
 
 .nav-links a {
-    color: #8a7e6e;
+    color: #631015;
     text-decoration: none;
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
-    position: relative;
-    padding: 6px 0;
     transition: color 0.3s ease;
+    position: relative;
 }
 
 .nav-links a::after {
     content: '';
     position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
+    bottom: -5px;
     left: 0;
-    background-color: #93907c;
-    transform: scaleX(0);
-    transform-origin: bottom right;
-    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.nav-links a:hover::after, .nav-links a.active::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-}
-
-.nav-links a:hover, .nav-links a.active {
-    color: #4a4439;
-}
-
-/* Tulisan bahasa/socials akan sentiasa duduk di hujung kanan */
-.header-socials {
-    display: flex;
-    gap: 10px;
-    font-size: 11px;
-    font-weight: 700;
-    color: #b5ab9a;
-    letter-spacing: 1px;
-    margin-left: auto; 
-}
-
-.header-socials a {
-    color: #8a7e6e;
-    text-decoration: none;
-    transition: color 0.2s, transform 0.2s;
-}
-
-@media (max-width: 900px) {
-    .nav-links {
-        position: static;
-        transform: none;
-        gap: 20px;
-    }
-}
-
-/* Animasi garisan bawah dari kiri ke kanan yang sangat smooth */
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    width: 100%;
+    width: 0;
     height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #93907c;
-    transform: scaleX(0);
-    transform-origin: bottom right;
-    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    background-color: #631015;
+    transition: width 0.3s ease;
 }
 
-.nav-links a:hover::after, .nav-links a.active::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-}
+.nav-links a:hover::after { width: 100%; }
 
-.nav-links a:hover, .nav-links a.active {
-    color: #4a4439;
-}
-
-/* Header Socials di hujung kanan */
-.header-socials {
-    display: flex;
-    gap: 10px;
-    font-size: 11px;
-    font-weight: 700;
-    color: #b5ab9a;
-    letter-spacing: 1px;
-}
-
-.header-socials a {
-    color: #8a7e6e;
-    text-decoration: none;
-    transition: color 0.2s, transform 0.2s;
-}
-
-.header-socials a:hover {
-    color: #93907c;
-    transform: translateY(-1px);
-}
-
-/* --- Hero Welcome Section Layout --- */
-.hero-section {
-    max-width: 850px;
-    margin: 80px auto 50px auto;
+/* --- Hero Section --- */
+.hero {
+    padding: 80px 40px;
     text-align: center;
-    padding: 0 20px;
 }
 
-.hero-sub {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 4px;
-    color: #93907c;
-    margin-bottom: 25px;
-}
+.hero-sub { color: #631015; font-size: 14px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 20px; }
+.hero-title { color: #631015; font-family: 'Lora', serif; font-size: 60px; margin-bottom: 20px; }
 
-.hero-title {
-    font-family: 'Lora', serif;
-    font-size: 36px;
-    font-weight: 400;
-    line-height: 1.6;
-    color: #4a4439;
-    letter-spacing: -0.2px;
-}
-
-/* --- Main Content Section --- */
-.content-container {
-    max-width: 1140px;
-    margin: 40px auto 90px auto;
-    width: 100%;
-    padding: 0 20px;
-}
-
-.section-title {
-    font-family: 'Alex Brush', cursive;
-    font-size: 56px;
-    color: #4a4439;
-    font-weight: 400;
-    margin-bottom: 35px;
-    text-transform: lowercase;
-}
-
-/* Grid Susunan Kad Gambar */
-.posts-grid {
+/* --- Post Cards --- */
+.grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 35px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 40px;
 }
 
 .post-card {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    cursor: pointer;
-    background: #ffffff; 
-    padding: 18px; 
-    border-radius: 12px;
-    border: 1px solid rgba(230, 226, 211, 0.7); 
-    box-shadow: 0 4px 6px rgba(74, 68, 57, 0.01), 0 10px 20px rgba(74, 68, 57, 0.02);
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    background: #ffffff;
+    border: 1px solid #e6e2d3;
+    padding: 20px;
+    transition: all 0.3s ease;
 }
 
-.image-wrapper {
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    overflow: hidden;
-    border-radius: 8px;
-    background-color: #4a4439;
-}
+.post-card:hover { border-color: #631015; transform: translateY(-5px); }
+.post-card:hover h3 { color: #631015; }
 
-.image-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.95;
-    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
-    filter: grayscale(10%) brightness(98%);
-}
-
-.post-card:hover {
-    box-shadow: 0 20px 38px rgba(74, 68, 57, 0.07), 0 8px 16px rgba(147, 144, 124, 0.03);
-    transform: translateY(-8px);
-    border-color: #93907c;
-}
-
-.post-card:hover .image-wrapper img {
-    transform: scale(1.06);
-    filter: grayscale(0%) brightness(102%);
-    opacity: 1;
-}
-
-.card-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    margin-top: 2px;
-}
-
-.card-meta .category {
-    color: #93907c;
-}
-
-.card-meta .date {
-    color: #b5ab9a;
-}
-
-.post-card h3 {
-    font-family: 'Lora', serif;
-    font-size: 17px;
-    font-weight: 500;
-    line-height: 1.4;
-    color: #4a4439;
-    transition: color 0.3s ease;
-}
-
-.post-card:hover h3 {
-    color: #93907c;
-}
-
-.post-card .card-desc {
-    font-size: 13.5px;
-    line-height: 1.6;
-    color: #7d7261;
-    font-weight: 400;
-}
-
-/* --- Sunday Ritual Section (Olive Green Footer Banner) --- */
+/* --- Sunday Ritual Section --- */
 .ritual-section {
-    background-color: #93907c; 
-    color: #f7f4eb;
+    background-color: #631015;
+    color: #fcfaf5;
+    padding: 60px 40px;
     text-align: center;
-    padding: 90px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-    border-top: 1px solid #e6e2d3;
-}
-
-.ritual-section h2 {
-    font-family: 'Lora', serif;
-    font-size: 38px;
-    font-weight: 400;
-    letter-spacing: 0.5px;
-    text-transform: lowercase;
-}
-
-.ritual-section h2 span {
-    font-family: 'Alex Brush', cursive;
-    font-size: 58px;
-    display: inline-block;
-    margin-left: 6px;
-}
-
-.ritual-section p {
-    font-size: 15.5px;
-    max-width: 650px;
-    line-height: 1.8;
-    color: #e6e2d3;
-    font-weight: 300;
 }
 
 .ritual-section button {
-    background-color: #4e4d41; 
-    color: #f7f4eb;
+    background-color: #ffffff;
+    color: #631015;
+    padding: 12px 30px;
     border: none;
-    padding: 16px 38px;
-    border-radius: 30px;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 2.5px;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(78, 77, 65, 0.2);
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.ritual-section button:hover {
-    background-color: #3b3a31;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(78, 77, 65, 0.35);
-}
-
-/* --- About Page Styling --- */
-.about-layout {
-    display: flex;
-    gap: 60px;
-    align-items: center;
-    margin-top: 10px;
-    background: #ffffff;
-    padding: 45px;
-    border-radius: 12px;
-    border: 1px solid rgba(230, 226, 211, 0.7);
-    box-shadow: 0 10px 30px rgba(74, 68, 57, 0.02);
-}
-
-.about-image {
-    flex: 1;
-    max-width: 380px;
-    aspect-ratio: 3 / 4;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 15px 35px rgba(74, 68, 57, 0.08);
-}
-
-.about-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.about-text {
-    flex: 1.3;
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
-}
-
-.intro-lead {
-    font-family: 'Lora', serif;
-    font-size: 24px;
-    line-height: 1.6;
-    color: #4a4439;
-}
-
-.about-text p {
-    font-size: 15px;
-    line-height: 1.8;
-    color: #7d7261;
-}
-
-.skills-section h4 {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 12px;
-    color: #4a4439;
-    margin-bottom: 16px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 700;
-}
-
-.skills-tags {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-
-.skills-tags span {
-    background-color: #e6e2d3;
-    color: #4a4439;
-    padding: 8px 18px;
-    border-radius: 6px;
-    font-size: 11px;
     font-weight: 600;
-    letter-spacing: 0.5px;
-    transition: all 0.3s;
-}
-
-.skills-tags span:hover {
-    background-color: #93907c;
-    color: #f7f4eb;
-    transform: translateY(-2px);
-}
-
-/* --- Footer --- */
-footer {
-    background-color: #f7f4eb;
-    color: #9c9281;
-    text-align: center;
-    padding: 40px;
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    border-top: 1px solid #e6e2d3;
-}
-
-/* --- Responsive Layout (FIXED NAVBAR NAVIGATION) --- */
-@media (max-width: 900px) {
-    header {
-        padding: 20px;
-    }
-
-    /* Memastikan susunan horizontal kekal statik dan tidak berubah bertingkat */
-    .navbar {
-        flex-direction: row; 
-        justify-content: space-between;
-    }
-
-    .nav-links {
-        gap: 20px; /* Kurangkan gap sikit di peranti kecil supaya muat */
-    }
-
-    .hero-section {
-        margin: 50px auto 30px auto;
-    }
-
-    .hero-title {
-        font-size: 26px;
-    }
-
-    .posts-grid {
-        grid-template-columns: 1fr;
-        gap: 35px;
-    }
-
-    .about-layout {
-        flex-direction: column;
-        padding: 25px;
-        gap: 35px;
-    }
-}
-/* --- Blog Page Styling --- */
-.blog-list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px; /* Jarak antara garisan artikel */
-    margin-top: 20px;
-}
-
-.blog-item {
-    display: flex;
-    gap: 60px;
-    padding: 40px 0;
-    border-bottom: 1px solid rgba(230, 226, 211, 0.8);
-    transition: all 0.3s ease;
-}
-
-/* Memastikan artikel terakhir tiada garisan bawah */
-.blog-item:last-child {
-    border-bottom: none;
-}
-
-.blog-meta {
-    flex: 0 0 180px; /* Menetapkan lebar tetap untuk zon tarikh & kategori */
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-}
-
-.blog-date {
-    color: #b5ab9a;
-}
-
-.blog-category {
-    color: #93907c;
-}
-
-.blog-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-}
-
-.blog-title a {
-    font-family: 'Lora', serif;
-    font-size: 22px;
-    font-weight: 500;
-    line-height: 1.4;
-    color: #4a4439;
-    text-decoration: none;
-    transition: color 0.3s ease, padding-left 0.3s ease;
-    display: inline-block;
-}
-
-/* Efek mikro-interaksi premium apabila tajuk artikel di-hover */
-.blog-item:hover .blog-title a {
-    color: #93907c;
-    padding-left: 6px; /* Tajuk akan beranjak sedikit ke kanan dengan sangat lembut */
-}
-
-.blog-excerpt {
-    font-size: 14.5px;
-    line-height: 1.7;
-    color: #7d7261;
-    max-width: 720px;
-}
-
-/* --- Responsif untuk Blog --- */
-@media (max-width: 768px) {
-    .blog-item {
-        flex-direction: column;
-        gap: 15px;
-        padding: 30px 0;
-    }
-    
-    .blog-meta {
-        flex: none;
-        flex-direction: row;
-        gap: 20px;
-    }
-    
-    .blog-title a {
-        font-size: 19px;
-    }
-}
-/* --- Contact Page Styling --- */
-.contact-layout {
-    display: flex;
-    gap: 80px;
-    margin-top: 20px;
-    background: #ffffff;
-    padding: 50px;
-    border-radius: 12px;
-    border: 1px solid rgba(230, 226, 211, 0.7);
-    box-shadow: 0 10px 30px rgba(74, 68, 57, 0.02);
-}
-
-.contact-info {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
-
-.contact-heading {
-    font-family: 'Lora', serif;
-    font-size: 28px;
-    font-weight: 500;
-    line-height: 1.4;
-    color: #4a4439;
-}
-
-.contact-subtext {
-    font-size: 15px;
-    line-height: 1.8;
-    color: #7d7261;
-}
-
-.info-details {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin: 10px 0;
-}
-
-.info-group span {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    color: #93907c;
-    display: block;
-    margin-bottom: 4px;
-}
-
-.info-group p {
-    font-family: 'Lora', serif;
-    font-size: 18px;
-    color: #4a4439;
-}
-
-.contact-socials {
-    display: flex;
-    gap: 25px;
-    margin-top: auto; /* Paksa pautan sosial duduk di bahagian paling bawah lajur */
-    padding-top: 20px;
-}
-
-.contact-socials a {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    color: #8a7e6e;
-    text-decoration: none;
-    transition: color 0.3s, transform 0.2s;
-}
-
-.contact-socials a:hover {
-    color: #93907c;
-    transform: translateY(-2px);
-}
-
-/* --- Susunan Borang Kanan --- */
-.contact-form-container {
-    flex: 1.2;
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.form-group label {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    color: #4a4439;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 14px 16px;
-    background-color: #f7f4eb; /* Warna input match dengan warna asal web */
-    border: 1px solid rgba(230, 226, 211, 0.8);
-    border-radius: 6px;
-    color: #5a5245;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 14px;
-    transition: all 0.3s ease;
-}
-
-/* Efek fokus yang licin apabila user klik kotak input */
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: #93907c;
-    background-color: #ffffff; /* Tukar jadi putih tulen semasa menaip */
-    box-shadow: 0 4px 12px rgba(147, 144, 124, 0.05);
-}
-
-/* Butang Hantar Mesej */
-.submit-btn {
-    background-color: #93907c;
-    color: #f7f4eb;
-    border: none;
-    padding: 16px 30px;
-    border-radius: 6px;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    align-self: flex-start; /* Butang tidak memanjang penuh */
-}
-
-.submit-btn:hover {
-    background-color: #4e4d41;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(78, 77, 65, 0.2);
-}
-
-/* --- Responsif Layout untuk Contact --- */
-@media (max-width: 900px) {
-    .contact-layout {
-        flex-direction: column;
-        padding: 30px 20px;
-        gap: 40px;
-    }
-    
-    .contact-socials {
-        margin-top: 20px;
-    }
-    
-    .submit-btn {
-        width: 100%; /* Butang memanjang penuh pada telefon bimbit */
-        text-align: center;
-    }
-}
-/* --- Gaya Ikon Media Sosial Bulat di Header --- */
-.header-social-icons {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-}
-
-.icon-circle {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background-color: #f0ebe0; /* Warna asal bulatan (kelabu/beige lembut) */
-    color: #4a4439; /* Warna ikon di dalam */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    font-size: 14px;
-    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-/* --- Efek Hover Mengikut Warna Screenshot 2026-06-05 221722.png --- */
-/* LinkedIn akan bertukar jadi warna Gold/Kuning Mustard apabila di-hover */
-.icon-circle.linkedin:hover {
-    background-color: #4a4439; /* Tukar jadi warna gelap premium */
-    color: #ffffff;
-    transform: translateY(-3px); /* Ikon melonjak sedikit ke atas */
-    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
-}
-
-/* Hover untuk Instagram, Facebook & Email (Sama ada nak kekal warna gold atau warna gelap) */
-.icon-circle.instagram:hover,
-.icon-circle.facebook:hover,
-.icon-circle.email:hover {
-    background-color: #4a4439; /* Tukar jadi warna gelap premium */
-    color: #ffffff;
-    transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(74, 68, 57, 0.2);
-}
-/* --- Animasi Melonjak untuk Teks Menu Navigasi --- */
-.nav-links a {
-    display: inline-block; /* Wajib ada supaya fungsi transform boleh berjalan pada teks */
-    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), color 0.3s ease;
-}
-
-/* Efek apabila mouse digerakkan di atas menu HOME, ABOUT, BLOG, CONTACT */
-.nav-links a:hover {
-    transform: translateY(-6px); /* Teks menu melonjak 6px ke atas */
-    color: #d4af37; /* Opsional: Tukar warna teks ke Gold semasa hover supaya sedondon dengan ikon LinkedIn */
-}
-
-/* Kekalkan kedudukan teks yang sedang aktif (class="active") supaya tidak pelik, atau jika anda mahu ia boleh melonjak juga */
-.nav-links a.active:hover {
-    transform: translateY(-6px);
-}
-/* --- Bahagian Preview & Muat Turun Resume --- */
-.resume-container {
-    margin-top: 50px;
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Shadow halus korporat */
-}
-
-.resume-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #f4f4f4;
-    padding-bottom: 15px;
-}
-
-.resume-header h3 {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.6rem;
-    color: #1a1a1a;
-    margin: 0;
-}
-
-.resume-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #e6dfd3; /* Tukar ke warna beige cair (seperti tag SQL/Unity) */
-    color: #2b3a42; /* Warna teks gelap lembut supaya kontra dan mudah dibaca */
-    text-decoration: none;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    border-radius: 6px; /* Tukar ke 6px supaya sama bulat dengan tag tech stack */
-    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Kesan melonjak 3px yang sedondon */
-.resume-btn:hover {
-    transform: translateY(-3px);
-    background-color: #928e7d; /* Tukar ke warna sage/olive green (seperti tag VS Code) */
-    color: #ffffff; /* Tukar teks kepada putih semasa hover supaya tulisan jelas */
-    box-shadow: 0 5px 15px rgba(146, 142, 125, 0.3); /* Shadow halus menggunakan tona sage green */
-}
-
-.resume-btn i {
-    margin-right: 6px;
-}
-
-/* Bingkai Kotak Preview PDF */
-.resume-preview {
-    background: #f9f9f9;
-    border: 1px solid #e0e0e0;
-    border-radius: 6px;
-    overflow: hidden;
-}
-
-/* Responsif untuk paparan telefon bimbit */
-@media (max-width: 768px) {
-    .resume-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
-    
-    .resume-preview iframe {
-        height: 450px; /* Kurangkan ketinggian preview pada skrin telefon */
-    }
-}
-/* --- Gaya Kontena Kad About Me (Sebiji Macam Resume-Container) --- */
-.about-card-container {
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Bayang halus korporat */
-    margin-bottom: 40px; /* Jarak pemisah antara kad About Me dan kad Resume */
-}
-
-/* Header di dalam kad About Me */
-.about-card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 25px;
-    border-bottom: 2px solid #f4f4f4; /* Garisan pemisah halus bawah tajuk */
-    padding-bottom: 15px;
-}
-
-/* Tulisan tajuk H2 "About Me" */
-.about-card-header h2 {
-    font-family: 'Playfair Display', 'Georgia', serif;
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #1a1a1a;
-    margin: 0;
-    letter-spacing: -0.5px;
-}
-
-/* Melaraskan kedudukan susunan gambar & teks di dalam kad */
-.about-layout {
-    display: flex;
-    gap: 40px;
-    align-items: flex-start;
-}
-
-/* --- Kontena Utama Marquee Ikon --- */
-.tech-marquee-container {
-    width: 100%;
-    overflow: hidden;
-    padding: 10px 0;
-    white-space: nowrap;
-    display: flex;
-    position: relative;
-}
-
-/* --- Mengunci kedudukan kad About Me supaya sama dengan Resume --- */
-.about-card-container {
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    margin-bottom: 40px;
-}
-
-.about-card-header {
-    margin-bottom: 25px;
-    border-bottom: 2px solid #f4f4f4;
-    padding-bottom: 15px;
-}
-
-.about-card-header h2 {
-    font-family: 'Playfair Display', 'Georgia', serif;
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #1a1a1a;
-    margin: 0;
-}
-/* ==========================================================================
-   KOD PENSTABIL MARQUEE KHAS (GAMBAR KEKAL & TEKS TAKKAN TERKELUAR)
-   ========================================================================== */
-
-/* 1. Paksa ruang teks biodata supaya tidak boleh ditolak oleh barisan ikon */
-.about-text {
-    flex: 1;
-    min-width: 0; /* Kod wajib supaya kontena tahu had maksimum skrin */
-}
-
-/* 2. Mengurung sepenuhnya animasi marquee di dalam dinding teks biodata sahaja */
-.tech-marquee-container {
-    width: 100%;
-    max-width: 100%; /* Menghalang kontena daripada membesar mengikut panjang ikon */
-    overflow: hidden; /* Memotong terus mana-mana ikon yang terkeluar dari sempadan */
-    white-space: nowrap;
-    display: block; /* Menggunakan block supaya ia mengambil baris baru yang selamat */
-    position: relative;
-    margin-top: 15px;
-    padding: 5px 0;
-}
-
-/* 3. Barisan bergerak yang mengandungi ikon */
-.tech-marquee-content {
-    display: inline-flex; /* Guna inline-flex supaya logik transform -50% berfungsi dengan tepat */
-    gap: 15px;
-    animation: scrollTech 20s linear infinite;
-}
-
-/* 4. Reka bentuk kotak tag kemahiran mengikut bentuk asal dalam Screenshot */
-.tech-icon-box {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 18px;
-    background-color: #e6dfd3; /* Warna beige lembut asal anda */
-    color: #2b3a42;
-    font-size: 0.9rem;
-    font-weight: 500;
-    border-radius: 8px;
-    box-sizing: border-box;
-}
-
-/* Warna ikon kecil di dalam kotak tag */
-.tech-icon-box i {
-    font-size: 1rem;
-    color: #7d7768;
-}
-
-/* 5. Logik pergerakan animasi berpusing tanpa henti */
-@keyframes scrollTech {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%); /* Bergerak separuh sahaja kerana Set 2 adalah klon Set 1 */
-    }
-}
-/* Efek fade-in untuk kandungan utama */
-.content-container {
-    animation: fadeInPage 1s ease-out forwards;
-}
-
-@keyframes fadeInPage {
-    0% {
-        opacity: 0;
-        transform: translateY(20px); /* Muncul dari bawah sedikit */
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-.about-image img {
-    animation: imageFloat 5s ease-in-out infinite;
-}
-@keyframes imageFloat {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-4px); } /* Naik sikit secara lembut */
-    100% { transform: translateY(0px); }
-}
-.status-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.85rem;
-    color: #666;
-    margin-bottom: 15px;
-}
-.pulse-dot {
-    width: 8px;
-    height: 8px;
-    background-color: #8da399; /* Warna sage green pastel */
-    border-radius: 50%;
-    position: relative;
-}
-.pulse-dot::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: #8da399;
-    border-radius: 50%;
-    animation: pulseAnimation 1.5s infinite ease-in-out;
-}
-@keyframes pulseAnimation {
-    0% { transform: scale(1); opacity: 1; }
-    100% { transform: scale(3); opacity: 0; }
-}
-/* ==========================================================================
-   ANIMATION: FIX TYPING EFFECT BERHENTI TEPAT PADA TEKS
-   ========================================================================== */
-
-.typing-title {
-    font-family: inherit;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #7d7768; /* Warna sage/olive lembut tema anda */
-    margin-bottom: 10px;
-    
-    /* ─── KOD MAGIK PENYELASAI ─── */
-    display: inline-block;     /* Memaksa lebar kotak mengikut saiz tulisan sahaja, bukan saiz skrin */
-    width: 0;                  /* Bermula dari kosong */
-    
-    overflow: hidden; 
-    white-space: nowrap; 
-    border-right: 3px solid #7d7768; 
-    
-    /* Animasi dilaraskan menggunakan ch (character unit) untuk ketepatan maksimum */
-    animation: 
-        playTyping 1.8s steps(18, end) forwards, 
-        blinkCursor 0.75s step-end infinite;
-}
-
-/* --- Keyframes Diperbaharui Menggunakan Unit 'ch' (Ikut Bilangan Huruf) --- */
-@keyframes playTyping {
-    from { width: 0; }
-    to { width: 18ch; } /* '25ch' bermaksud lebar kotak akan berhenti tepat pada huruf ke-25! */
-}
-
-@keyframes blinkCursor {
-    from, to { border-color: transparent; }
-    50% { border-color: #7d7768; }
-}
-/* ==========================================================================
-   KEMASAN BUTANG READ MORE (MENGEKALKAN STYLING ASAL SELEPAS JADI LINK)
-   ========================================================================== */
-.read-more-btn {
-    text-decoration: none; /* Membuang garisan bawah teks link */
-    display: inline-block; /* Memastikan saiz butang, padding, & margin kekal tegak */
-    color: #ffffff;        /* Tukar warna teks mengikut tema asal anda jika perlu */
-}
-/* ==========================================================================
-   EFFECT HOVER: TUKAR WARNA BUTANG BILA USER SENTUH
-   ========================================================================== */
-
-/* Pastikan nama class ini (.read-more-btn) sama dengan nama class butang anda */
-.read-more-btn {
-    /* Tambah baris ini di dalam class butang asal jika belum ada, 
-       supaya pertukaran warna nampak licin/smooth selama 0.3 saat */
-    transition: background-color 0.3s ease, transform 0.2s ease; 
-}
-
-.read-more-btn:hover {
-    background-color: #7d7768; /* Warna bertukar ke Sage/Olive lembut tema anda */
-    color: #ffffff;            /* Kekalkan tulisan warna putih */
-    cursor: pointer;           /* Tukar bentuk mouse jadi ikon tangan penunjuk */
-    transform: translateY(-2px); /* Kesan magik: butang akan naik atas sikit bila disentuh! */
-}
-/* ==========================================================================
-   KEMASAN PREMIUM: BUTANG VIEW DETAILS ESTETIK (MINIMALIST)
-   ========================================================================== */
-.project-link-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-    padding: 10px 22px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: #7d7768;            /* Warna Sage Green lembut asal anda */
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    border: 1.5px solid #7d7768; /* Garisan luar butang (Outlined) */
-    border-radius: 50px;       /* Bentuk kapsul bulat yang kemas */
-    background-color: transparent;
-    transition: all 0.3s ease; /* Animasi lancar untuk semua pertukaran */
-}
-
-/* Ikon anak panah di dalam butang */
-.project-link-btn i {
-    margin-left: 8px;
-    font-size: 0.85rem;
-    transition: transform 0.3s ease;
-}
-
-/* ==========================================================================
-   EFFECT HOVER: BILA USER SENTUH BUTANG VIEW DETAILS
-   ========================================================================== */
-.project-link-btn:hover {
-    background-color: #7d7768; /* Penuhkan latar belakang dengan warna sage */
-    color: #ffffff;            /* Tukar tulisan jadi warna putih */
-    box-shadow: 0 4px 12px rgba(125, 119, 104, 0.2); /* Kesan bayang lembut */
-    transform: translateY(-2px); /* Butang naik atas sedikit */
-    cursor: pointer;
-}
-
-.project-link-btn:hover i {
-    transform: translateX(4px); /* Anak panah meluncur ke kanan sikit */
-}
-/* ==========================================================================
-   KEMASAN PREMIUM: BUTANG BACK TO PORTFOLIO (MINIMALIST)
-   ========================================================================== */
-.back-to-portfolio-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;                  /* Jarak antara ikon anak panah & teks */
-    padding: 8px 16px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #7d7768;            /* Warna Sage Green lembut anda */
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    border: 1px solid transparent; /* Garisan halimunan sebelum di-hover */
-    border-radius: 4px;
-    background-color: #fdfcf7;  /* Warna latar belakang off-white yang warm */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
-    transition: all 0.3s ease;  /* Animasi smooth */
-}
-
-/* Ikon anak panah di dalam butang */
-.back-to-portfolio-btn i {
-    font-size: 0.9rem;
-    transition: transform 0.3s ease;
-}
-
-/* ==========================================================================
-   REKA BENTUK MODEN: BUTANG KOTAK + ANAK PANAH DALAM BULATAN
-   ========================================================================== */
-.back-to-portfolio-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 14px;                  /* Jarakkan bulatan ikon dengan teks */
-    padding: 10px 24px 10px 16px; /* Padding kiri dikurangkan sikit supaya bulatan nampak seimbang */
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: #5c564b;             /* Warna coklat warm premium */
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    background-color: #ffffff;  /* Latar belakang kotak putih bersih */
-    border: 1px solid #e8e5d8;  /* Garisan sempadan halus */
-    border-radius: 12px;        /* Bucu kotak membulat moden */
-    box-shadow: 0 4px 12px rgba(125, 119, 104, 0.05); /* Bayang lembut */
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-/* REKA BENTUK BULATAN UNTUK IKON */
-.back-to-portfolio-btn i {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;                /* Lebar bulatan */
-    height: 32px;               /* Tinggi bulatan */
-    font-size: 0.85rem;
-    color: #7d7768;             /* Warna asal ikon (sage green) */
-    background-color: #f5f3ec;  /* Latar belakang bulatan kelabu/sage lembut */
-    border-radius: 50px;        /* Menjadikannya bulatan sempurna */
-    transition: all 0.3s ease;  /* Animasi lancar untuk pergerakan bulatan */
-}
-
-/* ==========================================================================
-   EFFECT HOVER: BILA USER SENTUH BUTANG
-   ========================================================================== */
-.back-to-portfolio-btn:hover {
-    color: #7d7768;             /* Tulisan bertukar warna sage lembut */
-    border-color: #cdcaa7;      /* Garisan luar kotak menjadi sedikit pekat */
-    box-shadow: 0 6px 20px rgba(125, 119, 104, 0.12); /* Bayang lebih dalam */
-    transform: translateY(-2px); /* Kotak terapung naik sikit */
-    cursor: pointer;
-}
-
-/* Perubahan pada bulatan ikon apabila butang di-hover */
-.back-to-portfolio-btn:hover i {
-    color: #ffffff;             /* Ikon anak panah bertukar jadi putih */
-    background-color: #7d7768;  /* Bulatan dipenuhi warna sage green sepenuhnya */
-    transform: translateX(-4px); /* Seluruh bulatan meluncur ke kiri sikit */
-}
-/* ==========================================================================
-   PEMBAIKAN TOTAL: FIX RESPONSIF & KAWALAN OVERFLOW MARQUEE TECH STACK
-   ========================================================================== */
-@media screen and (max-width: 768px) {
-    
-    /* 1. Paksa layout utama turun ke bawah secara menegak */
-    .about-layout {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 10px !important;
-        box-sizing: border-box !important;
-        overflow: hidden !important; /* Menghalang sebarang komponen dalaman terkeluar */
-    }
-
-    /* 2. Kawalan saiz gambar profil */
-    .about-image {
-        width: 100% !important;
-        max-width: 260px !important; 
-        margin: 0 auto 20px auto !important;
-        display: flex !important;
-        justify-content: center !important;
-    }
-
-    .about-image img {
-        width: 100% !important;
-        height: auto !important;
-        display: block !important;
-    }
-
-    /* 3. Kotak teks dipaksa mengikut lebar skrin telefon sepenuhnya */
-    .about-text {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 0 10px !important; 
-        box-sizing: border-box !important;
-        display: block !important;
-        overflow: hidden !important; /* Mengunci kandungan teks di dalam skrin */
-    }
-
-    /* 4. Elakkan nama panjang terpotong atau terkeluar */
-    .profile-name {
-        font-size: 1.6rem !important;     /* Kecilkan sedikit lagi saiz di phone */
-        white-space: normal !important;   /* Membenarkan tulisan turun baris baharu */
-        word-wrap: break-word !important; 
-        overflow-wrap: break-word !important;
-        line-height: 1.3 !important;
-    }
-
-    /* 5. Memastikan perenggan teks responsif */
-    .about-text p {
-        font-size: 0.95rem !important;
-        line-height: 1.6 !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-        word-wrap: break-word !important;
-    }
-
-    /* ==========================================================================
-       PUNCA UTAMA: MENJINAKKAN ANIMASI MARQUEE SUPAYA TIDAK MENOLAK KOTAK
-       ========================================================================== */
-    .skills-section {
-        width: 100% !important;
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-        overflow: hidden !important;
-    }
-
-    .tech-marquee-container {
-        width: 100% !important;
-        max-width: 100% !important;
-        overflow: hidden !important; /* Memotong ikon yang berjalan di luar sempadan skrin phone */
-        box-sizing: border-box !important;
-        display: block !important;
-    }
-
-    .tech-marquee-content {
-        display: flex !important;
-        /* Kekalkan animasi berjalan melintang tetapi disembunyikan hujungnya oleh container */
-    }
-}
-.intro-lead {
-    /* Gaya untuk tulisan intro */
-    font-size: 1.1rem; /* Contoh saiz, boleh ubah ikut kesesuaian */
-    line-height: 1.0;  /* Jarak antara baris supaya selesa dibaca */
-    color: #555;       /* Warna tulisan, pastikan sama dengan perenggan pertama */
-    margin-bottom: 5px; /* Penting: Ini untuk beri jarak antara perenggan */
-}
-/* Container Utama */
-.audio-tech-container {
-    margin: 40px 0;
-}
-
-.audio-cards-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-/* Gaya Kad - Warna Konsisten (Krim) */
-.audio-card-modern {
-    background: #fdfcf7; 
-    padding: 25px;
-    border-radius: 8px;
-    border: 1px solid #e8e5d8;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
-}
-
-.card-title {
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: #1a1a1a;
-    margin-bottom: 12px;
-}
-
-.audio-card-modern p {
-    color: #666;
-    margin-bottom: 20px;
-}
-
-/* Gaya Butang - Konsisten */
-.tiktok-btn-light {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: bold;
-    border: 1px solid #ccc;
-    background: transparent;
     transition: 0.3s;
 }
 
-/* Warna border butang ikut gaya TikTok */
-.tiktok-btn-light.group { border-color: #00f2ea; color: #00f2ea; }
-.tiktok-btn-light.solo { border-color: #fe2c55; color: #fe2c55; }
+.ritual-section button:hover { background-color: #e6e2d3; }
 
-.tiktok-btn-light:hover {
-    background: #f0eee9;
+/* --- About & Skills --- */
+.skills-tags span {
+    background-color: #e6e2d3;
+    color: #631015;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin: 5px;
+    display: inline-block;
 }
-<style>
-    /* Reset & Transition untuk semua butang */
-    .btn-custom {
-        display: inline-flex; 
-        align-items: center; 
-        gap: 8px; 
-        padding: 8px 16px; 
-        text-decoration: none; 
-        border-radius: 4px; 
-        font-weight: bold; 
-        border: 1px solid;
-        transition: all 0.3s ease;
-    }
 
-    /* Style YouTube */
-    .btn-youtube {
-        border-color: #ff0000;
-        color: #ff0000; /* Warna asal teks */
-    }
-    
-    .btn-youtube:hover {
-        background-color: #ff0000;
-        color: #ffffff !important; /* Teks bertukar jadi PUTIH bila hover */
-    }
+.skills-tags span:hover { background-color: #631015; color: #ffffff; }
 
-    /* Style TikTok */
-    .btn-tiktok {
-        border-color: #00f2ea;
-        color: #00f2ea; /* Warna asal teks */
-    }
-    
-    .btn-tiktok:hover {
-        background-color: #00f2ea;
-        color: #090606 !important; /* Teks bertukar jadi PUTIH bila hover */
-    }
-</style>
+/* --- Contact Page --- */
+.submit-btn {
+    background-color: #631015;
+    color: #ffffff;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.submit-btn:hover { background-color: #8c1b22; }
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e6e2d3;
+    margin-top: 5px;
+}
+
+.form-group input:focus, .form-group textarea:focus { border-color: #631015; outline: none; }
+
+/* --- Ikon Sosial --- */
+.icon-circle:hover { background-color: #631015; color: #ffffff; }
+
+/* --- Footer --- */
+footer {
+    padding: 40px;
+    text-align: center;
+    border-top: 1px solid #e6e2d3;
+    color: #631015;
+}
