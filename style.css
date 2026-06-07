@@ -9,7 +9,7 @@
 }
 
 body {
-    background-color: #fcfaf5;
+    background-color: #fcfaf5; /* Warna Krim Baru */
     color: #5a5245;
     font-family: 'Plus Jakarta Sans', sans-serif;
     display: flex;
@@ -19,7 +19,7 @@ body {
     scroll-behavior: smooth;
 }
 
-/* --- Navigasi --- */
+/* --- Navigasi (Header) --- */
 header {
     background-color: rgba(252, 250, 245, 0.95);
     backdrop-filter: blur(8px);
@@ -28,132 +28,67 @@ header {
     top: 0;
     z-index: 1000;
     border-bottom: 1px solid #e6e2d3;
+}
+
+.navbar {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    max-width: 1140px;
+    margin: 0 auto;
+    width: 100%;
 }
 
-.logo {
-    font-family: 'Lora', serif;
+/* --- Tukar Warna Utama kepada Maroon --- */
+.logo, .nav-links a, .hero-sub, .hero-title, .section-title, .ritual-section h2 {
+    color: #631015 !important;
+}
+
+/* --- Butang Custom & Hover --- */
+.btn-custom {
+    display: inline-flex; 
+    align-items: center; 
+    gap: 8px; 
+    padding: 8px 16px; 
+    text-decoration: none; 
+    border-radius: 4px; 
+    font-weight: bold; 
+    border: 1px solid #631015;
+    background: transparent;
+    transition: 0.3s;
     color: #631015;
-    font-size: 24px;
-    font-weight: 600;
-    letter-spacing: -0.5px;
 }
 
-.nav-links {
-    display: flex;
-    gap: 30px;
+.btn-custom:hover {
+    background: #631015;
+    color: #ffffff !important;
 }
 
-.nav-links a {
+/* --- TikTok/Social Buttons (Kekal Struktur Asal) --- */
+.tiktok-btn-light.group { border-color: #631015; color: #631015; }
+.tiktok-btn-light.solo { border-color: #631015; color: #631015; }
+
+.tiktok-btn-light:hover {
+    background: #fcfaf5;
     color: #631015;
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    transition: color 0.3s ease;
-    position: relative;
 }
 
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: #631015;
-    transition: width 0.3s ease;
-}
-
-.nav-links a:hover::after { width: 100%; }
-
-/* --- Hero Section --- */
-.hero {
-    padding: 80px 40px;
-    text-align: center;
-}
-
-.hero-sub { color: #631015; font-size: 14px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 20px; }
-.hero-title { color: #631015; font-family: 'Lora', serif; font-size: 60px; margin-bottom: 20px; }
-
-/* --- Post Cards --- */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    padding: 40px;
-}
-
-.post-card {
-    background: #ffffff;
-    border: 1px solid #e6e2d3;
-    padding: 20px;
-    transition: all 0.3s ease;
-}
-
-.post-card:hover { border-color: #631015; transform: translateY(-5px); }
-.post-card:hover h3 { color: #631015; }
-
-/* --- Sunday Ritual Section --- */
+/* --- Ritual Section (Theme Maroon) --- */
 .ritual-section {
     background-color: #631015;
-    color: #fcfaf5;
-    padding: 60px 40px;
+    color: #ffffff;
+    padding: 80px 20px;
     text-align: center;
 }
 
 .ritual-section button {
-    background-color: #ffffff;
+    background: #ffffff;
     color: #631015;
-    padding: 12px 30px;
+    padding: 15px 30px;
     border: none;
     cursor: pointer;
-    font-weight: 600;
-    transition: 0.3s;
+    font-weight: bold;
+    border-radius: 4px;
 }
-
-.ritual-section button:hover { background-color: #e6e2d3; }
-
-/* --- About & Skills --- */
-.skills-tags span {
-    background-color: #e6e2d3;
-    color: #631015;
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-size: 12px;
-    margin: 5px;
-    display: inline-block;
-}
-
-.skills-tags span:hover { background-color: #631015; color: #ffffff; }
-
-/* --- Contact Page --- */
-.submit-btn {
-    background-color: #631015;
-    color: #ffffff;
-    width: 100%;
-    padding: 15px;
-    border: none;
-    cursor: pointer;
-    font-weight: 700;
-}
-
-.submit-btn:hover { background-color: #8c1b22; }
-
-.form-group input, .form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #e6e2d3;
-    margin-top: 5px;
-}
-
-.form-group input:focus, .form-group textarea:focus { border-color: #631015; outline: none; }
-
-/* --- Ikon Sosial --- */
-.icon-circle:hover { background-color: #631015; color: #ffffff; }
 
 /* --- Footer --- */
 footer {
