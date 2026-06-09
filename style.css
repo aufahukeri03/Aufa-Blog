@@ -12,16 +12,14 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    -webkit-font-smoothing: antialiased;
-    scroll-behavior: smooth;
-    overflow-x: hidden; /* Mencegah skrol kiri/kanan */
+    overflow-x: hidden; /* MENGUNCI supaya tak boleh scroll ke tepi */
 }
 
 /* --- Navigasi (Header) --- */
 header {
     background-color: rgba(247, 244, 235, 0.95);
     backdrop-filter: blur(8px);
-    padding: 25px 20px;
+    padding: 20px;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -30,12 +28,12 @@ header {
 
 .navbar {
     display: flex;
-    align-items: center;
-    justify-content: center; /* Memastikan semua elemen (Logo, Menu, Sosials) di tengah */
-    gap: 30px;               /* Jarak konsisten antara elemen */
+    flex-direction: column; /* SUSUNAN MENEGAK: Logo atas, Menu tengah, Sosials bawah */
+    align-items: center;    /* PENTING: Centerkan semua secara mendatar */
     max-width: 1140px;
     margin: 0 auto;
     width: 100%;
+    gap: 15px;              /* Jarak antara barisan */
 }
 
 .logo {
@@ -43,17 +41,16 @@ header {
     color: #4a4439;
     font-size: 24px;
     font-weight: 600;
-    letter-spacing: -0.5px;
-    white-space: nowrap; /* Mencegah logo daripada terpecah kepada dua baris */
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 30px;
-    position: static;     /* Dibuang 'absolute' supaya tidak lari kedudukan */
+    gap: 25px;
+    justify-content: center; /* Memastikan butang menu sentiasa di tengah */
+    position: static;
     transform: none;
-    white-space: nowrap;  /* Memastikan menu kekal sebaris */
+    width: 100%;
 }
 
 .nav-links a {
@@ -78,52 +75,20 @@ header {
     left: 0;
     background-color: #93907c;
     transform: scaleX(0);
-    transform-origin: bottom right;
-    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: transform 0.3s ease;
 }
 
 .nav-links a:hover::after, .nav-links a.active::after {
     transform: scaleX(1);
-    transform-origin: bottom left;
 }
 
-.nav-links a:hover, .nav-links a.active {
-    color: #4a4439;
-}
-
-/* Socials */
 .header-socials {
     display: flex;
     gap: 15px;
+    justify-content: center; /* Sosials di tengah */
     font-size: 11px;
     font-weight: 700;
     color: #b5ab9a;
-    letter-spacing: 1px;
-}
-
-.header-socials a {
-    color: #8a7e6e;
-    text-decoration: none;
-    transition: color 0.2s, transform 0.2s;
-}
-
-/* --- Responsif untuk Telefon --- */
-@media (max-width: 768px) {
-    .navbar {
-        gap: 15px; /* Kurangkan jarak supaya muat skrin telefon */
-    }
-    
-    .nav-links {
-        gap: 15px; /* Kurangkan jarak antara menu */
-    }
-
-    .nav-links a {
-        font-size: 10px; /* Sedikit lebih kecil untuk muat skrin kecil */
-    }
-    
-    .logo {
-        font-size: 18px; /* Logo sedikit kecil pada telefon */
-    }
 }
 /* Animasi garisan bawah dari kiri ke kanan yang sangat smooth */
 .nav-links a::after {
