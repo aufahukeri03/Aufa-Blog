@@ -19,60 +19,49 @@ body {
     scroll-behavior: smooth;
 }
 
-/* --- Header & Navigasi Responsif --- */
-header {
-    padding: 20px;
-    width: 100%;
-}
-
+/* --- Header & Navigasi (Gaya Asal yang Diperkemas) --- */
 .navbar {
     display: flex;
-    flex-wrap: wrap; /* Membenarkan elemen turun ke bawah jika ruang sempit */
-    justify-content: center; /* Fokus kepada susunan tengah */
+    flex-direction: column; /* Susun menegak untuk mobile */
     align-items: center;
-    gap: 20px;
-    max-width: 1140px;
-    margin: 0 auto;
+    gap: 15px; /* Jarak antara logo, menu, dan sosial */
+    padding: 20px 0;
 }
 
-/* Letak logo di kiri atau atas */
 .logo {
-    flex: 1 1 100%; /* Ambil lebar penuh pada baris pertama */
-    text-align: center;
-    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 5px;
 }
 
-/* Navigasi mendatar */
-.nav-links {
-    display: flex;
-    gap: 20px;
-    list-style: none;
-    order: 2; /* Susunan kedua */
-}
-
-/* Ikon sosial di bawah atau di hujung */
+/* Susunan Ikon Sosial di atas menu */
 .header-socials {
     display: flex;
     gap: 15px;
-    order: 3; /* Susunan ketiga */
+    margin-bottom: 5px;
 }
 
-/* --- Media Query untuk Mobile (Sesuai kehendak anda) --- */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column; /* Ubah ke menegak untuk mobile */
-        gap: 15px;
-    }
+/* Gaya Butang Asal (Tanpa background/pill) */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px; /* Jarak antara button */
+    padding: 0;
+    margin: 0;
+}
 
-    .nav-links {
-        order: 2; /* Navigasi di tengah */
-        margin-top: 10px;
-    }
+.nav-links a {
+    color: #8a7e6e;
+    text-decoration: none; /* Buang garisan bawah */
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
 
-    .header-socials {
-        order: 3; /* Sosials turun ke bawah */
-        margin-top: 10px;
-    }
+.nav-links a:hover {
+    color: #4a4439; /* Sedikit gelap bila hover */
 }
 /* Animasi garisan bawah dari kiri ke kanan yang sangat smooth */
 .nav-links a::after {
