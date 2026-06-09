@@ -1,3 +1,6 @@
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Lora:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
 /* --- Reset & Gaya Asas --- */
 * {
     margin: 0;
@@ -6,7 +9,7 @@
 }
 
 body {
-    background-color: #f7f4eb;
+    background-color: #f7f4eb; /* Cream warm beige */
     color: #5a5245; 
     font-family: 'Plus Jakarta Sans', sans-serif;
     display: flex;
@@ -14,65 +17,104 @@ body {
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     scroll-behavior: smooth;
-    overflow-x: hidden; /* MENGELAKKAN SCROLL KIRI KANAN */
 }
 
-/* --- Navigasi (Header) --- */
+/* --- Navigasi (Header) - MUTLAK & TETAP --- */
 header {
     background-color: rgba(247, 244, 235, 0.95);
     backdrop-filter: blur(8px);
-    padding: 20px;
+    padding: 25px 40px;
     position: sticky;
     top: 0;
     z-index: 1000;
     border-bottom: 1px solid #e6e2d3;
-    width: 100%;
 }
 
 .navbar {
     display: flex;
-    flex-direction: column; /* Susun menegak */
-    align-items: center;    /* Pusatkan semua elemen secara melintang */
-    justify-content: center;
+    align-items: center;
     max-width: 1140px;
     margin: 0 auto;
     width: 100%;
-    gap: 15px; /* Jarak antara logo, menu, dan sosial */
+    position: relative; /* Menjadi paksi rujukan untuk kedudukan tengah */
 }
 
 .logo {
     font-family: 'Lora', serif;
     color: #4a4439;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 600;
-    text-align: center;
+    letter-spacing: -0.5px;
+    margin-right: auto; /* Tolak semua elemen lain ke kanan */
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 25px; /* Jarak antara Home, About, Blog, Contact */
-    justify-content: center; /* Pastikan menu duduk di tengah */
-    padding: 0;
+    gap: 35px;
+    /* Trik tegar untuk kunci menu betul-betul di tengah navbar tanpa hiraukan elemen kanan */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .nav-links a {
     color: #8a7e6e;
     text-decoration: none;
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 600;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     text-transform: uppercase;
+    position: relative;
+    padding: 6px 0;
     transition: color 0.3s ease;
 }
 
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #93907c;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.nav-links a:hover::after, .nav-links a.active::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #4a4439;
+}
+
+/* Tulisan bahasa/socials akan sentiasa duduk di hujung kanan */
 .header-socials {
     display: flex;
-    gap: 15px;
-    justify-content: center;
+    gap: 10px;
     font-size: 11px;
     font-weight: 700;
     color: #b5ab9a;
+    letter-spacing: 1px;
+    margin-left: auto; 
+}
+
+.header-socials a {
+    color: #8a7e6e;
+    text-decoration: none;
+    transition: color 0.2s, transform 0.2s;
+}
+
+@media (max-width: 900px) {
+    .nav-links {
+        position: static;
+        transform: none;
+        gap: 20px;
+    }
 }
 /* Animasi garisan bawah dari kiri ke kanan yang sangat smooth */
 .nav-links a::after {
