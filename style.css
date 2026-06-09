@@ -26,16 +26,18 @@ header {
     top: 0;
     z-index: 1000;
     border-bottom: 1px solid #e6e2d3;
+    width: 100%;
 }
 
 .navbar {
     display: flex;
-    align-items: center;
-    justify-content: space-between; /* Tukar kepada space-between untuk mobile */
+    flex-direction: column; /* Susun menegak */
+    align-items: center;    /* Pusatkan semua elemen secara melintang */
+    justify-content: center;
     max-width: 1140px;
     margin: 0 auto;
     width: 100%;
-    flex-wrap: wrap; /* Benarkan elemen turun ke bawah jika tiada ruang */
+    gap: 15px; /* Jarak antara logo, menu, dan sosial */
 }
 
 .logo {
@@ -43,52 +45,35 @@ header {
     color: #4a4439;
     font-size: 20px;
     font-weight: 600;
-    margin-right: 15px;
+    text-align: center;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
-    position: static; /* Ubah dari absolute kepada static */
-    transform: none;
+    gap: 25px; /* Jarak antara Home, About, Blog, Contact */
+    justify-content: center; /* Pastikan menu duduk di tengah */
+    padding: 0;
 }
 
 .nav-links a {
     color: #8a7e6e;
     text-decoration: none;
-    font-size: 11px; /* Kecilkan sedikit untuk mobile */
+    font-size: 11px;
     font-weight: 600;
     letter-spacing: 1px;
     text-transform: uppercase;
     transition: color 0.3s ease;
 }
 
-/* Tulisan bahasa/socials */
 .header-socials {
     display: flex;
-    gap: 10px;
+    gap: 15px;
+    justify-content: center;
     font-size: 11px;
     font-weight: 700;
     color: #b5ab9a;
 }
-
-/* --- Media Query untuk Telefon --- */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column; /* Semua elemen disusun menegak */
-        gap: 15px;
-    }
-    
-    .nav-links {
-        order: 2; /* Menu duduk di tengah */
-        gap: 15px;
-    }
-    
-    .header-socials {
-        order: 3; /* Sosials duduk di bawah sekali */
-    }
-} 
 /* Animasi garisan bawah dari kiri ke kanan yang sangat smooth */
 .nav-links a::after {
     content: '';
