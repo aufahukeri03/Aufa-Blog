@@ -19,112 +19,59 @@ body {
     scroll-behavior: smooth;
 }
 
-/* --- Navigasi (Header) --- */
+/* --- Header & Navigasi Responsif --- */
 header {
-    background-color: rgba(247, 244, 235, 0.95);
-    backdrop-filter: blur(8px);
-    padding: 25px 40px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid #e6e2d3;
+    padding: 20px;
+    width: 100%;
 }
 
 .navbar {
     display: flex;
+    flex-wrap: wrap; /* Membenarkan elemen turun ke bawah jika ruang sempit */
+    justify-content: center; /* Fokus kepada susunan tengah */
     align-items: center;
-    justify-content: space-between; /* Menambah ruang antara elemen */
+    gap: 20px;
     max-width: 1140px;
     margin: 0 auto;
-    width: 100%;
 }
 
+/* Letak logo di kiri atau atas */
 .logo {
-    font-family: 'Lora', serif;
-    color: #4a4439;
-    font-size: 24px;
-    font-weight: 600;
-    letter-spacing: -0.5px;
+    flex: 1 1 100%; /* Ambil lebar penuh pada baris pertama */
+    text-align: center;
+    margin-bottom: 10px;
 }
 
+/* Navigasi mendatar */
 .nav-links {
-    list-style: none;
     display: flex;
-    gap: 35px;
+    gap: 20px;
+    list-style: none;
+    order: 2; /* Susunan kedua */
 }
 
-.nav-links a {
-    color: #8a7e6e;
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    position: relative;
-    padding: 6px 0;
-    transition: color 0.3s ease;
-}
-
-/* Hover Effect */
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #93907c;
-    transform: scaleX(0);
-    transform-origin: bottom right;
-    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.nav-links a:hover::after, .nav-links a.active::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-}
-
-.nav-links a:hover, .nav-links a.active {
-    color: #4a4439;
-}
-
+/* Ikon sosial di bawah atau di hujung */
 .header-socials {
     display: flex;
     gap: 15px;
-    font-size: 11px;
-    font-weight: 700;
-    color: #b5ab9a;
+    order: 3; /* Susunan ketiga */
 }
 
-.header-socials a {
-    color: #8a7e6e;
-    text-decoration: none;
-}
-
-/* --- DESIGN RESPONSIVE (MOBILE) --- */
-@media (max-width: 900px) {
-    header {
-        padding: 20px;
-    }
-
+/* --- Media Query untuk Mobile (Sesuai kehendak anda) --- */
+@media (max-width: 768px) {
     .navbar {
-        flex-direction: column; /* Tukar susunan ke menegak */
+        flex-direction: column; /* Ubah ke menegak untuk mobile */
         gap: 15px;
     }
 
     .nav-links {
-        gap: 20px;
-        order: 2; /* Menu duduk di baris kedua */
+        order: 2; /* Navigasi di tengah */
+        margin-top: 10px;
     }
 
     .header-socials {
-        order: 3; /* Socials duduk di baris ketiga */
-        margin-left: 0;
-    }
-    
-    /* Memastikan logo berada di baris pertama secara automatik */
-    .logo {
-        order: 1;
+        order: 3; /* Sosials turun ke bawah */
+        margin-top: 10px;
     }
 }
 /* Animasi garisan bawah dari kiri ke kanan yang sangat smooth */
