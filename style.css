@@ -30,8 +30,8 @@ header {
 
 .navbar {
     display: flex;
-    align-items: center;
-    justify-content: space-between; /* Logo di kiri, menu di tengah, socials di kanan (desktop) */
+    flex-direction: column; /* Paksa susun menegak untuk semua saiz skrin */
+    align-items: center;    /* Center semua elemen secara mendatar */
     max-width: 1140px;
     margin: 0 auto;
     width: 100%;
@@ -40,16 +40,17 @@ header {
 .logo {
     font-family: 'Lora', serif;
     color: #4a4439;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 600;
+    margin-bottom: 10px; /* Jarak antara logo dan menu */
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 25px;
-    flex-grow: 1;           /* Membolehkan menu mengambil ruang tengah */
-    justify-content: center; /* PENTING: Meletakkan menu di tengah-tengah */
+    gap: 20px;
+    justify-content: center; /* Pastikan menu di tengah */
+    margin-bottom: 10px;
 }
 
 .nav-links a {
@@ -64,23 +65,23 @@ header {
 
 .header-socials {
     display: flex;
-    gap: 10px;
+    gap: 15px;
+    justify-content: center; /* Pastikan ikon sosial di tengah */
     font-size: 11px;
     font-weight: 700;
     color: #b5ab9a;
 }
 
-/* --- Media Query untuk Telefon --- */
+.header-socials a {
+    color: #8a7e6e;
+    text-decoration: none;
+    transition: color 0.2s, transform 0.2s;
+}
+
+/* --- Media Query Tambahan (Jika perlu) --- */
 @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column; /* Susun menegak untuk telefon */
-        gap: 15px;
-    }
-    
     .nav-links {
-        justify-content: center; /* Memastikan menu kekal di tengah */
-        flex-wrap: wrap;         /* Jika menu panjang, ia akan turun ke bawah */
-        gap: 15px;
+        gap: 15px; /* Kurangkan gap jika skrin sangat kecil */
     }
 }
 /* Animasi garisan bawah dari kiri ke kanan yang sangat smooth */
