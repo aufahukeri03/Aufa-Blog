@@ -14,14 +14,14 @@ body {
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     scroll-behavior: smooth;
-    overflow-x: hidden;
+    overflow-x: hidden; /* MENGELAKKAN SCROLL KIRI KANAN */
 }
 
 /* --- Navigasi (Header) --- */
 header {
     background-color: rgba(247, 244, 235, 0.95);
     backdrop-filter: blur(8px);
-    padding: 20px 0; /* Ubah padding kiri kanan kepada 0 */
+    padding: 20px;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -30,12 +30,12 @@ header {
 
 .navbar {
     display: flex;
-    flex-direction: column; /* Susun menegak untuk center */
-    align-items: center;    /* Center semua elemen secara mendatar */
+    align-items: center;
+    justify-content: space-between; /* Tukar kepada space-between untuk mobile */
     max-width: 1140px;
     margin: 0 auto;
     width: 100%;
-    gap: 15px; 
+    flex-wrap: wrap; /* Benarkan elemen turun ke bawah jika tiada ruang */
 }
 
 .logo {
@@ -43,28 +43,25 @@ header {
     color: #4a4439;
     font-size: 20px;
     font-weight: 600;
+    margin-right: 15px;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    justify-content: center; /* Memastikan 4 button duduk di tengah */
-    gap: 30px;               /* Jarak antara link */
-    width: 100%;
+    gap: 20px;
+    position: static; /* Ubah dari absolute kepada static */
+    transform: none;
 }
 
 .nav-links a {
     color: #8a7e6e;
     text-decoration: none;
-    font-size: 11px;
+    font-size: 11px; /* Kecilkan sedikit untuk mobile */
     font-weight: 600;
     letter-spacing: 1px;
     text-transform: uppercase;
     transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: #4a4439; /* Kesan hover supaya nampak hidup */
 }
 
 /* Tulisan bahasa/socials */
@@ -79,13 +76,19 @@ header {
 /* --- Media Query untuk Telefon --- */
 @media (max-width: 768px) {
     .navbar {
-        padding: 0 15px; /* Bagi ruang sikit di tepi skrin phone */
+        flex-direction: column; /* Semua elemen disusun menegak */
+        gap: 15px;
     }
     
     .nav-links {
-        gap: 20px; /* Kurangkan gap sikit untuk skrin kecil */
+        order: 2; /* Menu duduk di tengah */
+        gap: 15px;
     }
-}  
+    
+    .header-socials {
+        order: 3; /* Sosials duduk di bawah sekali */
+    }
+} 
 /* Animasi garisan bawah dari kiri ke kanan yang sangat smooth */
 .nav-links a::after {
     content: '';
@@ -1238,7 +1241,7 @@ footer {
     }
 
     /* ==========================================================================
-       PUNCA UTAMA: MENJINAKKAN ANIMASI MARQUEE SUPAYA TIDAK MENOLAK KOTAK
+       ANIMASI MARQUEE SUPAYA TIDAK MENOLAK KOTAK
        ========================================================================== */
     .skills-section {
         width: 100% !important;
