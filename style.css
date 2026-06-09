@@ -19,49 +19,124 @@ body {
     scroll-behavior: smooth;
 }
 
-/* --- Header & Navigasi (Gaya Asal yang Diperkemas) --- */
+/* --- Navigasi (Header) - MUTLAK & TETAP --- */
+header {
+    background-color: rgba(247, 244, 235, 0.95);
+    backdrop-filter: blur(8px);
+    padding: 25px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #e6e2d3;
+}
+
 .navbar {
     display: flex;
-    flex-direction: column; /* Susun menegak untuk mobile */
     align-items: center;
-    gap: 15px; /* Jarak antara logo, menu, dan sosial */
-    padding: 20px 0;
+    justify-content: space-between; /* Membantu susunan pada desktop */
+    max-width: 1140px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative; 
 }
 
 .logo {
-    font-size: 20px;
+    font-family: 'Lora', serif;
+    color: #4a4439;
+    font-size: 24px;
     font-weight: 600;
-    margin-bottom: 5px;
+    letter-spacing: -0.5px;
+    flex-shrink: 0; /* Pastikan logo tidak mengecil */
 }
 
-/* Susunan Ikon Sosial di atas menu */
-.header-socials {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 5px;
-}
-
-/* Gaya Butang Asal (Tanpa background/pill) */
 .nav-links {
-    display: flex;
     list-style: none;
-    gap: 20px; /* Jarak antara button */
-    padding: 0;
-    margin: 0;
+    display: flex;
+    gap: 35px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .nav-links a {
     color: #8a7e6e;
-    text-decoration: none; /* Buang garisan bawah */
-    font-size: 11px;
+    text-decoration: none;
+    font-size: 13px;
     font-weight: 600;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     text-transform: uppercase;
+    position: relative;
+    padding: 6px 0;
     transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
-    color: #4a4439; /* Sedikit gelap bila hover */
+/* Hover Effect Asal */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #93907c;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.nav-links a:hover::after, .nav-links a.active::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #4a4439;
+}
+
+.header-socials {
+    display: flex;
+    gap: 15px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #b5ab9a;
+    letter-spacing: 1px;
+}
+
+.header-socials a {
+    color: #8a7e6e;
+    text-decoration: none;
+    transition: color 0.2s, transform 0.2s;
+}
+
+/* --- DESIGN RESPONSIVE (MOBILE) --- */
+@media (max-width: 900px) {
+    header {
+        padding: 15px 20px;
+    }
+
+    .navbar {
+        flex-direction: column; /* Ubah susunan jadi menegak */
+        align-items: center;
+        gap: 10px;
+    }
+
+    .logo {
+        margin-right: 0; /* Reset margin */
+        margin-bottom: 5px;
+    }
+
+    .nav-links {
+        position: static; /* Tukar daripada absolute ke static */
+        transform: none;
+        gap: 20px;
+        margin-bottom: 5px;
+    }
+
+    .header-socials {
+        margin-left: 0; /* Reset margin supaya duduk di tengah */
+        justify-content: center;
+        margin-top: 5px;
+    }
 }
 /* Animasi garisan bawah dari kiri ke kanan yang sangat smooth */
 .nav-links a::after {
