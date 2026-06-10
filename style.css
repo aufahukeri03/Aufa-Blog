@@ -1603,27 +1603,33 @@ footer {
     z-index: 1001; /* Pastikan ia berada di lapisan paling atas */
     color: #4a4439;
 }
-/* --- Pembetulan Saiz Gambar Projek (Mobile Friendly) --- */
+/* --- Redesign Blog List untuk Mobile (Full Width) --- */
 @media (max-width: 768px) {
-    /* 1. Sasarkan bekas gambar projek (sila pastikan class ini tepat dengan HTML anda) */
-    .project-card, .blog-post-card, .post-image-container {
+    /* 1. Paksa setiap item blog menjadi susunan menegak */
+    .blog-item {
         display: flex !important;
-        flex-direction: column !important; /* Susun menegak */
+        flex-direction: column !important; /* Gambar di atas, teks di bawah */
         width: 100% !important;
+        margin-bottom: 30px !important;
     }
 
-    /* 2. Paksa gambar untuk mengambil 100% lebar skrin */
-    .project-image, .post-image, img {
+    /* 2. Besarkan saiz gambar supaya memenuhi lebar skrin */
+    .blog-meta {
         width: 100% !important;
-        max-width: 100% !important; /* Buang had kecil */
-        height: auto !important;
-        border-radius: 10px; /* Kekalkan corner yang cantik */
+        margin-bottom: 15px !important;
     }
 
-    /* 3. Pastikan teks di bawah gambar tidak terhimpit */
-    .project-info, .text-content {
+    .blog-img {
         width: 100% !important;
-        padding-top: 15px;
+        height: auto !important; /* Kekalkan nisbah gambar */
+        object-fit: cover;
+        border-radius: 8px; /* Kekalkan corner yang kemas */
+    }
+
+    /* 3. Pastikan ruang teks selesa */
+    .blog-content {
+        width: 100% !important;
+        padding: 0 !important;
     }
 }
 
