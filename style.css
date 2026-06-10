@@ -92,30 +92,6 @@ header {
     color: #4a4439;
 }
 
-/* Tulisan bahasa/socials akan sentiasa duduk di hujung kanan */
-.header-socials {
-    display: flex;
-    gap: 10px;
-    font-size: 11px;
-    font-weight: 700;
-    color: #b5ab9a;
-    letter-spacing: 1px;
-    margin-left: auto; 
-}
-
-.header-socials a {
-    color: #8a7e6e;
-    text-decoration: none;
-    transition: color 0.2s, transform 0.2s;
-}
-
-@media (max-width: 900px) {
-    .nav-links {
-        position: static;
-        transform: none;
-        gap: 20px;
-    }
-}
 
 /* Animasi garisan bawah dari kiri ke kanan yang sangat smooth */
 .nav-links a::after {
