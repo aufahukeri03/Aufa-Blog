@@ -1562,4 +1562,31 @@ footer {
         order: 3;
     }
 }
+/* --- Redesign Pop-up untuk Mobile Friendly --- */
+@media (max-width: 768px) {
+    /* 1. Pastikan bekas modal muat dengan skrin telefon */
+    .modal-content, .popup-content {
+        width: 95% !important;
+        max-height: 85vh !important; /* Hadkan tinggi supaya tidak terkeluar skrin */
+        overflow-y: auto;          /* Benarkan skrol jika kandungan panjang */
+        margin: 5% auto;
+        padding: 15px !important;
+    }
+
+    /* 2. Susun gambar-gambar projek secara menegak di dalam pop-up */
+    /* Anda perlu pastikan container gambar menggunakan flex-direction: column */
+    .modal-body, .popup-container {
+        display: flex !important;
+        flex-direction: column !important; /* Susun menegak (bukan mendatar) */
+        align-items: center;
+        gap: 15px !important;
+    }
+
+    /* 3. Pastikan gambar fit 100% dengan lebar modal */
+    .modal-content img, .popup-content img {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 300px; /* Tetapkan lebar maksimum supaya tidak terlalu besar */
+    }
+}
 
