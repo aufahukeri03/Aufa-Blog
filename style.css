@@ -1587,4 +1587,20 @@ footer {
         max-width: 400px; /* Saiz maksimum gambar di mobile */
     }
 }
+/* Pastikan bekas modal menjadi rujukan posisi untuk butang pangkah */
+.modal-content {
+    position: relative !important; /* Penting untuk kedudukan pangkah */
+    padding-top: 40px !important; /* Beri ruang supaya pangkah tidak bertindih dengan tajuk */
+}
+
+/* Tetapkan butang pangkah sentiasa di penjuru kanan atas */
+.close {
+    position: absolute !important;
+    top: 15px !important;
+    right: 20px !important;
+    font-size: 30px !important;
+    cursor: pointer;
+    z-index: 1001; /* Pastikan ia berada di lapisan paling atas */
+    color: #4a4439;
+}
 
