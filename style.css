@@ -1533,4 +1533,33 @@ footer {
 .blog-content {
     flex: 1;
 }
+/* --- Penambahbaikan Mobile Friendly untuk Header --- */
+@media (max-width: 900px) {
+    .navbar {
+        flex-wrap: wrap; /* Benarkan elemen turun ke bawah jika tiada ruang */
+        justify-content: center; /* Pusatkan semua elemen */
+        gap: 20px;
+        padding: 15px;
+    }
+
+    /* Logo di baris atas */
+    .logo {
+        flex: 0 0 100%; /* Ambil ruang penuh */
+        text-align: center;
+        margin-right: 0;
+    }
+
+    /* Navigasi di tengah */
+    .nav-links {
+        position: static; /* Buang kedudukan absolute */
+        transform: none;
+        order: 2;
+    }
+
+    /* Ikon sosial di bawah navigasi */
+    .header-socials {
+        margin-left: 0;
+        order: 3;
+    }
+}
 
